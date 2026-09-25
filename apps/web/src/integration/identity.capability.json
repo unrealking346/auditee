@@ -1,0 +1,63 @@
+{
+  "capability": "identity",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 11,
+  "sourceVariants": 7,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/middleware/auth.ts",
+      "size": 997
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/auth.ts",
+      "size": 1467
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/web/src/components/AuthModal.tsx",
+      "size": 1508
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/data/WaeveSession.kt",
+      "size": 1575
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/cover-waeve-sessions.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/cover-waeve-sessions.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/cover-waeve-sessions.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/ios/Runner/AudioSessionBridge.swift",
+      "size": 334
+    }
+  ]
+}

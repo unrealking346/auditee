@@ -1,0 +1,59 @@
+{
+  "canonicalAndroidFiles": 91,
+  "candidateRoots": [
+    {
+      "root": "mobile/android",
+      "files": 91,
+      "settings": [
+        "settings.gradle.kts"
+      ],
+      "builds": [
+        "android/app/build.gradle.kts",
+        "android/build.gradle.kts",
+        "app/build.gradle.kts",
+        "build.gradle.kts",
+        "platforms/android-native/app/build.gradle",
+        "platforms/android-native/build.gradle"
+      ],
+      "manifests": [
+        "android/app/src/main/AndroidManifest.xml",
+        "app/src/main/AndroidManifest.xml",
+        "platforms/android-native/app/src/main/AndroidManifest.xml"
+      ]
+    },
+    {
+      "root": "mobile/android/android",
+      "files": 46,
+      "settings": [
+        "settings.gradle.kts"
+      ],
+      "builds": [
+        "app/build.gradle.kts",
+        "build.gradle.kts"
+      ],
+      "manifests": [
+        "app/src/main/AndroidManifest.xml"
+      ]
+    },
+    {
+      "root": "mobile/android/platforms/android-native",
+      "files": 6,
+      "settings": [
+        "settings.gradle"
+      ],
+      "builds": [
+        "app/build.gradle",
+        "build.gradle"
+      ],
+      "manifests": [
+        "app/src/main/AndroidManifest.xml"
+      ]
+    }
+  ],
+  "preservedSourceWrappers": [],
+  "systemGradle": true,
+  "sdkmanager": null,
+  "sourceVariantsModified": 0,
+  "destructiveOperations": 0,
+  "status": "ANDROID_BUILD_RECONCILIATION_READY"
+}

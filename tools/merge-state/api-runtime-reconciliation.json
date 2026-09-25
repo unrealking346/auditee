@@ -1,0 +1,141 @@
+{
+  "candidates": [
+    {
+      "name": "typescript-api",
+      "entry": "src/server.ts",
+      "package": "package.json",
+      "database": "prisma/schema.prisma",
+      "entryExists": true,
+      "packageExists": true,
+      "databaseExists": true,
+      "packageName": "@waeve/api",
+      "moduleType": "module",
+      "scripts": [
+        "dev",
+        "start",
+        "prisma:generate",
+        "prisma:migrate",
+        "seed",
+        "test",
+        "check"
+      ],
+      "dependencies": [
+        "@prisma/client",
+        "argon2",
+        "cors",
+        "dotenv",
+        "express",
+        "helmet",
+        "jsonwebtoken",
+        "multer",
+        "zod"
+      ],
+      "entryBytes": 1367
+    },
+    {
+      "name": "global-javascript-api",
+      "entry": "src/server.js",
+      "package": "package.json",
+      "database": "prisma/schema.prisma",
+      "entryExists": true,
+      "packageExists": true,
+      "databaseExists": true,
+      "packageName": "@waeve/api",
+      "moduleType": "module",
+      "scripts": [
+        "dev",
+        "start",
+        "prisma:generate",
+        "prisma:migrate",
+        "seed",
+        "test",
+        "check"
+      ],
+      "dependencies": [
+        "@prisma/client",
+        "argon2",
+        "cors",
+        "dotenv",
+        "express",
+        "helmet",
+        "jsonwebtoken",
+        "multer",
+        "zod"
+      ],
+      "entryBytes": 10514
+    },
+    {
+      "name": "legacy-backend",
+      "entry": "backend/server.js",
+      "package": "backend/package.json",
+      "database": "prisma/schema.prisma",
+      "entryExists": true,
+      "packageExists": false,
+      "databaseExists": true,
+      "entryBytes": 4042
+    },
+    {
+      "name": "nested-server",
+      "entry": "waeve/server/server.js",
+      "package": "waeve/server/package.json",
+      "database": null,
+      "entryExists": false,
+      "packageExists": true,
+      "databaseExists": false,
+      "packageName": "waeve-2.0",
+      "moduleType": "module",
+      "scripts": [
+        "dev",
+        "start",
+        "migrate",
+        "seed",
+        "check"
+      ],
+      "dependencies": [
+        "@aws-sdk/client-s3",
+        "@aws-sdk/s3-request-presigner",
+        "@fastify/cors",
+        "@fastify/helmet",
+        "@fastify/jwt",
+        "@fastify/rate-limit",
+        "@fastify/static",
+        "argon2",
+        "dotenv",
+        "fastify",
+        "ioredis",
+        "pg",
+        "zod"
+      ]
+    }
+  ],
+  "schemaEvidence": [
+    {
+      "path": "apps/api/prisma/schema.prisma",
+      "bytes": 11971,
+      "models": 31,
+      "tables": 0,
+      "enums": 15
+    },
+    {
+      "path": "_sources/WAEVE-Global-Production-Services-4.0.0/Waeve/backend/prisma/schema.prisma",
+      "bytes": 11971,
+      "models": 31,
+      "tables": 0,
+      "enums": 15
+    },
+    {
+      "path": "_sources/WAEVE-Android-production-project/Waeve/infra/schema.sql",
+      "bytes": 6375,
+      "models": 0,
+      "tables": 17,
+      "enums": 0
+    }
+  ],
+  "selectionPolicy": [
+    "Prefer a buildable TypeScript production API when dependencies and scripts support it.",
+    "Prefer the broadest production schema only after compatibility is verified.",
+    "Do not delete competing implementations.",
+    "Do not overwrite existing source variants.",
+    "Runtime selection is provisional until build and tests pass."
+  ]
+}

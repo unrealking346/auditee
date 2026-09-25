@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-09-18T15:10:57.281Z",
+  "activated": [
+    {
+      "domain": "services/analytics",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/catalog",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/discovery",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/editorial",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/knowledge",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/media",
+      "sourceFiles": 4,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/payments",
+      "sourceFiles": 2,
+      "typescriptFiles": 1,
+      "validation": "tsc --noEmit -p tsconfig.json"
+    },
+    {
+      "domain": "services/playback",
+      "sourceFiles": 7,
+      "typescriptFiles": 2,
+      "validation": "tsc --noEmit -p tsconfig.json"
+    },
+    {
+      "domain": "services/recommendations",
+      "sourceFiles": 2,
+      "typescriptFiles": 1,
+      "validation": "tsc --noEmit -p tsconfig.json"
+    },
+    {
+      "domain": "services/rights",
+      "sourceFiles": 3,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/royalties",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/territory",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    },
+    {
+      "domain": "services/trust",
+      "sourceFiles": 1,
+      "typescriptFiles": 0,
+      "validation": "node --check src/index.js"
+    }
+  ],
+  "skipped": [
+    {
+      "domain": "apps/artist",
+      "reason": "no executable JS/TS source detected"
+    },
+    {
+      "domain": "services/notifications",
+      "reason": "no executable JS/TS source detected"
+    },
+    {
+      "domain": "services/search",
+      "reason": "no executable JS/TS source detected"
+    }
+  ],
+  "preserved": true,
+  "android": {
+    "exists": true,
+    "gradlew": false,
+    "settings": true,
+    "action": "No Android files modified; build will occur only when a valid Gradle entrypoint exists."
+  }
+}

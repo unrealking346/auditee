@@ -1,0 +1,65 @@
+{
+  "canonicalPackage": "@waeve/database",
+  "canonicalMigration": "migrations/001_canonical.sql",
+  "referenceSchemas": [
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/prisma/schema.prisma",
+      "size": 11971
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/prisma/schema.prisma",
+      "size": 6479
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/prisma/schema.prisma",
+      "size": 6479
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/infra/schema.sql",
+      "size": 6375
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/migrations/001_init.sql",
+      "size": 3731
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/migrations/002_global_launch.sql",
+      "size": 3412
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/migrations/003_global_features.sql",
+      "size": 5527
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/migrations/004_everything_else.sql",
+      "size": 20466
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/migrations/005_category_complete.sql",
+      "size": 9597
+    }
+  ],
+  "reconciliationSources": [
+    "WAEVE-Global-Production-Services-4.0.0",
+    "WAEVE-Complete-2.4.0-12-Screens",
+    "WAEVE-Complete-2.2.0-UI-Matched",
+    "WAEVE-Android-production-project",
+    "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+    "Waeve"
+  ],
+  "rules": [
+    "The canonical schema is the foundation.",
+    "Broader source schemas are reconciliation inputs.",
+    "Existing canonical migrations are not overwritten.",
+    "Rights, royalties, territory, analytics and operational domains must be reconciled before production completion."
+  ]
+}

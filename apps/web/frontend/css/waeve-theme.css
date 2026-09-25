@@ -1,0 +1,175 @@
+/*
+ * ============================================================
+ * WAEVE GLOBAL BLUE ACTION OVERRIDE
+ * Build: 0.7.0
+ *
+ * RULE:
+ * ANY WAEVE BLUE ACTION = BLACK CONTENT
+ * ============================================================
+ */
+
+:where(
+    button,
+    a,
+    .primary-button,
+    .nav-button,
+    .play-button,
+    .playlist-add-button,
+    .music-card-playlist,
+    .playlist-card-actions button,
+    .playlist-view-actions button,
+    .playlist-song-row > button,
+    .playlist-remove-song,
+    .waeve-create-playlist,
+    .waeve-dialog-close,
+    .waeve-playlist-dialog-actions button,
+    .waeve-playlist-card-actions button,
+    .waeve-cover-picker-header button,
+    #waeve-player-play
+) {
+    color: #000000 !important;
+}
+
+/*
+ * Any text or icon placed inside a blue button
+ * must also become black.
+ */
+
+:where(
+    button,
+    a,
+    .primary-button,
+    .nav-button,
+    .play-button,
+    .playlist-add-button,
+    .music-card-playlist,
+    .playlist-card-actions button,
+    .playlist-view-actions button,
+    .playlist-song-row > button,
+    .playlist-remove-song,
+    .waeve-create-playlist,
+    .waeve-dialog-close,
+    .waeve-playlist-card-actions button,
+    .waeve-playlist-dialog-actions button,
+    .waeve-cover-picker-header button,
+    #waeve-player-play
+) :where(
+    span,
+    strong,
+    i,
+    svg,
+    path
+) {
+    color: #000000 !important;
+    fill: #000000 !important;
+    stroke: #000000 !important;
+}
+
+
+/*
+ * BLUE ACTION STATES
+ */
+
+:where(
+    .primary-button,
+    .nav-button.active,
+    .play-button,
+    .playlist-add-button,
+    .music-card-playlist,
+    .playlist-card-actions button,
+    .playlist-view-actions button,
+    .playlist-song-row > button,
+    .playlist-remove-song,
+    .waeve-create-playlist,
+    .waeve-playlist-card-actions button,
+    .waeve-playlist-dialog-actions button:last-child,
+    #waeve-player-play
+) {
+    background: var(--waeve-primary) !important;
+    color: #000000 !important;
+}
+
+
+/*
+ * HOVER
+ */
+
+:where(
+    .primary-button:hover,
+    .nav-button.active:hover,
+    .play-button:hover,
+    .playlist-add-button:hover,
+    .music-card-playlist:hover,
+    .playlist-card-actions button:hover,
+    .playlist-view-actions button:hover,
+    .playlist-song-row > button:hover,
+    .playlist-remove-song:hover,
+    .waeve-create-playlist:hover,
+    .waeve-playlist-card-actions button:hover,
+    .waeve-playlist-dialog-actions button:last-child:hover,
+    #waeve-player-play:hover
+) {
+    background: var(--waeve-primary-dark) !important;
+    color: #000000 !important;
+}
+
+
+/*
+ * ACTIVE / PRESSED
+ */
+
+:where(
+    .primary-button:active,
+    .nav-button.active:active,
+    .play-button:active,
+    .playlist-add-button:active,
+    .music-card-playlist:active,
+    .playlist-card-actions button:active,
+    .playlist-view-actions button:active,
+    .playlist-song-row > button:active,
+    .playlist-remove-song:active,
+    .waeve-create-playlist:active,
+    .waeve-playlist-card-actions button:active,
+    .waeve-playlist-dialog-actions button:last-child:active,
+    #waeve-player-play:active
+) {
+    color: #000000 !important;
+}
+
+
+/*
+ * BLUE PLAYLIST COVERS
+ *
+ * The content printed over blue covers is black too.
+ */
+
+:where(
+    .playlist-card-cover,
+    .waeve-playlist-cover,
+    .waeve-playlist-cover-1,
+    .waeve-playlist-cover-2,
+    .waeve-playlist-cover-3,
+    .waeve-playlist-cover-4,
+    .waeve-playlist-cover-5,
+    .waeve-playlist-cover-6,
+    .waeve-playlist-modal-cover
+) {
+    color: #000000 !important;
+}
+
+
+:where(
+    .playlist-card-cover,
+    .waeve-playlist-cover,
+    .waeve-playlist-cover-1,
+    .waeve-playlist-cover-2,
+    .waeve-playlist-cover-3,
+    .waeve-playlist-cover-4,
+    .waeve-playlist-cover-5,
+    .waeve-playlist-cover-6,
+    .waeve-playlist-modal-cover
+) * {
+    color: #000000 !important;
+    fill: #000000 !important;
+    stroke: #000000 !important;
+}

@@ -1,0 +1,79 @@
+{
+  "purpose": "Canonical Waeve integration boundary for capabilities originating from preserved source variants.",
+  "legacy": {
+    "source": "Waeve",
+    "capabilities": [
+      {
+        "capability": "catalogue-system",
+        "source": "Waeve",
+        "path": "frontend/js/music.js"
+      },
+      {
+        "capability": "playback-system",
+        "source": "Waeve",
+        "path": "frontend/js/player.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/playlist-player.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/playlists.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/playlist-management.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/library-playlist-ui.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/playlist-ui.js"
+      },
+      {
+        "capability": "playlist-system",
+        "source": "Waeve",
+        "path": "frontend/js/library-playlist-ui.js"
+      },
+      {
+        "capability": "routing-system",
+        "source": "Waeve",
+        "path": "frontend/js/router.js"
+      },
+      {
+        "capability": "application-foundation",
+        "source": "Waeve",
+        "path": "frontend/js/storage.js"
+      },
+      {
+        "capability": "application-foundation",
+        "source": "Waeve",
+        "path": "frontend/js/app.js"
+      }
+    ]
+  },
+  "production": {
+    "preferredSources": [
+      "WAEVE-Global-Production-Services-4.0.0",
+      "WAEVE-Complete-2.4.0-12-Screens",
+      "WAEVE-Complete-2.2.0-UI-Matched",
+      "WAEVE-Android-production-project",
+      "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+    ]
+  },
+  "rules": [
+    "Production implementations are preferred for security, authentication, API and deployment foundations.",
+    "Legacy playback and playlist behavior is retained as an integration input.",
+    "Existing canonical files are never silently overwritten.",
+    "Preserved source variants remain immutable.",
+    "No capability is marked complete until compilation, testing and integration verification succeed."
+  ]
+}

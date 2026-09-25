@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-09-19T08:16:11.339Z",
+  "workspaces": [
+    {
+      "path": "apps/admin",
+      "name": "@waeve/admin",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit",
+        "test": "npm run build && node --test dist/test/*.test.js"
+      },
+      "sourceFiles": 4
+    },
+    {
+      "path": "apps/api",
+      "name": "@waeve/api",
+      "scripts": {
+        "dev": "node --watch src/server.js",
+        "start": "node src/server.js",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev",
+        "seed": "node prisma/seed.js",
+        "test": "node --test",
+        "check": "node --check src/server.js && node --check src/routes/platform.js && node --check src/services/territory.js && node --check src/services/rights.js && node --check src/services/royalty.js && node --check src/services/knowledge.js && node --check src/services/discovery.js && node --check src/services/trust.js && node --check src/services/editorial.js && node --check src/services/ai.js && node --check src/services/analytics.js"
+      },
+      "sourceFiles": 169
+    },
+    {
+      "path": "apps/artist",
+      "name": "@waeve/apps-artist",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit",
+        "test": "npm run build && node --test dist/test/*.test.js"
+      },
+      "sourceFiles": 5
+    },
+    {
+      "path": "apps/developer",
+      "name": "@waeve/developer",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit",
+        "test": "npm run build && node --test dist/test/*.test.js"
+      },
+      "sourceFiles": 4
+    },
+    {
+      "path": "apps/web",
+      "name": "@waeve/web",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "test": "vitest run",
+        "preview": "vite preview"
+      },
+      "sourceFiles": 258
+    },
+    {
+      "path": "packages/database",
+      "name": "@waeve/database",
+      "scripts": {
+        "check": "node --check scripts/check-schema.mjs",
+        "verify": "npm run check"
+      },
+      "sourceFiles": 11
+    },
+    {
+      "path": "packages/shared",
+      "name": "@waeve/shared",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit"
+      },
+      "sourceFiles": 7
+    },
+    {
+      "path": "services/analytics",
+      "name": "@waeve/services-analytics",
+      "scripts": {
+        "check": "node --check backend/src/services/analytics.js"
+      },
+      "sourceFiles": 4
+    },
+    {
+      "path": "services/catalog",
+      "name": "@waeve/services-catalog",
+      "scripts": {
+        "check": "node --check js/catalogue.js"
+      },
+      "sourceFiles": 18
+    },
+    {
+      "path": "services/discovery",
+      "name": "@waeve/services-discovery",
+      "scripts": {
+        "check": "node --check backend/src/services/discovery.js"
+      },
+      "sourceFiles": 5
+    },
+    {
+      "path": "services/editorial",
+      "name": "@waeve/services-editorial",
+      "scripts": {
+        "check": "node --check backend/src/services/editorial.js"
+      },
+      "sourceFiles": 3
+    },
+    {
+      "path": "services/knowledge",
+      "name": "@waeve/services-knowledge",
+      "scripts": {
+        "check": "node --check backend/src/services/knowledge.js"
+      },
+      "sourceFiles": 3
+    },
+    {
+      "path": "services/media",
+      "name": "@waeve/services-media",
+      "scripts": {
+        "check": "node --check android/app/src/main/assets/js/storage.js"
+      },
+      "sourceFiles": 7
+    },
+    {
+      "path": "services/notifications",
+      "name": "@waeve/services-notifications",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit",
+        "test": "npm run build && node --test dist/test/*.test.js"
+      },
+      "sourceFiles": 5
+    },
+    {
+      "path": "services/payments",
+      "name": "@waeve/services-payments",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      },
+      "sourceFiles": 9
+    },
+    {
+      "path": "services/playback",
+      "name": "@waeve/services-playback",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      },
+      "sourceFiles": 26
+    },
+    {
+      "path": "services/recommendations",
+      "name": "@waeve/services-recommendations",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      },
+      "sourceFiles": 7
+    },
+    {
+      "path": "services/rights",
+      "name": "@waeve/services-rights",
+      "scripts": {
+        "check": "node --check backend/src/services/rights.js"
+      },
+      "sourceFiles": 9
+    },
+    {
+      "path": "services/royalties",
+      "name": "@waeve/services-royalties",
+      "scripts": {
+        "check": "node --check backend/src/services/royalty.js"
+      },
+      "sourceFiles": 4
+    },
+    {
+      "path": "services/search",
+      "name": "@waeve/services-search",
+      "scripts": {},
+      "sourceFiles": 7
+    },
+    {
+      "path": "services/territory",
+      "name": "@waeve/services-territory",
+      "scripts": {
+        "check": "node --check backend/src/services/territory.js"
+      },
+      "sourceFiles": 3
+    },
+    {
+      "path": "services/trust",
+      "name": "@waeve/services-trust",
+      "scripts": {
+        "check": "node --check backend/src/services/trust.js"
+      },
+      "sourceFiles": 3
+    }
+  ],
+  "android": {
+    "files": 94,
+    "settings": true,
+    "gradlew": true,
+    "manifests": 3,
+    "status": "BUILD_FAILED"
+  },
+  "passed": [],
+  "failed": [
+    "apps/admin:check",
+    "apps/admin:build",
+    "apps/admin:test",
+    "apps/artist:check",
+    "apps/artist:build",
+    "apps/artist:test",
+    "apps/developer:check",
+    "apps/developer:build",
+    "apps/developer:test",
+    "packages/database:check",
+    "packages/shared:check",
+    "packages/shared:build",
+    "services/analytics:check",
+    "services/catalog:check",
+    "services/discovery:check",
+    "services/editorial:check",
+    "services/knowledge:check",
+    "services/media:check",
+    "services/notifications:check",
+    "services/notifications:build",
+    "services/notifications:test",
+    "services/payments:check",
+    "services/playback:check",
+    "services/recommendations:check",
+    "services/rights:check",
+    "services/royalties:check",
+    "services/territory:check",
+    "services/trust:check",
+    "mobile/android:assembleDebug"
+  ],
+  "skipped": [
+    {
+      "workspace": "services/search",
+      "reason": "Source workspace has no executable validation script yet."
+    }
+  ],
+  "externalDependencies": [
+    "Commercial music licensing and territory rights",
+    "Production object storage/CDN",
+    "Payment providers and billing webhooks",
+    "Production identity/email services",
+    "App-store signing/distribution credentials",
+    "Production transcoding and asynchronous media workers",
+    "Royalty contracts, tax and regional legal configuration"
+  ],
+  "status": "DOMAIN_VERIFICATION_BLOCKED"
+}

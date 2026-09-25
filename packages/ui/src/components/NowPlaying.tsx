@@ -1,0 +1,2 @@
+import {useEffect,useState} from 'react'; import {player} from '../lib/player';
+export function NowPlaying({onClose}:{onClose:()=>void}){const[,tick]=useState(0);useEffect(()=>player.subscribe(()=>tick(x=>x+1)),[]);const s=player.current;if(!s)return null;return <div className="modal"><div style={{width:'min(700px,100%)',textAlign:'center'}}><button onClick={onClose}>Close</button><img src={s.artwork_url||'/cover.svg'} alt="" style={{width:'min(520px,80vw)',borderRadius:20}}/><h1>{s.title}</h1><p>{s.artist_name}</p></div></div>}

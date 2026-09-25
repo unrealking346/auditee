@@ -1,0 +1,281 @@
+{
+  "canonicalApplication": "@waeve/api",
+  "preferredProductionSources": [
+    "WAEVE-Global-Production-Services-4.0.0",
+    "WAEVE-Complete-2.4.0-12-Screens",
+    "WAEVE-Complete-2.2.0-UI-Matched",
+    "WAEVE-Android-production-project",
+    "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+  ],
+  "candidates": [
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/package.json",
+      "size": 1059
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/prisma/seed.js",
+      "size": 2790
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/routes/platform.js",
+      "size": 3848
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/server.js",
+      "size": 10514
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/server.test.js",
+      "size": 168
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/ai.js",
+      "size": 568
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/analytics.js",
+      "size": 881
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/discovery.js",
+      "size": 1920
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/editorial.js",
+      "size": 987
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/knowledge.js",
+      "size": 992
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/rights.js",
+      "size": 957
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/royalty.js",
+      "size": 1274
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/territory.js",
+      "size": 980
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/trust.js",
+      "size": 1178
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/package.json",
+      "size": 615
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/prisma/seed.js",
+      "size": 1821
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/server.js",
+      "size": 8478
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/server.test.js",
+      "size": 168
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/package.json",
+      "size": 615
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/prisma/seed.js",
+      "size": 1821
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/auth.js",
+      "size": 1172
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/server.js",
+      "size": 8478
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/server.test.js",
+      "size": 168
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/package.json",
+      "size": 669
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/db.ts",
+      "size": 263
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/middleware/auth.ts",
+      "size": 997
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/migrate.ts",
+      "size": 347
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/artists.ts",
+      "size": 2035
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/auth.ts",
+      "size": 1467
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/index.ts",
+      "size": 395
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/music.ts",
+      "size": 2529
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/playlists.ts",
+      "size": 2344
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/subscriptions.ts",
+      "size": 1224
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/server.ts",
+      "size": 1367
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/services/recommendations.ts",
+      "size": 687
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/tsconfig.json",
+      "size": 174
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/package.json",
+      "size": 825
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/app.js",
+      "size": 24887
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/billing.js",
+      "size": 555
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/db.js",
+      "size": 272
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/everything.js",
+      "size": 27407
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/index.js",
+      "size": 236
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/migrate.js",
+      "size": 748
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/recommendations.js",
+      "size": 396
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/rights.js",
+      "size": 355
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/seed.js",
+      "size": 1791
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/storage.js",
+      "size": 866
+    }
+  ],
+  "requirements": [
+    "Authentication and session management",
+    "Catalog and music metadata",
+    "Search",
+    "Playback authorization",
+    "Playlists and library",
+    "Artist/release operations",
+    "Rights and territory enforcement",
+    "Royalty ledger",
+    "Subscriptions and entitlements",
+    "Analytics/listening events",
+    "Moderation and audit",
+    "Notifications",
+    "Rate limiting and security controls",
+    "Versioned API contracts"
+  ],
+  "rules": [
+    "PostgreSQL is the authoritative transactional store.",
+    "Client-submitted subscription/Premium state is never authoritative.",
+    "Permanent private storage credentials never reach clients.",
+    "Playback authorization must enforce applicable rights and territory.",
+    "Privileged mutations must be auditable.",
+    "No backend capability is marked complete before compilation and tests."
+  ]
+}

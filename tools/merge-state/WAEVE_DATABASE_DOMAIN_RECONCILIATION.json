@@ -1,0 +1,3096 @@
+{
+  "status": "functional_classification",
+  "classification_source": "WAEVE_DATABASE_RECONCILIATION_PLAN.json",
+  "schema_changes_made": false,
+  "legacy_tables": 129,
+  "domains": {
+    "advertising": {
+      "table_count": 2,
+      "tables": [
+        {
+          "table": "ad_slots",
+          "domain": "advertising",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "placement",
+            "region_code",
+            "campaign_id",
+            "active",
+            "config"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "campaigns",
+          "domain": "advertising",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "name",
+            "advertiser",
+            "starts_at",
+            "ends_at",
+            "budget_minor",
+            "currency",
+            "status",
+            "targeting"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        }
+      ]
+    },
+    "artist_operations": {
+      "table_count": 8,
+      "tables": [
+        {
+          "table": "artist_events",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "city",
+            "country_code",
+            "venue",
+            "starts_at",
+            "ticket_url",
+            "status"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artist_fan_support",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "user_id",
+            "amount_minor",
+            "currency",
+            "provider",
+            "provider_ref",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artist_posts",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "body",
+            "media",
+            "published_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artist_storefront_items",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "kind",
+            "title",
+            "url",
+            "price_minor",
+            "currency",
+            "active"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artist_team_members",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "artist_id",
+            "user_id",
+            "role",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(artist_id,user_id)"
+          ]
+        },
+        {
+          "table": "artist_verifications",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "status",
+            "evidence",
+            "reviewer_id",
+            "created_at",
+            "reviewed_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "reviewer_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "merch_links",
+          "domain": "artist_operations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "url",
+            "currency",
+            "price_minor",
+            "image_url",
+            "active"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "release_submissions",
+          "domain": "artist_operations",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "release_id",
+            "status",
+            "reviewer_notes",
+            "submitted_at",
+            "reviewed_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "release_id",
+              "references": "releases",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "catalog": {
+      "table_count": 15,
+      "tables": [
+        {
+          "table": "albums",
+          "domain": "catalog",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "artwork_url",
+            "release_date",
+            "kind"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artist_profiles",
+          "domain": "catalog",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "artist_id",
+            "avatar_url",
+            "header_url",
+            "links",
+            "genres",
+            "country_code",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "artists",
+          "domain": "catalog",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "name",
+            "bio",
+            "verified",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "catalog_ingest_jobs",
+          "domain": "catalog",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "provider",
+            "status",
+            "source_ref",
+            "records_total",
+            "records_ok",
+            "records_failed",
+            "error_log",
+            "created_at",
+            "completed_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "catalog_quality_issues",
+          "domain": "catalog",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "entity_type",
+            "entity_id",
+            "issue_type",
+            "severity",
+            "details",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "credits",
+          "domain": "catalog",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "name",
+            "role",
+            "ipi",
+            "pro"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "genres",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "name",
+            "parent_id",
+            "slug"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "parent_id",
+              "references": "genres",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "moods",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "name",
+            "slug"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "release_tracks",
+          "domain": "catalog",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "release_id",
+            "track_id",
+            "disc_no",
+            "track_no"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "release_id",
+              "references": "releases",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(release_id,track_id)"
+          ]
+        },
+        {
+          "table": "releases",
+          "domain": "catalog",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "upc",
+            "kind",
+            "release_date",
+            "status",
+            "artwork_key",
+            "notes",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "track_genres",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "track_id",
+            "genre_id",
+            "weight"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "genre_id",
+              "references": "genres",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(track_id,genre_id)"
+          ]
+        },
+        {
+          "table": "track_moods",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "track_id",
+            "mood_id",
+            "weight"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "mood_id",
+              "references": "moods",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(track_id,mood_id)"
+          ]
+        },
+        {
+          "table": "track_tags",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "track_id",
+            "tag"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(track_id,tag)"
+          ]
+        },
+        {
+          "table": "track_versions",
+          "domain": "catalog",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "version_name",
+            "isrc",
+            "language_code",
+            "mix_name",
+            "explicit",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "tracks",
+          "domain": "catalog",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "album_id",
+            "artist_id",
+            "title",
+            "duration_ms",
+            "isrc",
+            "audio_key",
+            "explicit",
+            "lossless",
+            "hires",
+            "atmos",
+            "territories",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "album_id",
+              "references": "albums",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "community": {
+      "table_count": 4,
+      "tables": [
+        {
+          "table": "community_posts",
+          "domain": "community",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "community_id",
+            "user_id",
+            "body",
+            "media",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "community_id",
+              "references": "fan_communities",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "fan_communities",
+          "domain": "community",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "name",
+            "description",
+            "privacy",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "fan_community_members",
+          "domain": "community",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "community_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "community_id",
+              "references": "fan_communities",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(community_id,user_id)"
+          ]
+        },
+        {
+          "table": "short_clips",
+          "domain": "community",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "start_ms",
+            "end_ms",
+            "caption",
+            "status"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "devices": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "connected_devices",
+          "domain": "devices",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "name",
+            "platform",
+            "capabilities",
+            "last_seen_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,kind,name)"
+          ]
+        },
+        {
+          "table": "device_handoffs",
+          "domain": "devices",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "from_device",
+            "to_device",
+            "track_id",
+            "position_ms",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "device_tokens",
+          "domain": "devices",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "platform",
+            "device_id",
+            "push_token",
+            "app_version",
+            "last_seen_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,device_id)"
+          ]
+        },
+        {
+          "table": "devices",
+          "domain": "devices",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_key",
+            "platform",
+            "app_version",
+            "last_seen_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,device_key)"
+          ]
+        },
+        {
+          "table": "user_devices",
+          "domain": "devices",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "platform",
+            "model",
+            "os_version",
+            "app_version",
+            "push_token",
+            "last_ip",
+            "last_seen_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,device_id)"
+          ]
+        }
+      ]
+    },
+    "discovery_recommendations": {
+      "table_count": 8,
+      "tables": [
+        {
+          "table": "chart_entries",
+          "domain": "discovery_recommendations",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "chart_id",
+            "track_id",
+            "rank",
+            "score",
+            "previous_rank"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "chart_id",
+              "references": "charts",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(chart_id,track_id)"
+          ]
+        },
+        {
+          "table": "charts",
+          "domain": "discovery_recommendations",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "chart_type",
+            "region_code",
+            "period_start",
+            "title",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": [
+            "UNIQUE(chart_type,region_code,period_start)"
+          ]
+        },
+        {
+          "table": "experiment_assignments",
+          "domain": "discovery_recommendations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "experiment_id",
+            "user_id",
+            "variant",
+            "assigned_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "experiment_id",
+              "references": "experiments",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(experiment_id,user_id)"
+          ]
+        },
+        {
+          "table": "experiments",
+          "domain": "discovery_recommendations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "key",
+            "description",
+            "status",
+            "config"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "mix_tracks",
+          "domain": "discovery_recommendations",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "mix_id",
+            "track_id",
+            "position",
+            "reason"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "mix_id",
+              "references": "mixes",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(mix_id,track_id)"
+          ]
+        },
+        {
+          "table": "mixes",
+          "domain": "discovery_recommendations",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "title",
+            "description",
+            "generated_at",
+            "expires_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "radio_stations",
+          "domain": "discovery_recommendations",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "name",
+            "station_type",
+            "seed_track_id",
+            "seed_artist_id",
+            "genre_id",
+            "region_code",
+            "config",
+            "active"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "seed_track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "seed_artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "genre_id",
+              "references": "genres",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "recommendation_profiles",
+          "domain": "discovery_recommendations",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "user_id",
+            "embedding",
+            "taste",
+            "exploration",
+            "diversity",
+            "freshness",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "editorial": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "editorial_collection_items",
+          "domain": "editorial",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "collection_id",
+            "editorial_id",
+            "position"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "collection_id",
+              "references": "editorial_collections",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "editorial_id",
+              "references": "editorial_items",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(collection_id,editorial_id)"
+          ]
+        },
+        {
+          "table": "editorial_collections",
+          "domain": "editorial",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "title",
+            "slug",
+            "description",
+            "hero_image_url",
+            "region_code",
+            "published_at",
+            "status"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "editorial_items",
+          "domain": "editorial",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "kind",
+            "title",
+            "slug",
+            "excerpt",
+            "body",
+            "hero_image_url",
+            "published_at",
+            "author_name",
+            "region_code",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "editorial_track_links",
+          "domain": "editorial",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "editorial_id",
+            "track_id"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "editorial_id",
+              "references": "editorial_items",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(editorial_id,track_id)"
+          ]
+        },
+        {
+          "table": "sponsored_playlists",
+          "domain": "editorial",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "playlist_id",
+            "campaign_id",
+            "disclosure",
+            "starts_at",
+            "ends_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "campaign_id",
+              "references": "campaigns",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "feature_configuration": {
+      "table_count": 1,
+      "tables": [
+        {
+          "table": "feature_flags",
+          "domain": "feature_configuration",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "key",
+            "enabled",
+            "rollout_percent",
+            "config",
+            "updated_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        }
+      ]
+    },
+    "identity": {
+      "table_count": 8,
+      "tables": [
+        {
+          "table": "auth_identities",
+          "domain": "identity",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "subject",
+            "email",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(provider,subject)"
+          ]
+        },
+        {
+          "table": "consent_records",
+          "domain": "identity",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "policy_version",
+            "consent_type",
+            "granted",
+            "ip",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "email_verifications",
+          "domain": "identity",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "used_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "passkeys",
+          "domain": "identity",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "credential_id",
+            "public_key",
+            "sign_count",
+            "transports",
+            "created_at",
+            "last_used_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "password_reset_tokens",
+          "domain": "identity",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "used_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "refresh_tokens",
+          "domain": "identity",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "revoked_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "user_profiles",
+          "domain": "identity",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "user_id",
+            "avatar_url",
+            "bio",
+            "language_code",
+            "timezone",
+            "explicit_allowed",
+            "discovery_mode",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "users",
+          "domain": "identity",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "email",
+            "password_hash",
+            "display_name",
+            "role",
+            "country_code",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        }
+      ]
+    },
+    "listening_analytics": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "listening_events",
+          "domain": "listening_analytics",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "event_type",
+            "position_ms",
+            "session_id",
+            "device_id",
+            "country_code",
+            "occurred_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "listening_history",
+          "domain": "listening_analytics",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "session_id",
+            "played_at",
+            "duration_ms",
+            "completion_ratio"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "listening_sessions",
+          "domain": "listening_analytics",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "country_code",
+            "started_at",
+            "ended_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "recommendation_impressions",
+          "domain": "listening_analytics",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "surface",
+            "position",
+            "reason",
+            "shown_at",
+            "clicked_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "search_queries",
+          "domain": "listening_analytics",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "query",
+            "filters",
+            "result_count",
+            "clicked_entity",
+            "country_code",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "lyrics": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "album_notes",
+          "domain": "lyrics",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "album_id",
+            "kind",
+            "title",
+            "body",
+            "author_name",
+            "published_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "album_id",
+              "references": "albums",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "digital_booklets",
+          "domain": "lyrics",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "album_id",
+            "title",
+            "object_key",
+            "language_code",
+            "version"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "album_id",
+              "references": "albums",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "lyric_corrections",
+          "domain": "lyrics",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "user_id",
+            "locale",
+            "proposed_text",
+            "status",
+            "reviewer_id",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "reviewer_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "lyrics_contributors",
+          "domain": "lyrics",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "name",
+            "role",
+            "publisher",
+            "attribution"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "track_lyrics",
+          "domain": "lyrics",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "track_id",
+            "plain_text",
+            "synced_json",
+            "translations",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "music_recognition": {
+      "table_count": 1,
+      "tables": [
+        {
+          "table": "music_recognition_queries",
+          "domain": "music_recognition",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "fingerprint",
+            "matched_track_id",
+            "confidence",
+            "provider",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "matched_track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "notifications_support": {
+      "table_count": 6,
+      "tables": [
+        {
+          "table": "incident_announcements",
+          "domain": "notifications_support",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "title",
+            "body",
+            "severity",
+            "starts_at",
+            "ends_at",
+            "active"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "notification_preferences",
+          "domain": "notifications_support",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "user_id",
+            "email",
+            "push",
+            "new_releases",
+            "recommendations"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "notifications",
+          "domain": "notifications_support",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "title",
+            "body",
+            "payload",
+            "read_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "service_metrics_daily",
+          "domain": "notifications_support",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "metric_date",
+            "metric_key",
+            "region_code",
+            "value"
+          ],
+          "foreign_keys": [],
+          "constraints": [
+            "PRIMARY KEY(metric_date,metric_key,region_code)"
+          ]
+        },
+        {
+          "table": "support_messages",
+          "domain": "notifications_support",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "ticket_id",
+            "sender_user_id",
+            "body",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "ticket_id",
+              "references": "support_tickets",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "sender_user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "support_tickets",
+          "domain": "notifications_support",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "category",
+            "subject",
+            "body",
+            "status",
+            "priority",
+            "assigned_to",
+            "created_at",
+            "resolved_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "assigned_to",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "playback_media": {
+      "table_count": 9,
+      "tables": [
+        {
+          "table": "audio_fingerprints",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "algorithm",
+            "fingerprint",
+            "duration_ms",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(algorithm,fingerprint)"
+          ]
+        },
+        {
+          "table": "download_entitlements",
+          "domain": "playback_media",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "quality",
+            "expires_at",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,track_id,quality)"
+          ]
+        },
+        {
+          "table": "local_files",
+          "domain": "playback_media",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "local_uri",
+            "title",
+            "artist",
+            "album",
+            "duration_ms",
+            "fingerprint",
+            "added_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,device_id,local_uri)"
+          ]
+        },
+        {
+          "table": "media_assets",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "release_id",
+            "kind",
+            "codec",
+            "container",
+            "bitrate_kbps",
+            "sample_rate",
+            "bit_depth",
+            "channels",
+            "object_key",
+            "checksum_sha256",
+            "duration_ms",
+            "loudness_lufs",
+            "true_peak_db",
+            "encrypted",
+            "drm_scheme",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "release_id",
+              "references": "releases",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playback_preferences",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "user_id",
+            "audio_quality",
+            "download_quality",
+            "normalize",
+            "crossfade_ms",
+            "gapless",
+            "autoplay",
+            "explicit_content",
+            "video_autoplay",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playback_transitions",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "from_track_id",
+            "to_track_id",
+            "mode",
+            "confidence",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "from_track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "to_track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "queue_snapshots",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "user_id",
+            "items",
+            "current_index",
+            "shuffle",
+            "repeat_mode",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "smart_downloads",
+          "domain": "playback_media",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "user_id",
+            "enabled",
+            "max_tracks",
+            "quality",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "waveform_peaks",
+          "domain": "playback_media",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "track_id",
+            "samples",
+            "generated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "playlists_social": {
+      "table_count": 15,
+      "tables": [
+        {
+          "table": "content_reactions",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "entity_type",
+            "entity_id",
+            "reaction",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(user_id,entity_type,entity_id)"
+          ]
+        },
+        {
+          "table": "follows",
+          "domain": "playlists_social",
+          "migration": "001_init.sql",
+          "columns": [
+            "user_id",
+            "artist_id",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(user_id,artist_id)"
+          ]
+        },
+        {
+          "table": "likes",
+          "domain": "playlists_social",
+          "migration": "001_init.sql",
+          "columns": [
+            "user_id",
+            "track_id",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(user_id,track_id)"
+          ]
+        },
+        {
+          "table": "listening_room_events",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "room_id",
+            "user_id",
+            "event_type",
+            "payload",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "room_id",
+              "references": "listening_rooms",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "listening_room_members",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "room_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "room_id",
+              "references": "listening_rooms",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(room_id,user_id)"
+          ]
+        },
+        {
+          "table": "listening_rooms",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "host_user_id",
+            "name",
+            "privacy",
+            "status",
+            "current_track_id",
+            "position_ms",
+            "created_at",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "host_user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "current_track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playlist_collaborators",
+          "domain": "playlists_social",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "playlist_id",
+            "user_id",
+            "role",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(playlist_id,user_id)"
+          ]
+        },
+        {
+          "table": "playlist_comments",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "playlist_id",
+            "user_id",
+            "body",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playlist_folder_items",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "folder_id",
+            "playlist_id"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "folder_id",
+              "references": "playlist_folders",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(folder_id,playlist_id)"
+          ]
+        },
+        {
+          "table": "playlist_folders",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "name",
+            "parent_id"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "parent_id",
+              "references": "playlist_folders",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playlist_shares",
+          "domain": "playlists_social",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "playlist_id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playlist_tracks",
+          "domain": "playlists_social",
+          "migration": "001_init.sql",
+          "columns": [
+            "playlist_id",
+            "track_id",
+            "position",
+            "added_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(playlist_id,track_id)"
+          ]
+        },
+        {
+          "table": "playlist_versions",
+          "domain": "playlists_social",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "playlist_id",
+            "snapshot",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "playlist_id",
+              "references": "playlists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "playlists",
+          "domain": "playlists_social",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "owner_id",
+            "title",
+            "description",
+            "is_public",
+            "collaborative",
+            "cover_url",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "owner_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "share_links",
+          "domain": "playlists_social",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "entity_type",
+            "entity_id",
+            "token_hash",
+            "expires_at",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "podcasts_video_events": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "live_events",
+          "domain": "podcasts_video_events",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "starts_at",
+            "ends_at",
+            "stream_url",
+            "ticket_url",
+            "status"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "music_videos",
+          "domain": "podcasts_video_events",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "title",
+            "video_key",
+            "thumbnail_key",
+            "duration_ms",
+            "explicit",
+            "status"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "podcast_episodes",
+          "domain": "podcasts_video_events",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "podcast_id",
+            "title",
+            "description",
+            "published_at",
+            "duration_ms",
+            "audio_key",
+            "explicit"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "podcast_id",
+              "references": "podcasts",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "podcast_progress",
+          "domain": "podcasts_video_events",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "user_id",
+            "episode_id",
+            "position_ms",
+            "completed",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "episode_id",
+              "references": "podcast_episodes",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(user_id,episode_id)"
+          ]
+        },
+        {
+          "table": "podcasts",
+          "domain": "podcasts_video_events",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "title",
+            "description",
+            "artwork_url",
+            "language_code",
+            "explicit",
+            "publisher",
+            "rss_url",
+            "created_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        }
+      ]
+    },
+    "privacy_accessibility": {
+      "table_count": 6,
+      "tables": [
+        {
+          "table": "accessibility_preferences",
+          "domain": "privacy_accessibility",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "user_id",
+            "reduce_motion",
+            "high_contrast",
+            "larger_text",
+            "screen_reader_labels",
+            "captions",
+            "haptic_feedback",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "data_export_jobs",
+          "domain": "privacy_accessibility",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "status",
+            "object_key",
+            "expires_at",
+            "created_at",
+            "completed_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "deletion_requests",
+          "domain": "privacy_accessibility",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "status",
+            "requested_at",
+            "scheduled_for",
+            "completed_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "localization_strings",
+          "domain": "privacy_accessibility",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "key",
+            "language_code",
+            "value"
+          ],
+          "foreign_keys": [],
+          "constraints": [
+            "PRIMARY KEY(key,language_code)"
+          ]
+        },
+        {
+          "table": "parental_controls",
+          "domain": "privacy_accessibility",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "user_id",
+            "pin_hash",
+            "restricted_mode",
+            "max_rating",
+            "allow_social",
+            "allow_explicit",
+            "updated_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "regional_configs",
+          "domain": "privacy_accessibility",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "country_code",
+            "currency",
+            "language_code",
+            "timezone",
+            "age_floor",
+            "features"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        }
+      ]
+    },
+    "rights": {
+      "table_count": 3,
+      "tables": [
+        {
+          "table": "rights",
+          "domain": "rights",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "territory",
+            "start_at",
+            "end_at",
+            "master_ok",
+            "publishing_ok"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "UNIQUE(track_id,territory)"
+          ]
+        },
+        {
+          "table": "rights_history",
+          "domain": "rights",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "rights_id",
+            "track_id",
+            "territory",
+            "action",
+            "payload",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "takedown_requests",
+          "domain": "rights",
+          "migration": "002_global_launch.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "reporter",
+            "reason",
+            "status",
+            "created_at",
+            "resolved_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "royalties": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "royalty_ledger",
+          "domain": "royalties",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "track_id",
+            "artist_id",
+            "user_id",
+            "period",
+            "units",
+            "revenue",
+            "currency"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "royalty_payouts",
+          "domain": "royalties",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "statement_id",
+            "provider",
+            "provider_ref",
+            "amount",
+            "currency",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "statement_id",
+              "references": "royalty_statements",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "royalty_rates",
+          "domain": "royalties",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "territory",
+            "plan_tier",
+            "currency",
+            "rate_per_unit",
+            "effective_from",
+            "effective_to"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "royalty_splits",
+          "domain": "royalties",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "release_id",
+            "payee_name",
+            "payee_email",
+            "percentage",
+            "role",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "release_id",
+              "references": "releases",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "royalty_statements",
+          "domain": "royalties",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "artist_id",
+            "period_start",
+            "period_end",
+            "currency",
+            "gross",
+            "deductions",
+            "net",
+            "status",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "artist_id",
+              "references": "artists",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "subscriptions_billing": {
+      "table_count": 7,
+      "tables": [
+        {
+          "table": "billing_events",
+          "domain": "subscriptions_billing",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "provider",
+            "event_id",
+            "event_type",
+            "payload",
+            "received_at",
+            "processed_at"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "family_groups",
+          "domain": "subscriptions_billing",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "owner_user_id",
+            "name",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "owner_user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "family_members",
+          "domain": "subscriptions_billing",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "family_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "family_id",
+              "references": "family_groups",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": [
+            "PRIMARY KEY(family_id,user_id)"
+          ]
+        },
+        {
+          "table": "payment_methods",
+          "domain": "subscriptions_billing",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "provider_ref",
+            "brand",
+            "last4",
+            "exp_month",
+            "exp_year",
+            "active"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "subscription_offers",
+          "domain": "subscriptions_billing",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "plan_id",
+            "code",
+            "trial_days",
+            "discount_percent",
+            "starts_at",
+            "ends_at",
+            "active"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "plan_id",
+              "references": "subscription_plans",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "subscription_plans",
+          "domain": "subscriptions_billing",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "key",
+            "name",
+            "tier",
+            "billing_period",
+            "currency",
+            "price_minor",
+            "region_code",
+            "features",
+            "active"
+          ],
+          "foreign_keys": [],
+          "constraints": []
+        },
+        {
+          "table": "subscriptions",
+          "domain": "subscriptions_billing",
+          "migration": "001_init.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "status",
+            "plan",
+            "provider_ref",
+            "current_period_end",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "trust_moderation": {
+      "table_count": 5,
+      "tables": [
+        {
+          "table": "audit_log",
+          "domain": "trust_moderation",
+          "migration": "003_global_features.sql",
+          "columns": [
+            "id",
+            "actor_user_id",
+            "action",
+            "entity_type",
+            "entity_id",
+            "ip",
+            "user_agent",
+            "payload",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "actor_user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "content_reports",
+          "domain": "trust_moderation",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "reporter_user_id",
+            "entity_type",
+            "entity_id",
+            "reason",
+            "details",
+            "status",
+            "moderator_id",
+            "created_at",
+            "resolved_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "reporter_user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            },
+            {
+              "columns": "moderator_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "fraud_signals",
+          "domain": "trust_moderation",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "signal_type",
+            "score",
+            "payload",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "moderation_actions",
+          "domain": "trust_moderation",
+          "migration": "004_everything_else.sql",
+          "columns": [
+            "id",
+            "moderator_id",
+            "entity_type",
+            "entity_id",
+            "action",
+            "reason",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "moderator_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        },
+        {
+          "table": "ugc_claims",
+          "domain": "trust_moderation",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "claimant",
+            "track_id",
+            "external_ref",
+            "claim_type",
+            "status",
+            "evidence",
+            "created_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "track_id",
+              "references": "tracks",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    },
+    "unclassified": {
+      "table_count": 1,
+      "tables": [
+        {
+          "table": "playlist_import_jobs",
+          "domain": "unclassified",
+          "migration": "005_category_complete.sql",
+          "columns": [
+            "id",
+            "user_id",
+            "source",
+            "source_ref",
+            "status",
+            "total",
+            "matched",
+            "unmatched",
+            "report",
+            "created_at",
+            "completed_at"
+          ],
+          "foreign_keys": [
+            {
+              "columns": "user_id",
+              "references": "users",
+              "referenced_columns": "id"
+            }
+          ],
+          "constraints": []
+        }
+      ]
+    }
+  }
+}

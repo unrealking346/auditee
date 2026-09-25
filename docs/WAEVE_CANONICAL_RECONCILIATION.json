@@ -1,0 +1,82 @@
+{
+  "project": "Waeve",
+  "architecture": "global-production-music-industry-platform",
+  "sourceVariants": 18,
+  "sourceFiles": 696,
+  "preservation": {
+    "originalSourcesModified": false,
+    "originalSourcesDeleted": false
+  },
+  "capabilities": {
+    "playback": {
+      "implementations": 53,
+      "variants": 15
+    },
+    "playlists": {
+      "implementations": 56,
+      "variants": 12
+    },
+    "library": {
+      "implementations": 7,
+      "variants": 6
+    },
+    "catalogue": {
+      "implementations": 86,
+      "variants": 13
+    },
+    "search": {
+      "implementations": 4,
+      "variants": 3
+    },
+    "discovery": {
+      "implementations": 6,
+      "variants": 5
+    },
+    "identity": {
+      "implementations": 11,
+      "variants": 7
+    },
+    "rights": {
+      "implementations": 6,
+      "variants": 3
+    },
+    "royalties": {
+      "implementations": 1,
+      "variants": 1
+    },
+    "analytics": {
+      "implementations": 1,
+      "variants": 1
+    },
+    "moderation": {
+      "implementations": 1,
+      "variants": 1
+    },
+    "payments": {
+      "implementations": 6,
+      "variants": 5
+    },
+    "notifications": {
+      "implementations": 0,
+      "variants": 0
+    }
+  },
+  "serviceBoundaries": [
+    "catalog",
+    "playback",
+    "search",
+    "discovery",
+    "recommendations",
+    "rights",
+    "royalties",
+    "territory",
+    "knowledge",
+    "trust",
+    "editorial",
+    "analytics",
+    "payments",
+    "media",
+    "notifications"
+  ],
+  "completionRule": "No capability is complete until implementation, compilation, tests, integration and verification succeed."
+}

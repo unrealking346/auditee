@@ -1,0 +1,8 @@
+{
+  "service": "editorial",
+  "status": "canonical-boundary",
+  "sourceCapabilities": [
+    "editorial"
+  ],
+  "rule": "The service must contain verified implementation before being marked complete."
+}

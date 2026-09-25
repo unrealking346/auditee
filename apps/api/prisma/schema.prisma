@@ -1,0 +1,543 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  LISTENER
+  ARTIST
+  ADMIN
+  MODERATOR
+}
+enum SubscriptionTier {
+  FREE
+  PREMIUM
+}
+enum MusicType {
+  SINGLE
+  EP
+  ALBUM
+}
+enum Visibility {
+  PUBLIC
+  PRIVATE
+  UNLISTED
+}
+enum ReleaseStatus {
+  DRAFT
+  VALIDATING
+  MODERATION
+  SCHEDULED
+  PUBLISHED
+  REJECTED
+}
+enum FollowTarget {
+  USER
+  ARTIST
+}
+enum ReportStatus {
+  OPEN
+  REVIEWING
+  RESOLVED
+  REJECTED
+}
+
+model User {
+  id String @id @default(cuid())
+  email String @unique
+  passwordHash String
+  username String @unique
+  displayName String
+  role Role @default(LISTENER)
+  country String?
+  region String?
+  language String @default("en")
+  timezone String @default("UTC")
+  avatarUrl String?
+  coverUrl String?
+  explicitAllowed Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  artist Artist?
+  playlists Playlist[]
+  likes Like[]
+  follows Follow[] @relation("follower")
+  sessions Session[]
+  playEvents PlayEvent[]
+  subscription Subscription?
+  notifications Notification[]
+  searches SearchEvent[]
+  playlistCollaborations PlaylistCollaborator[]
+  uploads Release[] @relation("uploadedBy")
+}
+
+model Artist {
+  id String @id @default(cuid())
+  userId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stageName String
+  bio String?
+  country String?
+  genres String[]
+  verified Boolean @default(false)
+  followersCount Int @default(0)
+  monthlyListeners Int @default(0)
+  score Float @default(0)
+  releases Release[]
+  credits Credit[]
+}
+
+model Release {
+  id String @id @default(cuid())
+  title String
+  type MusicType
+  artistId String
+  artist Artist @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  uploadedById String
+  uploadedBy User @relation("uploadedBy", fields: [uploadedById], references: [id])
+  coverUrl String?
+  releaseDate DateTime?
+  status ReleaseStatus @default(DRAFT)
+  genre String?
+  subgenre String?
+  mood String?
+  language String?
+  explicit Boolean @default(false)
+  upc String?
+  tracks Track[]
+  likes Like[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Track {
+  id String @id @default(cuid())
+  title String
+  releaseId String
+  release Release @relation(fields: [releaseId], references: [id], onDelete: Cascade)
+  artistName String
+  durationMs Int @default(0)
+  audioUrl String?
+  previewUrl String?
+  artworkUrl String?
+  isrc String?
+  lyricsText String?
+  lyricsTimedJson Json?
+  explicit Boolean @default(false)
+  producer String?
+  composer String?
+  songwriter String?
+  label String?
+  createdAt DateTime @default(now())
+  likes Like[]
+  playlistTracks PlaylistTrack[]
+  playEvents PlayEvent[]
+  credits Credit[]
+}
+
+model Playlist {
+  id String @id @default(cuid())
+  ownerId String
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name String
+  description String?
+  coverUrl String?
+  visibility Visibility @default(PRIVATE)
+  collaborative Boolean @default(false)
+  tracks PlaylistTrack[]
+  collaborators PlaylistCollaborator[]
+  likes Like[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlaylistTrack {
+  id String @id @default(cuid())
+  playlistId String
+  trackId String
+  position Int
+  playlist Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  track Track @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  @@unique([playlistId, trackId])
+  @@index([playlistId, position])
+}
+
+model PlaylistCollaborator {
+  id String @id @default(cuid())
+  playlistId String
+  userId String
+  playlist Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([playlistId, userId])
+}
+
+model Like {
+  id String @id @default(cuid())
+  userId String
+  trackId String?
+  playlistId String?
+  releaseId String?
+  artistId String?
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  track Track? @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  playlist Playlist? @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  release Release? @relation(fields: [releaseId], references: [id], onDelete: Cascade)
+  @@unique([userId, trackId])
+  @@unique([userId, playlistId])
+  @@unique([userId, releaseId])
+}
+
+model Follow {
+  id String @id @default(cuid())
+  followerId String
+  targetType FollowTarget
+  targetId String
+  follower User @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  @@unique([followerId, targetType, targetId])
+  @@index([targetType, targetId])
+}
+
+model Session {
+  id String @id @default(cuid())
+  userId String
+  tokenHash String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Subscription {
+  id String @id @default(cuid())
+  userId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tier SubscriptionTier @default(FREE)
+  provider String?
+  externalId String?
+  trialEndsAt DateTime?
+  renewsAt DateTime?
+  status String @default("ACTIVE")
+}
+
+model PlayEvent {
+  id String @id @default(cuid())
+  userId String
+  trackId String
+  playedMs Int @default(0)
+  completed Boolean @default(false)
+  region String?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  track Track @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  @@index([userId, createdAt])
+  @@index([trackId, createdAt])
+}
+
+model SearchEvent {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  query String
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id String @id @default(cuid())
+  userId String
+  type String
+  title String
+  body String
+  readAt DateTime?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Credit {
+  id String @id @default(cuid())
+  trackId String?
+  artistId String?
+  role String
+  name String
+  track Track? @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  artist Artist? @relation(fields: [artistId], references: [id], onDelete: Cascade)
+}
+
+model Report {
+  id String @id @default(cuid())
+  reporterId String?
+  targetType String
+  targetId String
+  reason String
+  status ReportStatus @default(OPEN)
+  createdAt DateTime @default(now())
+}
+
+enum RightsType {
+  MASTER
+  PUBLISHING
+  MECHANICAL
+  PERFORMANCE
+  NEIGHBORING
+  LYRICS
+  ARTWORK
+  SYNC
+  UGC
+  OFFLINE
+  REMIX
+  AI
+}
+enum RightsStatus {
+  DRAFT
+  ACTIVE
+  SUSPENDED
+  EXPIRED
+  REJECTED
+}
+enum RoyaltyStatus {
+  PENDING
+  APPROVED
+  PAID
+  DISPUTED
+}
+enum TrustEventType {
+  STREAM
+  FOLLOW
+  LIKE
+  PLAYLIST_SEARCH
+  ACCOUNT_UPLOAD
+}
+enum TrustDecision {
+  ALLOW
+  REVIEW
+  BLOCK
+}
+enum TerritoryPolicyType {
+  ALLOW
+  DENY
+}
+enum EditorialStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+enum AIJobStatus {
+  QUEUED
+  RUNNING
+  SUCCEEDED
+  FAILED
+  BLOCKED
+}
+
+model Territory {
+  id String @id @default(cuid())
+  code String @unique
+  name String
+  region String?
+  currency String?
+  language String?
+  active Boolean @default(true)
+  policies TerritoryPolicy[]
+  rights RightsGrant[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TerritoryPolicy {
+  id String @id @default(cuid())
+  territoryId String
+  resourceType String
+  resourceId String?
+  policyType TerritoryPolicyType
+  effectiveFrom DateTime?
+  effectiveTo DateTime?
+  reason String?
+  territory Territory @relation(fields:[territoryId],references:[id],onDelete:Cascade)
+  @@index([territoryId,resourceType,resourceId])
+}
+
+model RightsGrant {
+  id String @id @default(cuid())
+  resourceType String
+  resourceId String
+  rightType RightsType
+  ownerName String
+  ownerPartyId String?
+  percentage Decimal @db.Decimal(7,4)
+  territoryId String
+  status RightsStatus @default(DRAFT)
+  startsAt DateTime?
+  endsAt DateTime?
+  contractRef String?
+  metadata Json?
+  territory Territory @relation(fields:[territoryId],references:[id],onDelete:Restrict)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([resourceType,resourceId,rightType,status])
+  @@index([territoryId,status])
+}
+
+model RoyaltyLedger {
+  id String @id @default(cuid())
+  eventId String
+  resourceType String
+  resourceId String
+  territoryCode String
+  usageType String
+  grossAmount Decimal @db.Decimal(18,8)
+  netAmount Decimal @db.Decimal(18,8)
+  currency String
+  ownerPartyId String?
+  ownerName String
+  status RoyaltyStatus @default(PENDING)
+  periodStart DateTime
+  periodEnd DateTime
+  calculationVersion String
+  metadata Json?
+  createdAt DateTime @default(now())
+  @@index([resourceId,territoryCode,periodStart])
+  @@index([ownerPartyId,status])
+}
+
+model MusicEntity {
+  id String @id @default(cuid())
+  entityType String
+  entityId String
+  canonicalName String
+  aliases String[]
+  country String?
+  language String?
+  attributes Json?
+  embedding Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@unique([entityType,entityId])
+  @@index([canonicalName])
+}
+
+model MusicRelation {
+  id String @id @default(cuid())
+  fromEntityId String
+  toEntityId String
+  relationType String
+  weight Float @default(1)
+  metadata Json?
+  createdAt DateTime @default(now())
+  @@unique([fromEntityId,toEntityId,relationType])
+  @@index([fromEntityId,relationType])
+  @@index([toEntityId,relationType])
+}
+
+model RecommendationProfile {
+  id String @id @default(cuid())
+  userId String @unique
+  features Json
+  version String
+  updatedAt DateTime @updatedAt
+}
+
+model RecommendationCandidate {
+  id String @id @default(cuid())
+  userId String
+  trackId String
+  source String
+  score Float
+  reason Json?
+  expiresAt DateTime?
+  createdAt DateTime @default(now())
+  @@index([userId,score])
+  @@index([trackId,createdAt])
+}
+
+model TrustEvent {
+  id String @id @default(cuid())
+  userId String?
+  targetType String
+  targetId String?
+  eventType TrustEventType
+  fingerprint String?
+  ipHash String?
+  deviceHash String?
+  score Float @default(0)
+  decision TrustDecision @default(ALLOW)
+  signals Json?
+  createdAt DateTime @default(now())
+  @@index([userId,createdAt])
+  @@index([targetType,targetId,createdAt])
+}
+
+model TrustProfile {
+  id String @id @default(cuid())
+  subjectType String
+  subjectId String
+  riskScore Float @default(0)
+  status TrustDecision @default(ALLOW)
+  features Json
+  updatedAt DateTime @updatedAt
+  @@unique([subjectType,subjectId])
+}
+
+model EditorialCollection {
+  id String @id @default(cuid())
+  name String
+  slug String @unique
+  description String?
+  territoryCode String?
+  genre String?
+  status EditorialStatus @default(DRAFT)
+  coverUrl String?
+  curatorId String?
+  startsAt DateTime?
+  endsAt DateTime?
+  metadata Json?
+  items EditorialItem[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([status,territoryCode])
+}
+
+model EditorialItem {
+  id String @id @default(cuid())
+  collectionId String
+  resourceType String
+  resourceId String
+  position Int
+  rationale String?
+  collection EditorialCollection @relation(fields:[collectionId],references:[id],onDelete:Cascade)
+  @@unique([collectionId,resourceType,resourceId])
+  @@index([collectionId,position])
+}
+
+model AIJob {
+  id String @id @default(cuid())
+  userId String?
+  jobType String
+  input Json
+  output Json?
+  provider String?
+  model String?
+  status AIJobStatus @default(QUEUED)
+  safetyFlags String[]
+  createdAt DateTime @default(now())
+  startedAt DateTime?
+  completedAt DateTime?
+  @@index([jobType,status,createdAt])
+}
+
+model AnalyticsFact {
+  id String @id @default(cuid())
+  metric String
+  subjectType String
+  subjectId String
+  territoryCode String?
+  periodStart DateTime
+  periodEnd DateTime
+  value Decimal @db.Decimal(24,8)
+  dimensions Json?
+  createdAt DateTime @default(now())
+  @@index([metric,subjectType,subjectId,periodStart])
+  @@index([territoryCode,metric,periodStart])
+}

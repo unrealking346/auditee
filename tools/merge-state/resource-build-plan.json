@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-09-18T11:36:01.035Z",
+  "environment": {
+    "totalMB": 7461,
+    "usedMB": 6010,
+    "freeMB": 477,
+    "availableMB": 1450,
+    "node": "v24.18.0"
+  },
+  "strategy": "resource-aware-incremental",
+  "installPolicy": {
+    "maxConcurrency": 1,
+    "ignoreScripts": true,
+    "useExistingLockfile": true,
+    "installOnlyActiveCore": true,
+    "avoidEmptyWorkspaces": true
+  },
+  "activeWorkspaces": [
+    "packages/shared",
+    "packages/database",
+    "apps/api",
+    "apps/web"
+  ],
+  "packageInfo": [
+    {
+      "workspace": "packages/shared",
+      "package": "@waeve/shared",
+      "active": true,
+      "dependencyCount": 0,
+      "devDependencyCount": 1,
+      "scripts": [
+        "build",
+        "check"
+      ]
+    },
+    {
+      "workspace": "packages/database",
+      "package": "@waeve/database",
+      "active": true,
+      "dependencyCount": 0,
+      "devDependencyCount": 0,
+      "scripts": [
+        "check",
+        "verify"
+      ]
+    },
+    {
+      "workspace": "apps/api",
+      "package": "@waeve/api",
+      "active": true,
+      "dependencyCount": 9,
+      "devDependencyCount": 1,
+      "scripts": [
+        "dev",
+        "start",
+        "prisma:generate",
+        "prisma:migrate",
+        "seed",
+        "test",
+        "check"
+      ]
+    },
+    {
+      "workspace": "apps/web",
+      "package": "@waeve/web",
+      "active": true,
+      "dependencyCount": 3,
+      "devDependencyCount": 7,
+      "scripts": [
+        "dev",
+        "build",
+        "test",
+        "preview"
+      ]
+    }
+  ],
+  "deferredDomains": [
+    "artist",
+    "admin",
+    "developer",
+    "catalog service",
+    "playback service",
+    "search service",
+    "discovery service",
+    "recommendations service",
+    "rights service",
+    "royalties service",
+    "territory service",
+    "knowledge service",
+    "trust service",
+    "editorial service",
+    "analytics service",
+    "payments service",
+    "media service",
+    "notifications service"
+  ],
+  "reason": "Termux has limited physical RAM; dependency installation must proceed incrementally."
+}

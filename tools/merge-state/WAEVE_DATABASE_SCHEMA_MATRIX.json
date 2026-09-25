@@ -1,0 +1,5340 @@
+{
+  "generatedAt": "2026-09-19T16:12:36.603Z",
+  "authorityTarget": "Canonical Waeve Prisma/PostgreSQL model",
+  "legacyMigrationFiles": [
+    "001_init.sql",
+    "002_global_launch.sql",
+    "003_global_features.sql",
+    "004_everything_else.sql",
+    "005_category_complete.sql"
+  ],
+  "legacyTableCount": 129,
+  "prismaModelCount": 30,
+  "heuristicMappings": 16,
+  "unmappedLegacyTables": 113,
+  "mapping": [
+    {
+      "legacyTable": "accessibility_preferences",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "reduce_motion",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "high_contrast",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "larger_text",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "screen_reader_labels",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "captions",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "haptic_feedback",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "ad_slots",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "placement",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2) NOT NULL DEFAULT 'WW'"
+        },
+        {
+          "name": "campaign_id",
+          "definition": "uuid"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "config",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "album_notes",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "album_id",
+          "definition": "uuid REFERENCES albums(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "author_name",
+          "definition": "text"
+        },
+        {
+          "name": "published_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "albums",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "artwork_url",
+          "definition": "text"
+        },
+        {
+          "name": "release_date",
+          "definition": "date"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL DEFAULT 'album'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_events",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "city",
+          "definition": "text"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "venue",
+          "definition": "text"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "ticket_url",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'published'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_fan_support",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "amount_minor",
+          "definition": "bigint NOT NULL"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL"
+        },
+        {
+          "name": "provider",
+          "definition": "text"
+        },
+        {
+          "name": "provider_ref",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'pending'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_posts",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "media",
+          "definition": "jsonb NOT NULL DEFAULT '[]'"
+        },
+        {
+          "name": "published_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_profiles",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "artist_id",
+          "definition": "uuid PRIMARY KEY REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "avatar_url",
+          "definition": "text"
+        },
+        {
+          "name": "header_url",
+          "definition": "text"
+        },
+        {
+          "name": "links",
+          "definition": "jsonb NOT NULL DEFAULT '{}'::jsonb"
+        },
+        {
+          "name": "genres",
+          "definition": "text[] NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_storefront_items",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "url",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "price_minor",
+          "definition": "bigint"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3)"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_team_members",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'manager'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artist_verifications",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'pending'"
+        },
+        {
+          "name": "evidence",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "reviewer_id",
+          "definition": "uuid REFERENCES users(id)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "reviewed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "artists",
+      "possiblePrismaModel": "Artist",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "bio",
+          "definition": "text"
+        },
+        {
+          "name": "verified",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "stageName",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "bio",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "country",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "genres",
+          "type": "String[]",
+          "attributes": ""
+        },
+        {
+          "name": "verified",
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        {
+          "name": "followersCount",
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        {
+          "name": "monthlyListeners",
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        {
+          "name": "score",
+          "type": "Float",
+          "attributes": "@default(0)"
+        },
+        {
+          "name": "releases",
+          "type": "Release[]",
+          "attributes": ""
+        },
+        {
+          "name": "credits",
+          "type": "Credit[]",
+          "attributes": ""
+        }
+      ]
+    },
+    {
+      "legacyTable": "audio_fingerprints",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid NOT NULL REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "algorithm",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "fingerprint",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "audit_log",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "actor_user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "action",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text"
+        },
+        {
+          "name": "entity_id",
+          "definition": "text"
+        },
+        {
+          "name": "ip",
+          "definition": "inet"
+        },
+        {
+          "name": "user_agent",
+          "definition": "text"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL DEFAULT '{}'::jsonb"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "auth_identities",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "provider",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "subject",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "email",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "billing_events",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "provider",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "event_id",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "event_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL"
+        },
+        {
+          "name": "received_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "processed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "campaigns",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "advertiser",
+          "definition": "text"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "ends_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "budget_minor",
+          "definition": "bigint"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3)"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        },
+        {
+          "name": "targeting",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "catalog_ingest_jobs",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "provider",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'queued'"
+        },
+        {
+          "name": "source_ref",
+          "definition": "text"
+        },
+        {
+          "name": "records_total",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "records_ok",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "records_failed",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "error_log",
+          "definition": "jsonb NOT NULL DEFAULT '[]'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "completed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "catalog_quality_issues",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_id",
+          "definition": "uuid NOT NULL"
+        },
+        {
+          "name": "issue_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "severity",
+          "definition": "text NOT NULL DEFAULT 'medium'"
+        },
+        {
+          "name": "details",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'open'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "chart_entries",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "chart_id",
+          "definition": "uuid REFERENCES charts(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "rank",
+          "definition": "int NOT NULL"
+        },
+        {
+          "name": "score",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "previous_rank",
+          "definition": "int"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "charts",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "chart_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "period_start",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "community_posts",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "community_id",
+          "definition": "uuid REFERENCES fan_communities(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "media",
+          "definition": "jsonb NOT NULL DEFAULT '[]'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "connected_devices",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "platform",
+          "definition": "text"
+        },
+        {
+          "name": "capabilities",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "last_seen_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "consent_records",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "policy_version",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "consent_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "granted",
+          "definition": "boolean NOT NULL"
+        },
+        {
+          "name": "ip",
+          "definition": "inet"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "content_reactions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_id",
+          "definition": "uuid NOT NULL"
+        },
+        {
+          "name": "reaction",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "content_reports",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "reporter_user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_id",
+          "definition": "uuid NOT NULL"
+        },
+        {
+          "name": "reason",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "details",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'open'"
+        },
+        {
+          "name": "moderator_id",
+          "definition": "uuid REFERENCES users(id)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "resolved_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "credits",
+      "possiblePrismaModel": "Credit",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "ipi",
+          "definition": "text"
+        },
+        {
+          "name": "pro",
+          "definition": "text"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "trackId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "artistId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "role",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "track",
+          "type": "Track?",
+          "attributes": "@relation(fields: [trackId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "artist",
+          "type": "Artist?",
+          "attributes": "@relation(fields: [artistId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "data_export_jobs",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'queued'"
+        },
+        {
+          "name": "object_key",
+          "definition": "text"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "completed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "deletion_requests",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'requested'"
+        },
+        {
+          "name": "requested_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "scheduled_for",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "completed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "device_handoffs",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "from_device",
+          "definition": "text"
+        },
+        {
+          "name": "to_device",
+          "definition": "text"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "position_ms",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'requested'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "device_tokens",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "platform",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "device_id",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "push_token",
+          "definition": "text"
+        },
+        {
+          "name": "app_version",
+          "definition": "text"
+        },
+        {
+          "name": "last_seen_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "devices",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "device_key",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "platform",
+          "definition": "text"
+        },
+        {
+          "name": "app_version",
+          "definition": "text"
+        },
+        {
+          "name": "last_seen_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "digital_booklets",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "album_id",
+          "definition": "uuid REFERENCES albums(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text"
+        },
+        {
+          "name": "object_key",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "language_code",
+          "definition": "text"
+        },
+        {
+          "name": "version",
+          "definition": "text NOT NULL DEFAULT '1'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "download_entitlements",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "quality",
+          "definition": "text NOT NULL DEFAULT 'high'"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'active'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "editorial_collection_items",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "collection_id",
+          "definition": "uuid REFERENCES editorial_collections(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "editorial_id",
+          "definition": "uuid REFERENCES editorial_items(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "position",
+          "definition": "int NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "editorial_collections",
+      "possiblePrismaModel": "EditorialCollection",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "slug",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "hero_image_url",
+          "definition": "text"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "published_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "description",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "territoryCode",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "genre",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "status",
+          "type": "EditorialStatus",
+          "attributes": "@default(DRAFT)"
+        },
+        {
+          "name": "coverUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "curatorId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "startsAt",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "endsAt",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "metadata",
+          "type": "Json?",
+          "attributes": ""
+        },
+        {
+          "name": "items",
+          "type": "EditorialItem[]",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      ]
+    },
+    {
+      "legacyTable": "editorial_items",
+      "possiblePrismaModel": "EditorialItem",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "slug",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "excerpt",
+          "definition": "text"
+        },
+        {
+          "name": "body",
+          "definition": "text"
+        },
+        {
+          "name": "hero_image_url",
+          "definition": "text"
+        },
+        {
+          "name": "published_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "author_name",
+          "definition": "text"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "collectionId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "resourceType",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "resourceId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "position",
+          "type": "Int",
+          "attributes": ""
+        },
+        {
+          "name": "rationale",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "collection",
+          "type": "EditorialCollection",
+          "attributes": "@relation(fields:[collectionId],references:[id],onDelete:Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "editorial_track_links",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "editorial_id",
+          "definition": "uuid REFERENCES editorial_items(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "email_verifications",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "token_hash",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz NOT NULL"
+        },
+        {
+          "name": "used_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "experiment_assignments",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "experiment_id",
+          "definition": "uuid REFERENCES experiments(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "variant",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "assigned_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "experiments",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "key",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        },
+        {
+          "name": "config",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "family_groups",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "owner_user_id",
+          "definition": "uuid UNIQUE REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL DEFAULT 'Waeve Family'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "family_members",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "family_id",
+          "definition": "uuid REFERENCES family_groups(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid UNIQUE REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'member'"
+        },
+        {
+          "name": "joined_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "fan_communities",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "privacy",
+          "definition": "text NOT NULL DEFAULT 'public'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "fan_community_members",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "community_id",
+          "definition": "uuid REFERENCES fan_communities(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'member'"
+        },
+        {
+          "name": "joined_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "feature_flags",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "key",
+          "definition": "text PRIMARY KEY"
+        },
+        {
+          "name": "enabled",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "rollout_percent",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "config",
+          "definition": "jsonb NOT NULL DEFAULT '{}'::jsonb"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "follows",
+      "possiblePrismaModel": "Follow",
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "followerId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "targetType",
+          "type": "FollowTarget",
+          "attributes": ""
+        },
+        {
+          "name": "targetId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "follower",
+          "type": "User",
+          "attributes": "@relation(\"follower\", fields: [followerId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "fraud_signals",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "device_id",
+          "definition": "text"
+        },
+        {
+          "name": "signal_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "score",
+          "definition": "numeric(7,4)"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "genres",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "name",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "parent_id",
+          "definition": "uuid REFERENCES genres(id)"
+        },
+        {
+          "name": "slug",
+          "definition": "text UNIQUE NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "incident_announcements",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "severity",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "ends_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "likes",
+      "possiblePrismaModel": "Like",
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "trackId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "playlistId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "releaseId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "artistId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "track",
+          "type": "Track?",
+          "attributes": "@relation(fields: [trackId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "playlist",
+          "type": "Playlist?",
+          "attributes": "@relation(fields: [playlistId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "release",
+          "type": "Release?",
+          "attributes": "@relation(fields: [releaseId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "listening_events",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "event_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "position_ms",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "session_id",
+          "definition": "uuid"
+        },
+        {
+          "name": "device_id",
+          "definition": "text"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "occurred_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "listening_history",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "session_id",
+          "definition": "uuid"
+        },
+        {
+          "name": "played_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "completion_ratio",
+          "definition": "numeric(5,4) NOT NULL DEFAULT 0"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "listening_room_events",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "room_id",
+          "definition": "uuid REFERENCES listening_rooms(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "event_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "listening_room_members",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "room_id",
+          "definition": "uuid REFERENCES listening_rooms(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'member'"
+        },
+        {
+          "name": "joined_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "listening_rooms",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "host_user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "privacy",
+          "definition": "text NOT NULL DEFAULT 'invite'"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'active'"
+        },
+        {
+          "name": "current_track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "position_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "listening_sessions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "device_id",
+          "definition": "text"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "started_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "ended_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "live_events",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz NOT NULL"
+        },
+        {
+          "name": "ends_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "stream_url",
+          "definition": "text"
+        },
+        {
+          "name": "ticket_url",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'scheduled'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "local_files",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "device_id",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "local_uri",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text"
+        },
+        {
+          "name": "artist",
+          "definition": "text"
+        },
+        {
+          "name": "album",
+          "definition": "text"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int"
+        },
+        {
+          "name": "fingerprint",
+          "definition": "text"
+        },
+        {
+          "name": "added_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "localization_strings",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "key",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "language_code",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "value",
+          "definition": "text NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "lyric_corrections",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "locale",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "proposed_text",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'pending'"
+        },
+        {
+          "name": "reviewer_id",
+          "definition": "uuid REFERENCES users(id)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "lyrics_contributors",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "publisher",
+          "definition": "text"
+        },
+        {
+          "name": "attribution",
+          "definition": "text"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "media_assets",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "release_id",
+          "definition": "uuid REFERENCES releases(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "codec",
+          "definition": "text"
+        },
+        {
+          "name": "container",
+          "definition": "text"
+        },
+        {
+          "name": "bitrate_kbps",
+          "definition": "int"
+        },
+        {
+          "name": "sample_rate",
+          "definition": "int"
+        },
+        {
+          "name": "bit_depth",
+          "definition": "int"
+        },
+        {
+          "name": "channels",
+          "definition": "int"
+        },
+        {
+          "name": "object_key",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "checksum_sha256",
+          "definition": "text"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int"
+        },
+        {
+          "name": "loudness_lufs",
+          "definition": "numeric(7,3)"
+        },
+        {
+          "name": "true_peak_db",
+          "definition": "numeric(7,3)"
+        },
+        {
+          "name": "encrypted",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "drm_scheme",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'ready'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "merch_links",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "url",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3)"
+        },
+        {
+          "name": "price_minor",
+          "definition": "bigint"
+        },
+        {
+          "name": "image_url",
+          "definition": "text"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "mix_tracks",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "mix_id",
+          "definition": "uuid REFERENCES mixes(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "position",
+          "definition": "int NOT NULL"
+        },
+        {
+          "name": "reason",
+          "definition": "text"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "mixes",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "generated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "moderation_actions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "moderator_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_id",
+          "definition": "uuid NOT NULL"
+        },
+        {
+          "name": "action",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "reason",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "moods",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "name",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "slug",
+          "definition": "text UNIQUE NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "music_recognition_queries",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "device_id",
+          "definition": "text"
+        },
+        {
+          "name": "fingerprint",
+          "definition": "text"
+        },
+        {
+          "name": "matched_track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "confidence",
+          "definition": "numeric(7,5)"
+        },
+        {
+          "name": "provider",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "music_videos",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "video_key",
+          "definition": "text"
+        },
+        {
+          "name": "thumbnail_key",
+          "definition": "text"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int"
+        },
+        {
+          "name": "explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'ready'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "notification_preferences",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "email",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "push",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "new_releases",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "recommendations",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "notifications",
+      "possiblePrismaModel": "Notification",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "read_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "body",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "readAt",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "parental_controls",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "pin_hash",
+          "definition": "text"
+        },
+        {
+          "name": "restricted_mode",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "max_rating",
+          "definition": "text"
+        },
+        {
+          "name": "allow_social",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "allow_explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "passkeys",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "credential_id",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "public_key",
+          "definition": "bytea NOT NULL"
+        },
+        {
+          "name": "sign_count",
+          "definition": "bigint NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "transports",
+          "definition": "text[] NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "last_used_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "password_reset_tokens",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "token_hash",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz NOT NULL"
+        },
+        {
+          "name": "used_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "payment_methods",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "provider",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "provider_ref",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "brand",
+          "definition": "text"
+        },
+        {
+          "name": "last4",
+          "definition": "text"
+        },
+        {
+          "name": "exp_month",
+          "definition": "int"
+        },
+        {
+          "name": "exp_year",
+          "definition": "int"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playback_preferences",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "audio_quality",
+          "definition": "text NOT NULL DEFAULT 'auto'"
+        },
+        {
+          "name": "download_quality",
+          "definition": "text NOT NULL DEFAULT 'high'"
+        },
+        {
+          "name": "normalize",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "crossfade_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "gapless",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "autoplay",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "explicit_content",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "video_autoplay",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playback_transitions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "from_track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "to_track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "mode",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "confidence",
+          "definition": "numeric(6,5)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_collaborators",
+      "possiblePrismaModel": "PlaylistCollaborator",
+      "legacyColumns": [
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'editor'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "playlistId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "playlist",
+          "type": "Playlist",
+          "attributes": "@relation(fields: [playlistId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "playlist_comments",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_folder_items",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "folder_id",
+          "definition": "uuid REFERENCES playlist_folders(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_folders",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "parent_id",
+          "definition": "uuid REFERENCES playlist_folders(id) ON DELETE CASCADE"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_import_jobs",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "source",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "source_ref",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'queued'"
+        },
+        {
+          "name": "total",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "matched",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "unmatched",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "report",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "completed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_shares",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "token_hash",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlist_tracks",
+      "possiblePrismaModel": "PlaylistTrack",
+      "legacyColumns": [
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "position",
+          "definition": "int NOT NULL"
+        },
+        {
+          "name": "added_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "playlistId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "trackId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "position",
+          "type": "Int",
+          "attributes": ""
+        },
+        {
+          "name": "playlist",
+          "type": "Playlist",
+          "attributes": "@relation(fields: [playlistId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "track",
+          "type": "Track",
+          "attributes": "@relation(fields: [trackId], references: [id], onDelete: Cascade)"
+        }
+      ]
+    },
+    {
+      "legacyTable": "playlist_versions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "snapshot",
+          "definition": "jsonb NOT NULL"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "playlists",
+      "possiblePrismaModel": "Playlist",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "owner_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "is_public",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "collaborative",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "cover_url",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "ownerId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "owner",
+          "type": "User",
+          "attributes": "@relation(fields: [ownerId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "description",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "coverUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "visibility",
+          "type": "Visibility",
+          "attributes": "@default(PRIVATE)"
+        },
+        {
+          "name": "collaborative",
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        {
+          "name": "tracks",
+          "type": "PlaylistTrack[]",
+          "attributes": ""
+        },
+        {
+          "name": "collaborators",
+          "type": "PlaylistCollaborator[]",
+          "attributes": ""
+        },
+        {
+          "name": "likes",
+          "type": "Like[]",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      ]
+    },
+    {
+      "legacyTable": "podcast_episodes",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "podcast_id",
+          "definition": "uuid REFERENCES podcasts(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "published_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int"
+        },
+        {
+          "name": "audio_key",
+          "definition": "text"
+        },
+        {
+          "name": "explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "podcast_progress",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "episode_id",
+          "definition": "uuid REFERENCES podcast_episodes(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "position_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "completed",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "podcasts",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "description",
+          "definition": "text"
+        },
+        {
+          "name": "artwork_url",
+          "definition": "text"
+        },
+        {
+          "name": "language_code",
+          "definition": "text"
+        },
+        {
+          "name": "explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "publisher",
+          "definition": "text"
+        },
+        {
+          "name": "rss_url",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "queue_snapshots",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "items",
+          "definition": "jsonb NOT NULL DEFAULT '[]'"
+        },
+        {
+          "name": "current_index",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "shuffle",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "repeat_mode",
+          "definition": "text NOT NULL DEFAULT 'off'"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "radio_stations",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "station_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "seed_track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "seed_artist_id",
+          "definition": "uuid REFERENCES artists(id)"
+        },
+        {
+          "name": "genre_id",
+          "definition": "uuid REFERENCES genres(id)"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2) DEFAULT 'WW'"
+        },
+        {
+          "name": "config",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "recommendation_impressions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "surface",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "position",
+          "definition": "int"
+        },
+        {
+          "name": "reason",
+          "definition": "text"
+        },
+        {
+          "name": "shown_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "clicked_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "recommendation_profiles",
+      "possiblePrismaModel": "RecommendationProfile",
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "embedding",
+          "definition": "jsonb"
+        },
+        {
+          "name": "taste",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "exploration",
+          "definition": "numeric(5,4) NOT NULL DEFAULT .25"
+        },
+        {
+          "name": "diversity",
+          "definition": "numeric(5,4) NOT NULL DEFAULT .50"
+        },
+        {
+          "name": "freshness",
+          "definition": "numeric(5,4) NOT NULL DEFAULT .50"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "features",
+          "type": "Json",
+          "attributes": ""
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      ]
+    },
+    {
+      "legacyTable": "refresh_tokens",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "token_hash",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz NOT NULL"
+        },
+        {
+          "name": "revoked_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "regional_configs",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "country_code",
+          "definition": "char(2) PRIMARY KEY"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL"
+        },
+        {
+          "name": "language_code",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "timezone",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "age_floor",
+          "definition": "int NOT NULL DEFAULT 13"
+        },
+        {
+          "name": "features",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "release_submissions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "release_id",
+          "definition": "uuid REFERENCES releases(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'submitted'"
+        },
+        {
+          "name": "reviewer_notes",
+          "definition": "text"
+        },
+        {
+          "name": "submitted_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "reviewed_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "release_tracks",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "release_id",
+          "definition": "uuid REFERENCES releases(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "disc_no",
+          "definition": "int NOT NULL DEFAULT 1"
+        },
+        {
+          "name": "track_no",
+          "definition": "int NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "releases",
+      "possiblePrismaModel": "Release",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "upc",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "kind",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "release_date",
+          "definition": "date"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        },
+        {
+          "name": "artwork_key",
+          "definition": "text"
+        },
+        {
+          "name": "notes",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "type",
+          "type": "MusicType",
+          "attributes": ""
+        },
+        {
+          "name": "artistId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "artist",
+          "type": "Artist",
+          "attributes": "@relation(fields: [artistId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "uploadedById",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "uploadedBy",
+          "type": "User",
+          "attributes": "@relation(\"uploadedBy\", fields: [uploadedById], references: [id])"
+        },
+        {
+          "name": "coverUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "releaseDate",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "status",
+          "type": "ReleaseStatus",
+          "attributes": "@default(DRAFT)"
+        },
+        {
+          "name": "genre",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "subgenre",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "mood",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "language",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "explicit",
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        {
+          "name": "upc",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "tracks",
+          "type": "Track[]",
+          "attributes": ""
+        },
+        {
+          "name": "likes",
+          "type": "Like[]",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      ]
+    },
+    {
+      "legacyTable": "rights",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "territory",
+          "definition": "char(2) NOT NULL"
+        },
+        {
+          "name": "start_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "end_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "master_ok",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "publishing_ok",
+          "definition": "boolean NOT NULL DEFAULT false"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "rights_history",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "rights_id",
+          "definition": "uuid"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "territory",
+          "definition": "char(2) NOT NULL"
+        },
+        {
+          "name": "action",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "payload",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "royalty_ledger",
+      "possiblePrismaModel": "RoyaltyLedger",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id)"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id)"
+        },
+        {
+          "name": "period",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "units",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "revenue",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL DEFAULT 'USD'"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "eventId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "resourceType",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "resourceId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "territoryCode",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "usageType",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "grossAmount",
+          "type": "Decimal",
+          "attributes": "@db.Decimal(18,8)"
+        },
+        {
+          "name": "netAmount",
+          "type": "Decimal",
+          "attributes": "@db.Decimal(18,8)"
+        },
+        {
+          "name": "currency",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "ownerPartyId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "ownerName",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "status",
+          "type": "RoyaltyStatus",
+          "attributes": "@default(PENDING)"
+        },
+        {
+          "name": "periodStart",
+          "type": "DateTime",
+          "attributes": ""
+        },
+        {
+          "name": "periodEnd",
+          "type": "DateTime",
+          "attributes": ""
+        },
+        {
+          "name": "calculationVersion",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "metadata",
+          "type": "Json?",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      ]
+    },
+    {
+      "legacyTable": "royalty_payouts",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "statement_id",
+          "definition": "uuid REFERENCES royalty_statements(id)"
+        },
+        {
+          "name": "provider",
+          "definition": "text"
+        },
+        {
+          "name": "provider_ref",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "amount",
+          "definition": "numeric(18,6)"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3)"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'pending'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "royalty_rates",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "territory",
+          "definition": "char(2) NOT NULL"
+        },
+        {
+          "name": "plan_tier",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL"
+        },
+        {
+          "name": "rate_per_unit",
+          "definition": "numeric(18,9) NOT NULL"
+        },
+        {
+          "name": "effective_from",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "effective_to",
+          "definition": "date"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "royalty_splits",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "release_id",
+          "definition": "uuid REFERENCES releases(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "payee_name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "payee_email",
+          "definition": "text"
+        },
+        {
+          "name": "percentage",
+          "definition": "numeric(7,4) NOT NULL CHECK(percentage >= 0 AND percentage <= 100)"
+        },
+        {
+          "name": "role",
+          "definition": "text"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "royalty_statements",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "period_start",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "period_end",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL"
+        },
+        {
+          "name": "gross",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "deductions",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "net",
+          "definition": "numeric(18,6) NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'draft'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "search_queries",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "query",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "filters",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "result_count",
+          "definition": "int"
+        },
+        {
+          "name": "clicked_entity",
+          "definition": "jsonb"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "service_metrics_daily",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "metric_date",
+          "definition": "date NOT NULL"
+        },
+        {
+          "name": "metric_key",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2) NOT NULL DEFAULT 'WW'"
+        },
+        {
+          "name": "value",
+          "definition": "numeric(20,6) NOT NULL DEFAULT 0"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "share_links",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "entity_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "entity_id",
+          "definition": "uuid NOT NULL"
+        },
+        {
+          "name": "token_hash",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "expires_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "short_clips",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "start_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "end_ms",
+          "definition": "int NOT NULL"
+        },
+        {
+          "name": "caption",
+          "definition": "text"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'ready'"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "smart_downloads",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "enabled",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "max_tracks",
+          "definition": "int NOT NULL DEFAULT 50"
+        },
+        {
+          "name": "quality",
+          "definition": "text NOT NULL DEFAULT 'high'"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "sponsored_playlists",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "playlist_id",
+          "definition": "uuid REFERENCES playlists(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "campaign_id",
+          "definition": "uuid REFERENCES campaigns(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "disclosure",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "ends_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "subscription_offers",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "plan_id",
+          "definition": "uuid REFERENCES subscription_plans(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "code",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "trial_days",
+          "definition": "int DEFAULT 0"
+        },
+        {
+          "name": "discount_percent",
+          "definition": "numeric(5,2)"
+        },
+        {
+          "name": "starts_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "ends_at",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "subscription_plans",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "key",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "tier",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "billing_period",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "currency",
+          "definition": "char(3) NOT NULL"
+        },
+        {
+          "name": "price_minor",
+          "definition": "bigint NOT NULL"
+        },
+        {
+          "name": "region_code",
+          "definition": "char(2) NOT NULL DEFAULT 'WW'"
+        },
+        {
+          "name": "features",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "active",
+          "definition": "boolean NOT NULL DEFAULT true"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "subscriptions",
+      "possiblePrismaModel": "Subscription",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "provider",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "plan",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "provider_ref",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "current_period_end",
+          "definition": "timestamptz"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "tier",
+          "type": "SubscriptionTier",
+          "attributes": "@default(FREE)"
+        },
+        {
+          "name": "provider",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "externalId",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "trialEndsAt",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "renewsAt",
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        {
+          "name": "status",
+          "type": "String",
+          "attributes": "@default(\"ACTIVE\")"
+        }
+      ]
+    },
+    {
+      "legacyTable": "support_messages",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "bigserial PRIMARY KEY"
+        },
+        {
+          "name": "ticket_id",
+          "definition": "uuid REFERENCES support_tickets(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "sender_user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "support_tickets",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid REFERENCES users(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "category",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "subject",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "body",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'open'"
+        },
+        {
+          "name": "priority",
+          "definition": "text NOT NULL DEFAULT 'normal'"
+        },
+        {
+          "name": "assigned_to",
+          "definition": "uuid REFERENCES users(id)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "resolved_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "takedown_requests",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "reporter",
+          "definition": "text"
+        },
+        {
+          "name": "reason",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'open'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "resolved_at",
+          "definition": "timestamptz"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "track_genres",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "genre_id",
+          "definition": "uuid REFERENCES genres(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "weight",
+          "definition": "numeric(6,5) DEFAULT 1"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "track_lyrics",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "track_id",
+          "definition": "uuid PRIMARY KEY REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "plain_text",
+          "definition": "text"
+        },
+        {
+          "name": "synced_json",
+          "definition": "jsonb NOT NULL DEFAULT '[]'::jsonb"
+        },
+        {
+          "name": "translations",
+          "definition": "jsonb NOT NULL DEFAULT '{}'::jsonb"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "track_moods",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "mood_id",
+          "definition": "uuid REFERENCES moods(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "weight",
+          "definition": "numeric(6,5) DEFAULT 1"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "track_tags",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "tag",
+          "definition": "text NOT NULL"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "track_versions",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid NOT NULL REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "version_name",
+          "definition": "text NOT NULL DEFAULT 'original'"
+        },
+        {
+          "name": "isrc",
+          "definition": "text"
+        },
+        {
+          "name": "language_code",
+          "definition": "text"
+        },
+        {
+          "name": "mix_name",
+          "definition": "text"
+        },
+        {
+          "name": "explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "tracks",
+      "possiblePrismaModel": "Track",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "album_id",
+          "definition": "uuid REFERENCES albums(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "artist_id",
+          "definition": "uuid REFERENCES artists(id) ON DELETE SET NULL"
+        },
+        {
+          "name": "title",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "duration_ms",
+          "definition": "int NOT NULL DEFAULT 0"
+        },
+        {
+          "name": "isrc",
+          "definition": "text UNIQUE"
+        },
+        {
+          "name": "audio_key",
+          "definition": "text"
+        },
+        {
+          "name": "explicit",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "lossless",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "hires",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "atmos",
+          "definition": "boolean NOT NULL DEFAULT false"
+        },
+        {
+          "name": "territories",
+          "definition": "text[] NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "releaseId",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "release",
+          "type": "Release",
+          "attributes": "@relation(fields: [releaseId], references: [id], onDelete: Cascade)"
+        },
+        {
+          "name": "artistName",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "durationMs",
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        {
+          "name": "audioUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "previewUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "artworkUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "isrc",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "lyricsText",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "lyricsTimedJson",
+          "type": "Json?",
+          "attributes": ""
+        },
+        {
+          "name": "explicit",
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        {
+          "name": "producer",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "composer",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "songwriter",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "label",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "likes",
+          "type": "Like[]",
+          "attributes": ""
+        },
+        {
+          "name": "playlistTracks",
+          "type": "PlaylistTrack[]",
+          "attributes": ""
+        },
+        {
+          "name": "playEvents",
+          "type": "PlayEvent[]",
+          "attributes": ""
+        },
+        {
+          "name": "credits",
+          "type": "Credit[]",
+          "attributes": ""
+        }
+      ]
+    },
+    {
+      "legacyTable": "ugc_claims",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "claimant",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "track_id",
+          "definition": "uuid REFERENCES tracks(id)"
+        },
+        {
+          "name": "external_ref",
+          "definition": "text"
+        },
+        {
+          "name": "claim_type",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "status",
+          "definition": "text NOT NULL DEFAULT 'open'"
+        },
+        {
+          "name": "evidence",
+          "definition": "jsonb NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "user_devices",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "user_id",
+          "definition": "uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "device_id",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "platform",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "model",
+          "definition": "text"
+        },
+        {
+          "name": "os_version",
+          "definition": "text"
+        },
+        {
+          "name": "app_version",
+          "definition": "text"
+        },
+        {
+          "name": "push_token",
+          "definition": "text"
+        },
+        {
+          "name": "last_ip",
+          "definition": "inet"
+        },
+        {
+          "name": "last_seen_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "user_profiles",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "user_id",
+          "definition": "uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "avatar_url",
+          "definition": "text"
+        },
+        {
+          "name": "bio",
+          "definition": "text"
+        },
+        {
+          "name": "language_code",
+          "definition": "text NOT NULL DEFAULT 'en'"
+        },
+        {
+          "name": "timezone",
+          "definition": "text NOT NULL DEFAULT 'UTC'"
+        },
+        {
+          "name": "explicit_allowed",
+          "definition": "boolean NOT NULL DEFAULT true"
+        },
+        {
+          "name": "discovery_mode",
+          "definition": "text NOT NULL DEFAULT 'balanced'"
+        },
+        {
+          "name": "updated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    },
+    {
+      "legacyTable": "users",
+      "possiblePrismaModel": "User",
+      "legacyColumns": [
+        {
+          "name": "id",
+          "definition": "uuid PRIMARY KEY DEFAULT gen_random_uuid()"
+        },
+        {
+          "name": "email",
+          "definition": "text UNIQUE NOT NULL"
+        },
+        {
+          "name": "password_hash",
+          "definition": "text"
+        },
+        {
+          "name": "display_name",
+          "definition": "text NOT NULL"
+        },
+        {
+          "name": "role",
+          "definition": "text NOT NULL DEFAULT 'listener'"
+        },
+        {
+          "name": "country_code",
+          "definition": "char(2)"
+        },
+        {
+          "name": "created_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": [
+        {
+          "name": "id",
+          "type": "String",
+          "attributes": "@id @default(cuid())"
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "passwordHash",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "username",
+          "type": "String",
+          "attributes": "@unique"
+        },
+        {
+          "name": "displayName",
+          "type": "String",
+          "attributes": ""
+        },
+        {
+          "name": "role",
+          "type": "Role",
+          "attributes": "@default(LISTENER)"
+        },
+        {
+          "name": "country",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "region",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "attributes": "@default(\"en\")"
+        },
+        {
+          "name": "timezone",
+          "type": "String",
+          "attributes": "@default(\"UTC\")"
+        },
+        {
+          "name": "avatarUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "coverUrl",
+          "type": "String?",
+          "attributes": ""
+        },
+        {
+          "name": "explicitAllowed",
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        },
+        {
+          "name": "artist",
+          "type": "Artist?",
+          "attributes": ""
+        },
+        {
+          "name": "playlists",
+          "type": "Playlist[]",
+          "attributes": ""
+        },
+        {
+          "name": "likes",
+          "type": "Like[]",
+          "attributes": ""
+        },
+        {
+          "name": "follows",
+          "type": "Follow[]",
+          "attributes": "@relation(\"follower\")"
+        },
+        {
+          "name": "sessions",
+          "type": "Session[]",
+          "attributes": ""
+        },
+        {
+          "name": "playEvents",
+          "type": "PlayEvent[]",
+          "attributes": ""
+        },
+        {
+          "name": "subscription",
+          "type": "Subscription?",
+          "attributes": ""
+        },
+        {
+          "name": "notifications",
+          "type": "Notification[]",
+          "attributes": ""
+        },
+        {
+          "name": "searches",
+          "type": "SearchEvent[]",
+          "attributes": ""
+        },
+        {
+          "name": "playlistCollaborations",
+          "type": "PlaylistCollaborator[]",
+          "attributes": ""
+        },
+        {
+          "name": "uploads",
+          "type": "Release[]",
+          "attributes": "@relation(\"uploadedBy\")"
+        }
+      ]
+    },
+    {
+      "legacyTable": "waveform_peaks",
+      "possiblePrismaModel": null,
+      "legacyColumns": [
+        {
+          "name": "track_id",
+          "definition": "uuid PRIMARY KEY REFERENCES tracks(id) ON DELETE CASCADE"
+        },
+        {
+          "name": "samples",
+          "definition": "int[] NOT NULL DEFAULT '{}'"
+        },
+        {
+          "name": "generated_at",
+          "definition": "timestamptz NOT NULL DEFAULT now()"
+        }
+      ],
+      "prismaFields": []
+    }
+  ],
+  "policy": [
+    "Preserve all legacy functionality.",
+    "Do not modify original source migrations.",
+    "Do not delete existing Prisma models.",
+    "Do not create duplicate domain models merely because table names differ.",
+    "Resolve equivalent domains through explicit schema mapping.",
+    "Establish one authoritative production migration path."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "capability": "rights",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 6,
+  "sourceVariants": 3,
+  "implementations": [
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/rights.js",
+      "size": 957
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/territory.js",
+      "size": 980
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/music/LICENSE.txt",
+      "size": 142
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/music/LICENSE.txt",
+      "size": 142
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/LICENSE.txt",
+      "size": 142
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/rights.js",
+      "size": 355
+    }
+  ]
+}

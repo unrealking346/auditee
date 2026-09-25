@@ -1,0 +1,10 @@
+{
+  "name": "@waeve/database",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check scripts/check-schema.mjs",
+    "verify": "npm run check"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "application": "@waeve/web",
+  "architecture": "React/Vite canonical listener application",
+  "productionFoundation": {
+    "retained": true,
+    "sourceFamily": [
+      "WAEVE-Android-production-project",
+      "WAEVE-Global-Production-Services-4.0.0"
+    ]
+  },
+  "legacyCapabilities": [
+    {
+      "capability": "catalogue",
+      "source": "Waeve",
+      "path": "js/music.js"
+    },
+    {
+      "capability": "playback",
+      "source": "Waeve",
+      "path": "js/player.js"
+    },
+    {
+      "capability": "playback",
+      "source": "Waeve",
+      "path": "js/playlist-player.js"
+    },
+    {
+      "capability": "playlists",
+      "source": "Waeve",
+      "path": "js/playlists.js"
+    },
+    {
+      "capability": "playlists",
+      "source": "Waeve",
+      "path": "js/playlist-management.js"
+    },
+    {
+      "capability": "playlists",
+      "source": "Waeve",
+      "path": "js/playlist-ui.js"
+    },
+    {
+      "capability": "playlists",
+      "source": "Waeve",
+      "path": "js/library-playlist-ui.js"
+    },
+    {
+      "capability": "library",
+      "source": "Waeve",
+      "path": "js/library-playlist-ui.js"
+    },
+    {
+      "capability": "routing",
+      "source": "Waeve",
+      "path": "js/router.js"
+    },
+    {
+      "capability": "routing",
+      "source": "Waeve",
+      "path": "js/app.js"
+    },
+    {
+      "capability": "persistence",
+      "source": "Waeve",
+      "path": "js/storage.js"
+    }
+  ],
+  "integrationRules": [
+    "React remains the canonical UI runtime.",
+    "Legacy catalogue, player, playlist and library behavior is preserved as integration input.",
+    "Legacy globals are not injected directly into the React runtime.",
+    "Playlist creation, editing, deletion, adding/removing tracks and playback must remain supported.",
+    "Queue, shuffle, repeat, seek, volume and automatic next-track behavior must remain supported.",
+    "Local persistence remains available as a fallback capability.",
+    "Server-backed state is authoritative when authenticated.",
+    "No permanent private media credentials may reach the browser.",
+    "No feature is marked complete until it passes build and tests."
+  ]
+}

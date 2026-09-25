@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-09-18T15:06:26.832Z",
+  "status": "INTEGRATED_WITH_RECONCILIATION_CONFLICTS",
+  "sourceVariants": 18,
+  "sourceFiles": 696,
+  "copied": 223,
+  "identical": 121,
+  "conflicts": 158,
+  "domains": {
+    "web": {
+      "status": "INTEGRATED",
+      "sourceFiles": 119,
+      "copied": 6,
+      "conflicts": 66
+    },
+    "api": {
+      "status": "INTEGRATED",
+      "sourceFiles": 66,
+      "copied": 34,
+      "conflicts": 8
+    },
+    "artist": {
+      "status": "NO_SOURCE_EVIDENCE",
+      "sourceFiles": 0,
+      "copied": 0,
+      "conflicts": 0
+    },
+    "admin": {
+      "status": "NO_SOURCE_EVIDENCE",
+      "sourceFiles": 0,
+      "copied": 0,
+      "conflicts": 0
+    },
+    "developer": {
+      "status": "NO_SOURCE_EVIDENCE",
+      "sourceFiles": 0,
+      "copied": 0,
+      "conflicts": 0
+    },
+    "contracts": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "database": {
+      "status": "INTEGRATED",
+      "sourceFiles": 9,
+      "copied": 7,
+      "conflicts": 1
+    },
+    "security": {
+      "status": "INTEGRATED",
+      "sourceFiles": 8,
+      "copied": 6,
+      "conflicts": 0
+    },
+    "ui": {
+      "status": "INTEGRATED",
+      "sourceFiles": 19,
+      "copied": 12,
+      "conflicts": 5
+    },
+    "catalog": {
+      "status": "INTEGRATED",
+      "sourceFiles": 16,
+      "copied": 15,
+      "conflicts": 1
+    },
+    "playback": {
+      "status": "INTEGRATED",
+      "sourceFiles": 53,
+      "copied": 22,
+      "conflicts": 22
+    },
+    "search": {
+      "status": "INTEGRATED",
+      "sourceFiles": 4,
+      "copied": 4,
+      "conflicts": 0
+    },
+    "discovery": {
+      "status": "INTEGRATED",
+      "sourceFiles": 2,
+      "copied": 2,
+      "conflicts": 0
+    },
+    "recommendations": {
+      "status": "INTEGRATED",
+      "sourceFiles": 4,
+      "copied": 3,
+      "conflicts": 0
+    },
+    "rights": {
+      "status": "INTEGRATED",
+      "sourceFiles": 6,
+      "copied": 6,
+      "conflicts": 0
+    },
+    "royalties": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "territory": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "knowledge": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "trust": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "editorial": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "analytics": {
+      "status": "INTEGRATED",
+      "sourceFiles": 1,
+      "copied": 1,
+      "conflicts": 0
+    },
+    "payments": {
+      "status": "INTEGRATED",
+      "sourceFiles": 5,
+      "copied": 4,
+      "conflicts": 0
+    },
+    "media": {
+      "status": "INTEGRATED",
+      "sourceFiles": 16,
+      "copied": 4,
+      "conflicts": 9
+    },
+    "notifications": {
+      "status": "NO_SOURCE_EVIDENCE",
+      "sourceFiles": 0,
+      "copied": 0,
+      "conflicts": 0
+    },
+    "infrastructure": {
+      "status": "CONFLICT_ONLY",
+      "sourceFiles": 14,
+      "copied": 0,
+      "conflicts": 0
+    },
+    "android": {
+      "status": "BUILD_ENTRYPOINT_PRESENT",
+      "sourceFiles": 168,
+      "copied": 91,
+      "conflicts": 46
+    },
+    "tests": {
+      "status": "CONFLICT_ONLY",
+      "sourceFiles": 4,
+      "copied": 0,
+      "conflicts": 0
+    }
+  }
+}

@@ -1,0 +1,1 @@
+window.Store={get:(k,d)=>{try{return JSON.parse(localStorage.getItem("waeve:"+k))??d}catch{return d}},set:(k,v)=>localStorage.setItem("waeve:"+k,JSON.stringify(v)),remove:k=>localStorage.removeItem("waeve:"+k)};

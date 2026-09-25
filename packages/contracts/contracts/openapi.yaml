@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Waeve API
+  version: 2.0.0
+  description: Application-first global music platform API.
+servers:
+  - url: /api/v1
+security: []
+paths:
+  /auth/register: {post: {summary: Register, requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/Register'}}}}, responses: {'201': {description: Created}}}}
+  /auth/login: {post: {summary: Login, responses: {'200': {description: Authenticated}}}}
+  /auth/refresh: {post: {summary: Refresh access token, responses: {'200': {description: Refreshed}}}}
+  /auth/logout: {post: {summary: Logout, security: [{bearerAuth: []}]}}
+  /me: {get: {summary: Current account, security: [{bearerAuth: []}]}, patch: {summary: Update account, security: [{bearerAuth: []}]}}
+  /features: {get: {summary: Feature flags}}
+  /catalog/home: {get: {summary: Personalized/home catalog}}
+  /catalog/search: {get: {summary: Search catalog}}
+  /tracks/{id}: {get: {summary: Track metadata}}
+  /tracks/{id}/stream: {get: {summary: Authorized signed stream URL, security: [{bearerAuth: []}]}}
+  /events: {post: {summary: Listening event, security: [{bearerAuth: []}]}}
+  /history: {get: {summary: Listening history, security: [{bearerAuth: []}]}}
+  /recommendations: {get: {summary: Personalized recommendations, security: [{bearerAuth: []}]}}
+  /likes: {get: {summary: Liked tracks, security: [{bearerAuth: []}]}}
+  /likes/{trackId}: {post: {summary: Like track, security: [{bearerAuth: []}]}, delete: {summary: Unlike track, security: [{bearerAuth: []}]}}
+  /playlists: {get: {summary: List playlists, security: [{bearerAuth: []}]}, post: {summary: Create playlist, security: [{bearerAuth: []}]}}
+  /playlists/{id}: {get: {summary: Playlist detail, security: [{bearerAuth: []}]}}
+  /playlists/{id}/tracks: {post: {summary: Add track, security: [{bearerAuth: []}]}}
+  /playlists/{id}/tracks/{trackId}: {delete: {summary: Remove track, security: [{bearerAuth: []}]}}
+  /playlists/{id}/share: {post: {summary: Create share token, security: [{bearerAuth: []}]}}
+  /entitlements: {get: {summary: Premium entitlement, security: [{bearerAuth: []}]}}
+  /billing/checkout: {post: {summary: Start subscription checkout, security: [{bearerAuth: []}]}}
+  /downloads: {get: {summary: Offline entitlements, security: [{bearerAuth: []}]}}
+  /downloads/{trackId}: {post: {summary: Create offline entitlement, security: [{bearerAuth: []}]}}
+  /smart-downloads: {get: {summary: Smart download settings, security: [{bearerAuth: []}]}, put: {summary: Update smart downloads, security: [{bearerAuth: []}]}}
+  /editorial: {get: {summary: Editorial stories}}
+  /charts: {get: {summary: Regional/global charts}}
+  /artist/dashboard: {get: {summary: Artist analytics, security: [{bearerAuth: []}]}}
+  /artist/releases: {post: {summary: Create artist release, security: [{bearerAuth: []}]}}
+  /artist/assets/presign: {post: {summary: Presign artist asset upload, security: [{bearerAuth: []}]}}
+  /admin/overview: {get: {summary: Admin overview, security: [{bearerAuth: []}]}}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer, bearerFormat: JWT}
+  schemas:
+    Register:
+      type: object
+      required: [email,password,displayName]
+      properties:
+        email: {type: string, format: email}
+        password: {type: string, minLength: 12}
+        displayName: {type: string, minLength: 2}
+        countryCode: {type: string, minLength: 2, maxLength: 2}

@@ -1,0 +1,10 @@
+{
+  "name": "@waeve/services-media",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check android/app/src/main/assets/js/storage.js"
+  },
+  "dependencies": {}
+}

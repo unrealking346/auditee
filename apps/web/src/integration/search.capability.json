@@ -1,0 +1,28 @@
+{
+  "capability": "search",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 4,
+  "sourceVariants": 3,
+  "implementations": [
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/docs/GLOBAL_MUSIC_INDUSTRY_RESEARCH_2026.md",
+      "size": 4860
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/pages/search.html",
+      "size": 929
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/search/search_screen.dart",
+      "size": 1029
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/docs/RESEARCH_SOURCES.md",
+      "size": 1256
+    }
+  ]
+}

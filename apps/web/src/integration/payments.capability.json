@@ -1,0 +1,38 @@
+{
+  "capability": "payments",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 6,
+  "sourceVariants": 5,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/subscriptions.ts",
+      "size": 1224
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/java/com/waeve/app/BillingManager.kt",
+      "size": 1795
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/java/com/waeve/app/BillingManager.kt",
+      "size": 1795
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/premium/premium_screen.dart",
+      "size": 963
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/billing.js",
+      "size": 555
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/BillingManager.kt",
+      "size": 2633
+    }
+  ]
+}

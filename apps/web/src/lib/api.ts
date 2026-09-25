@@ -1,0 +1,3 @@
+const API=import.meta.env.VITE_API_URL||'http://localhost:4000/v1';
+let token=localStorage.getItem('waeve_token'); export function setToken(t:string|null){token=t;if(t)localStorage.setItem('waeve_token',t);else localStorage.removeItem('waeve_token')}
+export async function api<T>(path:string,options:RequestInit={}){const headers=new Headers(options.headers);if(options.body&&!headers.has('Content-Type')&&!(options.body instanceof FormData))headers.set('Content-Type','application/json');if(token)headers.set('Authorization',`Bearer ${token}`);const r=await fetch(API+path,{...options,headers});if(!r.ok)throw new Error((await r.json().catch(()=>({error:r.statusText}))).error||r.statusText);return r.status===204?undefined as T:await r.json() as T}

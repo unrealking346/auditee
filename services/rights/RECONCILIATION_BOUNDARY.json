@@ -1,0 +1,8 @@
+{
+  "domain": "rights",
+  "purpose": "Controlled integration boundary for multiple preserved Waeve implementations.",
+  "sourceVariantsPreserved": true,
+  "automaticDestructiveMerge": false,
+  "conflictCount": 13,
+  "generatedAt": "2026-09-18T15:08:07.530Z"
+}

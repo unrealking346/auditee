@@ -1,0 +1,1 @@
+window.WAEVE={version:"1.0.0",name:"Waeve",trialDays:30};

@@ -1,0 +1,3127 @@
+{
+  "generatedAt": "2026-09-18T15:08:07.530Z",
+  "sourceVariants": [
+    "WAEVE-Android-production-project",
+    "WAEVE-Complete-2.2.0-UI-Matched",
+    "WAEVE-Complete-2.4.0-12-Screens",
+    "WAEVE-Global-Production-Services-4.0.0",
+    "Waeve",
+    "Waeve-1.1.0",
+    "Waeve-2.0.0-final",
+    "Waeve-2.0.1-local-ready",
+    "Waeve-Discovery-Build",
+    "Waeve-Final-Build",
+    "Waeve-Final-Player-Build",
+    "Waeve-Final-Production-Build",
+    "Waeve-Final-Production-Build-1.1.0",
+    "Waeve-final-1.0.0",
+    "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+    "Waeve_Final_1.0.0",
+    "Waeve_Final_Build_1.0.0",
+    "Waeve_Production_2.0.0"
+  ],
+  "originalSourcesModified": 0,
+  "conflicts": [
+    {
+      "relative": "Waeve/README.md",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 2034,
+          "sha256": "bf1f673fd95aac11f90f41598ed60a7ea7f77be7ec674f42f999c7138c0f6e4e",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1634,
+          "sha256": "c989d30c11a5769a86accebe54a202bb0a72efbf74b13789a2f2e10fe6e6895f",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1634,
+          "sha256": "c989d30c11a5769a86accebe54a202bb0a72efbf74b13789a2f2e10fe6e6895f",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 2275,
+          "sha256": "50345a98c5b6b4f7dce4be3dc2e412d013e55549cc99557da70b914aac13881e",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 628,
+          "sha256": "89a8e95daf2beda9ca3430e75104051ac7dd1d8b74d4a58881550ca5a91788d8",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 1274,
+          "sha256": "d06fd367842e567ffdc7a4d877a5fba12d5ee6e2b9ccdd5da35e4088568466d8",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "payment",
+            "analytics",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 1345,
+          "sha256": "5c7ba1595d76418bd4c9b281c451f18fb8990d76a16aa95da36811be50b0e998",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "payment",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 1345,
+          "sha256": "5c7ba1595d76418bd4c9b281c451f18fb8990d76a16aa95da36811be50b0e998",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "payment",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 977,
+          "sha256": "1232871d1f07a4a613f63c20c78b9ceb651df0ab1312d2442857333040f2ecc2",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "rights",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 1229,
+          "sha256": "e33520e6202751f82b2f57e0301631e9dc884cfa862717bd7a101f7dc6dea01d",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "rights",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/docs/ARCHITECTURE.md",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 3384,
+          "sha256": "37aee2c15405b6bc8dc2c5248bcef9bf4723968cb6d2d69af02e937c82f3b95e",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1079,
+          "sha256": "50ce8ef6722e84f05bacac2a7edf60b5f63f2f359d1ca606bd42dd0f5f004173",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1079,
+          "sha256": "50ce8ef6722e84f05bacac2a7edf60b5f63f2f359d1ca606bd42dd0f5f004173",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 1079,
+          "sha256": "50ce8ef6722e84f05bacac2a7edf60b5f63f2f359d1ca606bd42dd0f5f004173",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/app/build.gradle.kts",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 2248,
+          "sha256": "c22b3dee1e456e849ccd6ef839af1bbd33d906909c09af5d85426df21313f9e9",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1302,
+          "sha256": "ab31d4fc67ee7a9c52f670c6761d3c999ba63070a6c87fc7929958f2b904d654",
+          "signals": [
+            "auth",
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1302,
+          "sha256": "1a08d544c701678ffcad37a23e5239abd99f64f54de22d0a3f9c51ae4e54bc60",
+          "signals": [
+            "auth",
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 1302,
+          "sha256": "e0fa952d2e798575eaed0dd9c994f0b76a34ef63e24fdbe14674989a74bf2709",
+          "signals": [
+            "auth",
+            "playback",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/app/src/main/AndroidManifest.xml",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 1358,
+          "sha256": "64cddce004cb906fa6b93dfe88c156a04252ffbb1d7174f254d295aa4266c82a",
+          "signals": [
+            "auth",
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1220,
+          "sha256": "ad62089aa653d97c40f9e3649f2dd640e394311e71078fc4cca769e753895d36",
+          "signals": [
+            "auth",
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1220,
+          "sha256": "ad62089aa653d97c40f9e3649f2dd640e394311e71078fc4cca769e753895d36",
+          "signals": [
+            "auth",
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 1220,
+          "sha256": "ad62089aa653d97c40f9e3649f2dd640e394311e71078fc4cca769e753895d36",
+          "signals": [
+            "auth",
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/app/src/main/res/values/styles.xml",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 421,
+          "sha256": "f66901c20392a8f5c4452d6bc5f3dc485232c598a7890d3734e1296d0b310996",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 411,
+          "sha256": "76877455412530d954503a4fef392e14b721af2de1b11642a821dcb531643c7b",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 411,
+          "sha256": "76877455412530d954503a4fef392e14b721af2de1b11642a821dcb531643c7b",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 411,
+          "sha256": "76877455412530d954503a4fef392e14b721af2de1b11642a821dcb531643c7b",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/build.gradle.kts",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 215,
+          "sha256": "db720ac0a173d0bad0a90f5e714bc1829f2765e6a27905be9a4bafeacb2e1481",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 133,
+          "sha256": "1b6192416ab16647648c56ed430a3303851f7f2bb761fb80177eeebe1dd67e8e",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 133,
+          "sha256": "1b6192416ab16647648c56ed430a3303851f7f2bb761fb80177eeebe1dd67e8e",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 133,
+          "sha256": "1b6192416ab16647648c56ed430a3303851f7f2bb761fb80177eeebe1dd67e8e",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/settings.gradle.kts",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 281,
+          "sha256": "3c3c835bfd4b514e8267585ac09c306f7f4b9f9ab312f777d99f8ebc80694654",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 246,
+          "sha256": "e0aac17a98ba02110e7b6ef31f5c78a3706eae4ed7ac87247b89816bb5606155",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 246,
+          "sha256": "e0aac17a98ba02110e7b6ef31f5c78a3706eae4ed7ac87247b89816bb5606155",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 246,
+          "sha256": "e0aac17a98ba02110e7b6ef31f5c78a3706eae4ed7ac87247b89816bb5606155",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve.gitignore",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Android-production-project",
+          "bytes": 66,
+          "sha256": "21f15e0224ebaefa23d6f19495d7ea1bfdb70f38ae0c7892f4a09ad8b74cd0bd",
+          "signals": [
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 73,
+          "sha256": "6f5aa6dccad2023911cc7561bf8997a604be3721527020ebd6d5511029bb3358",
+          "signals": [
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 73,
+          "sha256": "6f5aa6dccad2023911cc7561bf8997a604be3721527020ebd6d5511029bb3358",
+          "signals": [
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 73,
+          "sha256": "6f5aa6dccad2023911cc7561bf8997a604be3721527020ebd6d5511029bb3358",
+          "signals": [
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/backend/package.json",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 615,
+          "sha256": "8bb8121da67716cb20455492ecf5df54786fc0b0f2c7dd2918fb7b696b5a1bbf",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 615,
+          "sha256": "8bb8121da67716cb20455492ecf5df54786fc0b0f2c7dd2918fb7b696b5a1bbf",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 1059,
+          "sha256": "7f1ff31581b6e6f22456d5587b13d44bbaa8ad5cdd7455c027c0f0e51de79a4e",
+          "signals": [
+            "discovery",
+            "rights",
+            "royalty",
+            "analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/backend/prisma/schema.prisma",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 6479,
+          "sha256": "2f39902028e32ba2ebdb4bfa1d43dcfb7301f446b1a3bf3edac69af2296093cc",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "payment",
+            "analytics",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 6479,
+          "sha256": "2f39902028e32ba2ebdb4bfa1d43dcfb7301f446b1a3bf3edac69af2296093cc",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "payment",
+            "analytics",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 11971,
+          "sha256": "67edb005891cf34cfcb09e7ea2bec70666ad29a2652693542dd8b9ebd9a9e477",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "notification",
+            "moderation"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/backend/prisma/seed.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1821,
+          "sha256": "1817ca2b5cc20cfb9d1830769952274f31f3b7a6fef1ac6c01473fc22b27b44c",
+          "signals": [
+            "auth",
+            "catalogue",
+            "payment"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1821,
+          "sha256": "1817ca2b5cc20cfb9d1830769952274f31f3b7a6fef1ac6c01473fc22b27b44c",
+          "signals": [
+            "auth",
+            "catalogue",
+            "payment"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 2790,
+          "sha256": "2d1d0b7b26ce090ae46bc7b23efbca2bbf47b5ec857ace66afb0cda3fa274f41",
+          "signals": [
+            "auth",
+            "catalogue",
+            "rights",
+            "payment"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/backend/src/server.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 8478,
+          "sha256": "fdf9e892dcad308fc093d873eff0a0bb91fe4962c468bbbed2fde24ab84faf44",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 8478,
+          "sha256": "fdf9e892dcad308fc093d873eff0a0bb91fe4962c468bbbed2fde24ab84faf44",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 10514,
+          "sha256": "e94c2c81c9822c491977583ccc3beb222152d57564ed23c9ce86b06d9a0197a0",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "moderation"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/frontend/css/main.css",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 3306,
+          "sha256": "d3cd154603fed1e0e6fdf6d86ed0944ccaebe6a7322b3c17e8cb2adbb1c50fe3",
+          "signals": [
+            "playback",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 5653,
+          "sha256": "921030ea47090918a383aac381918a487b927f8b6b226abdac31f73c32255b47",
+          "signals": [
+            "playback",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 5653,
+          "sha256": "921030ea47090918a383aac381918a487b927f8b6b226abdac31f73c32255b47",
+          "signals": [
+            "playback",
+            "search",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/frontend/index.html",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 1131,
+          "sha256": "0a65dca7db66ed89bcdadf0b219a8b60a7eb024b1ed0b32247a1a5911ad7d51c",
+          "signals": [
+            "playback",
+            "catalogue",
+            "search",
+            "discovery"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 375,
+          "sha256": "c7b27a09f1ed96385b3422f05910bb3197b7c20a25487a979fcf0dc9b82bbb7f",
+          "signals": []
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 375,
+          "sha256": "c7b27a09f1ed96385b3422f05910bb3197b7c20a25487a979fcf0dc9b82bbb7f",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/frontend/js/app.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 7594,
+          "sha256": "8764c0e23b9e1ac3b25471991bf3995773505931e86210f270b0fd4cc102cd96",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "royalty",
+            "analytics",
+            "security"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 13392,
+          "sha256": "dada95924cf685dcf0a264b351f4781a8ace338c1bcb35089fd6ed58b64f36da",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "payment",
+            "analytics",
+            "security",
+            "notification"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 13392,
+          "sha256": "dada95924cf685dcf0a264b351f4781a8ace338c1bcb35089fd6ed58b64f36da",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "payment",
+            "analytics",
+            "security",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 51313,
+          "sha256": "d46428f5c438871e74f6262865babd4bb970848f0c5a56aed01ad94c50fe4b90",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 56112,
+          "sha256": "2d7d7240ff20f6602c9ce3c5d2a4b05b77ee1913f2b7bba41acb5dd80bdcbf56",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 67028,
+          "sha256": "c584fa4263f044a092e30fb3ee7ff38db34639abe8ada57a9e4fefd4ddab78ab",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+          "bytes": 572,
+          "sha256": "d7e7c7437922544af260c82c0536cfac02ec6ee533a2116c30d5f7483c303a09",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Complete-2.4.0-12-Screens",
+          "bytes": 1106,
+          "sha256": "fc984c1deb5b24386a1209511dbdd6835e7d299fe7496d88294a7304b1322487",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "media"
+          ]
+        },
+        {
+          "variant": "WAEVE-Global-Production-Services-4.0.0",
+          "bytes": 1106,
+          "sha256": "fc984c1deb5b24386a1209511dbdd6835e7d299fe7496d88294a7304b1322487",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/css/components.css",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 5848,
+          "sha256": "71e8acc38ce12a351ecde88413f8bb109880fc7230cb7f4314b2e06e0f110e25",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 474,
+          "sha256": "8aa0e7c46f0a442b733465729201434ce607274425094f05d652e8fa4bfc965e",
+          "signals": [
+            "playback",
+            "playlist"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 474,
+          "sha256": "8aa0e7c46f0a442b733465729201434ce607274425094f05d652e8fa4bfc965e",
+          "signals": [
+            "playback",
+            "playlist"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 474,
+          "sha256": "8aa0e7c46f0a442b733465729201434ce607274425094f05d652e8fa4bfc965e",
+          "signals": [
+            "playback",
+            "playlist"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/css/main.css",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 3482,
+          "sha256": "2a02c4745afa937c33829ef78506629e76ed1374c696c0378d72d4450525d8d4",
+          "signals": [
+            "search",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 14996,
+          "sha256": "8b987218100b82295abb50c6768839e9787f428b2bed956216a0697424bd1417",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 6283,
+          "sha256": "e6c32ab5b7a5a2e8b2d490600d2c7f52362bac2ddebd4eea0aaa6bce3f8ec316",
+          "signals": [
+            "playback",
+            "playlist",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 9420,
+          "sha256": "cf4fe6605c59051d8fadae24cfa5ef11c0027365818e48c81946359f97f818b8",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 8555,
+          "sha256": "06ff7ae31907e2d38cad710e5fd07eabd120315121d483d3fea0d0e33f7f951e",
+          "signals": [
+            "playback",
+            "catalogue",
+            "royalty",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 8555,
+          "sha256": "06ff7ae31907e2d38cad710e5fd07eabd120315121d483d3fea0d0e33f7f951e",
+          "signals": [
+            "playback",
+            "catalogue",
+            "royalty",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/css/player.css",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 3176,
+          "sha256": "2e4bb7bcae293df62966f74cd9bde778f00fd47cf6fa930c5da0b0d2c49e3257",
+          "signals": [
+            "playback",
+            "catalogue",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 2267,
+          "sha256": "a38776b7303ffba7e51113a43a2657a09a505b7aae9b00f3d906b39673ff329e",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 1788,
+          "sha256": "a5cb0c8534745e9e7ce6b7eac1afe0e8e570f9e5b01f113ffb1fe5718d7f3fc7",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 2267,
+          "sha256": "a38776b7303ffba7e51113a43a2657a09a505b7aae9b00f3d906b39673ff329e",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 2634,
+          "sha256": "eaad2f96b47ec90c16c38d0a7ceb2dadc9d8e89102bcc3698b29229f9f66963f",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 2634,
+          "sha256": "eaad2f96b47ec90c16c38d0a7ceb2dadc9d8e89102bcc3698b29229f9f66963f",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/index.html",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 1870,
+          "sha256": "0efc402a5103b95fbab2dd635093e1dd8ba800e5955b8f92503230015d7e1559",
+          "signals": [
+            "playback",
+            "playlist",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 1408,
+          "sha256": "e5f64c98a8781366384d6f023d7ff4740f46364eb728f3a263cca4a4008ec171",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 1293,
+          "sha256": "22b3545944ffbe42e1b124a473f827cf63e0e1db04aea21b4792066a46f3b2c9",
+          "signals": [
+            "playback",
+            "playlist",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 1408,
+          "sha256": "e5f64c98a8781366384d6f023d7ff4740f46364eb728f3a263cca4a4008ec171",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 1545,
+          "sha256": "43677bf52657da6b39f755de23ca2aebe5a61052eaefe81e27a8587860b7ad04",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 1541,
+          "sha256": "b5c01dee8c6ef8e2d724b34c07faeaf2abc6cd6660c17c4c85acac1cbd2ec888",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/app.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 5146,
+          "sha256": "1781f5b3c7193713532b8fdf2c80d86195387ea961bfd328eb8a60cfd91529d6",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 17074,
+          "sha256": "b137a720cbead5f7cbbe62d8d64a3196be33a2cd57a8ae5f812ad4613055a4b4",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "analytics",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 4112,
+          "sha256": "e8a103ccd3dad6dfb79516704cb5e7a500b29c07ffe28e3774f35e62ee2284ed",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "analytics"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 8383,
+          "sha256": "8478ab5938c8412836d84b932525e2c5d19ad2df7addd5088e6033afa8d78ebc",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "royalty",
+            "analytics"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 28954,
+          "sha256": "ef1d8395e7e66553ab75c5f20641bb59852a9a49d5fceee623a44c191fffa6c3",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 28202,
+          "sha256": "ebdf6f1322393c63c30a4d370265e11d4bbdb08b5c0f570fc610650803fbeb13",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/music.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 2614,
+          "sha256": "d0162b7aa23139028d63d793e5f11b9dfe938e766dd3b78ea834d8c7814bfe57",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "search",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 5850,
+          "sha256": "e660a1cbe2748a7ffdf5ac8a7ad52d829d729f6e4c9e06492ebc77a085be95c5",
+          "signals": [
+            "auth",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 759,
+          "sha256": "6f48b51a6e1017b9a621d451bd2d77e934d02d752ecb99c8c3dfa011f5259a43",
+          "signals": [
+            "auth",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 759,
+          "sha256": "6f48b51a6e1017b9a621d451bd2d77e934d02d752ecb99c8c3dfa011f5259a43",
+          "signals": [
+            "auth",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 5282,
+          "sha256": "a9a4535ffd5a069093946a5999fec4729b39526de5a788b8b1501ef561f4a289",
+          "signals": [
+            "auth",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 5282,
+          "sha256": "a9a4535ffd5a069093946a5999fec4729b39526de5a788b8b1501ef561f4a289",
+          "signals": [
+            "auth",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/player.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 5905,
+          "sha256": "fbfe943b39e113ba9fbd66b2faf761b7043c14c8ed8e260d7f0663a1da706b66",
+          "signals": [
+            "playback",
+            "catalogue",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 6575,
+          "sha256": "55403b3c23d8e49898de2963ad71e68179ae1c50da93df0e4ff9ba5be68353ab",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "analytics",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 4691,
+          "sha256": "40eaba952055fc2428b4e72250e85ed1bd4a0c6418e888d6451570ae8fa47d75",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "analytics"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 6575,
+          "sha256": "55403b3c23d8e49898de2963ad71e68179ae1c50da93df0e4ff9ba5be68353ab",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "analytics",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 6391,
+          "sha256": "30e6297ccb7a397f0f86b8776f0496d846711788368a12f1745b738000a29f13",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 7601,
+          "sha256": "ac394747c609f2a272f39d8740c664774d3e87d64dea189752b53bdd1c58a091",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/playlists.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 717,
+          "sha256": "bd67f70f39db950ece61cf9d28062da4690c30ff03dbbb1364915bd226bebe4c",
+          "signals": [
+            "playlist",
+            "catalogue",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 3378,
+          "sha256": "16837e8938e99d052c02b620555c5f2c098ba2ab24b5ff4f62b78e4116ae308d",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 3378,
+          "sha256": "16837e8938e99d052c02b620555c5f2c098ba2ab24b5ff4f62b78e4116ae308d",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 3378,
+          "sha256": "16837e8938e99d052c02b620555c5f2c098ba2ab24b5ff4f62b78e4116ae308d",
+          "signals": [
+            "playback",
+            "playlist",
+            "catalogue",
+            "search"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/router.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 341,
+          "sha256": "4303d936af6187afe32b73bbedd393065d2e8918afbb2237407bcfda12e92dc0",
+          "signals": [
+            "analytics"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 615,
+          "sha256": "913621949716177e0633f2fea9d3e36b9acd7456247532dbdfd9f1335c16b5bc",
+          "signals": [
+            "playback",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 303,
+          "sha256": "9b6655b15d680ed7d4a74e9d0122f7e2d09e315a0cff19f1f1627205b0b989cc",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 478,
+          "sha256": "d3d36e5b5223a5d7e86b10d40aaaeface6d1db7d32ca71562e85018d6893f0fa",
+          "signals": [
+            "playback",
+            "catalogue",
+            "search"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 413,
+          "sha256": "2d1bb97693261f96d046942387c9f530d7c7d6cfc873c704bfcc3bf26bfcdece",
+          "signals": [
+            "catalogue"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 413,
+          "sha256": "2d1bb97693261f96d046942387c9f530d7c7d6cfc873c704bfcc3bf26bfcdece",
+          "signals": [
+            "catalogue"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/storage.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 1975,
+          "sha256": "f7b46bee3a0e03781ba0d1416f9283b165c00ef95cf78c05dda813a5b217ca5c",
+          "signals": [
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 2087,
+          "sha256": "23dd056ca7938c5eb11d2e4a4dee5c85cb38e351e77f844ddb5b8855dcd83d60",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 1464,
+          "sha256": "47473cf6e61d7b46379124240318a42f9a1a1940b1d45cd29bd9247a1bc4c9f1",
+          "signals": [
+            "playback",
+            "playlist",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 1775,
+          "sha256": "fb2cda1db9db618c20f6e16a330c0bce2e82673ac905f8c1f082727a44fe8689",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 1654,
+          "sha256": "6b00c25a972ad6e2a812a6d15cdf0584d82b0b731ed9f311ae5c4598cae835b0",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 1654,
+          "sha256": "6b00c25a972ad6e2a812a6d15cdf0584d82b0b731ed9f311ae5c4598cae835b0",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/js/utils.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 575,
+          "sha256": "c07ae33997c4500bb1ffe70eda7928bcfed70603550a25b18d2f63913970d5b6",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 533,
+          "sha256": "a447f46fc0af5474ecd68540af8ecb7c14ff482d7702bd954db67975c4faf74a",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 533,
+          "sha256": "a447f46fc0af5474ecd68540af8ecb7c14ff482d7702bd954db67975c4faf74a",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 533,
+          "sha256": "a447f46fc0af5474ecd68540af8ecb7c14ff482d7702bd954db67975c4faf74a",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/music/test-track.mp3",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-1.1.0",
+          "bytes": 2852396,
+          "sha256": "91ca249955f36732d0b6c6242670d202793d617046c714f723f4b1c4997f1467",
+          "signals": [
+            "discovery",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 128983,
+          "sha256": "e0943b5e9e72bb931bc1d656cf863c6991735b11157e7b12fe43949e6e041bbd",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "README.md",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 3133,
+          "sha256": "7717ae33b7a120a1f2f266ff0384c94e41185dea6ff55b74c43b7409a8a093a2",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 3639,
+          "sha256": "2d8770327a36de30f553a50c1907a4bc41f850116fe099fb06328b9434189bd8",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve_Final_1.0.0",
+          "bytes": 1018,
+          "sha256": "dbe0ffab572d38fe72757b2a5a3fcd633153779eff3baf02d8716cba81888cf1",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "package.json",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 249,
+          "sha256": "e9a7f6e3ac28ec22b71ed5d9a4b0a579f15319d17c4ec290b8d950160d84980a",
+          "signals": [
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 249,
+          "sha256": "e9a7f6e3ac28ec22b71ed5d9a4b0a579f15319d17c4ec290b8d950160d84980a",
+          "signals": [
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve_Production_2.0.0",
+          "bytes": 257,
+          "sha256": "47d038619215a403f98be0178db2107f7eae715f1e293ea4a1b7fec554e182bc",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "public/css/main.css",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 5573,
+          "sha256": "0bddc26da16d03b20153f729be18552298ec4fc32a0180fc2a82d8564a6965b9",
+          "signals": [
+            "playback",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 5573,
+          "sha256": "0bddc26da16d03b20153f729be18552298ec4fc32a0180fc2a82d8564a6965b9",
+          "signals": [
+            "playback",
+            "search",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve_Production_2.0.0",
+          "bytes": 6134,
+          "sha256": "8a71e06745b8676b0a763f2398b4bdeeb9be5f3b4a0659391dcd9815a98bde92",
+          "signals": [
+            "playback",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "public/index.html",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 606,
+          "sha256": "72f019fca573d07fc66984f10c11d6be8a307c2868cbdab812880290233f041d",
+          "signals": [
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 603,
+          "sha256": "33c3901a07e0e12af12ef3abeb080c989b6b3d7158ac7dc84b742928b1039722",
+          "signals": [
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve_Production_2.0.0",
+          "bytes": 6079,
+          "sha256": "71959383cabfeba2c6c0164ef6fc5e32d38e8ba977fb518bdf67c7259980a6e4",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "public/js/app.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 11349,
+          "sha256": "df5b6ef11bf58e0a1f5416182adf79cdd153b620a2573cd9502b60674d0eefa4",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "royalty",
+            "payment",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 11348,
+          "sha256": "4eb4a2348a6cb930d3d0c9961a70299a77618bac72ac13fda8f685269bc61690",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "royalty",
+            "payment",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve_Production_2.0.0",
+          "bytes": 16809,
+          "sha256": "7a9dd513d674ef91498b6da8df424a3a7333031149d1a6a5c2c9125558653154",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "server.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.0-final",
+          "bytes": 9782,
+          "sha256": "e2e089ad1346094a7734dd85752054366607e7a5b6e996a039aa9adfb11a4435",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 9782,
+          "sha256": "e2e089ad1346094a7734dd85752054366607e7a5b6e996a039aa9adfb11a4435",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve_Production_2.0.0",
+          "bytes": 12463,
+          "sha256": "554d555c060e098072ac643e5894ba999d6f3bcbc0698a85a8ef1984392c3034",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "royalty",
+            "payment",
+            "analytics",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "index.html",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-2.0.1-local-ready",
+          "bytes": 669,
+          "sha256": "cd0d0efe2500816b2de67cd56e3c2641686caeed00d73b7cb43a47992d6bc8e5",
+          "signals": [
+            "discovery"
+          ]
+        },
+        {
+          "variant": "Waeve_Final_1.0.0",
+          "bytes": 539,
+          "sha256": "c066827b436022c71fcb0742cf7a2cda0441d03c9f7779874a3c4516336bb782",
+          "signals": [
+            "playback",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/README.txt",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 774,
+          "sha256": "bc5d5c0fe3f420671c3be718ee1031aeacf69156d7c5351e930b421f2935853f",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 792,
+          "sha256": "73278517fe71bc1f46d7c599c035398b2275fd266f79b290a56e46f612d3a584",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "payment",
+            "analytics",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 848,
+          "sha256": "5d1cb3fda688efd500edbcbbf0430bd50eb22517de8fb1f7f9d16ee9e568b332",
+          "signals": [
+            "playback",
+            "catalogue",
+            "search",
+            "analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/artist-echo.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 874,
+          "sha256": "ed6fe38cb71f425bfba29f889fc2f55268bc9763553cb544bc73f3b8cb59dd6e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "ed6fe38cb71f425bfba29f889fc2f55268bc9763553cb544bc73f3b8cb59dd6e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "5c63bf59ced0d1b414566524e7e03e258a4b3cde23fb094bca05f460e8a47462",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/artist-kairo.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 881,
+          "sha256": "973afbf7485b36e46097853de9bd4b1c5cfd56ae60b9ba422cfd03c38e0cd65a",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 881,
+          "sha256": "973afbf7485b36e46097853de9bd4b1c5cfd56ae60b9ba422cfd03c38e0cd65a",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "ad2473fb4c63631488b25e1935dd29d6b9f989fc5f80e7d37a5e0a93dd355b4a",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/artist-luma.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 872,
+          "sha256": "6347fe685e0bc74cdd467ab0d75787ad010498589ba70f63086b46d902929c16",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 872,
+          "sha256": "6347fe685e0bc74cdd467ab0d75787ad010498589ba70f63086b46d902929c16",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "ac63c44aa3bb1cc26c5e04a032c54c0233ea977907557f5d632ac6e6c1e58c81",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/artist-nova.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 872,
+          "sha256": "77e4a4758c22dd14f7e9529e68285c7df0fc8d5d7e65426511148973958d4e66",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 872,
+          "sha256": "77e4a4758c22dd14f7e9529e68285c7df0fc8d5d7e65426511148973958d4e66",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "37eb04bd26fa49012769bd39e3d395a3338cd7ba5a406a6af1da2933c9b2edfd",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/artist-waeve.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 876,
+          "sha256": "e463d933bac0846f54a1fd03bdc7c88c07e4595ae95c2044a27208b592ca6dea",
+          "signals": [
+            "catalogue"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 876,
+          "sha256": "e463d933bac0846f54a1fd03bdc7c88c07e4595ae95c2044a27208b592ca6dea",
+          "signals": [
+            "catalogue"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "e372fa421e4f7ef390c149d5c0ff72c85cfa0f38e5da35847ba96820bd4ba71c",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/cover-after-rain.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 874,
+          "sha256": "48a9180f84cdc17b676d6b18172bd6203286578950bbe7c653a4a0a2c64fd4e7",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "48a9180f84cdc17b676d6b18172bd6203286578950bbe7c653a4a0a2c64fd4e7",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "4d58c8c5a1cde553f5e0bc6f2f09b7cdf31f961f18be3fc683da1575129ec7f1",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/cover-blue-horizon.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 876,
+          "sha256": "07749beaf0e0553c6caf22495d1d14ea1b7f2693f1a049c145e6bb9e031b6496",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 876,
+          "sha256": "07749beaf0e0553c6caf22495d1d14ea1b7f2693f1a049c145e6bb9e031b6496",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "2f20476a834d5f5a4d5d2e6456e4de3098cc5deaa16aa651e53d44974c069bb2",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/cover-city-pulse.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 874,
+          "sha256": "5a985289572df375ff2d081d948d33d97d1220d375eeba3cf6d2921a0bcaac37",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "5a985289572df375ff2d081d948d33d97d1220d375eeba3cf6d2921a0bcaac37",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "ebc3cbf5b9f8e7c2073ec6c1ace7ce3f1c16aa5d6251bd7168a6b7d3102acfe5",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/cover-glass-skyline.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 877,
+          "sha256": "a86b9ccb4a0d87be4b12e5fbdfefb8f26731c84f6bb380d374e1a942fa72f89f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 877,
+          "sha256": "a86b9ccb4a0d87be4b12e5fbdfefb8f26731c84f6bb380d374e1a942fa72f89f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "0d1e3a30e8cfe81f1dee2b3b09fff9e1eb2e4efc1c61446a84657dba92a287e5",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/cover-midnight-current.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 880,
+          "sha256": "3705a6504dc96da9dc055c7f2d11e525ba622da2d79d9ca2d2c4a587f0056724",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 880,
+          "sha256": "3705a6504dc96da9dc055c7f2d11e525ba622da2d79d9ca2d2c4a587f0056724",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "c5afcabe39ac4d2d5f52dcae7110daf714c032d38096461d9c27641d607264b3",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/default-cover.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 441,
+          "sha256": "dc91b29311fd7c5341cfc6e8ebaa383ec2b943052f35ce1998f75c7da96eb17f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Build",
+          "bytes": 441,
+          "sha256": "dc91b29311fd7c5341cfc6e8ebaa383ec2b943052f35ce1998f75c7da96eb17f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Player-Build",
+          "bytes": 441,
+          "sha256": "dc91b29311fd7c5341cfc6e8ebaa383ec2b943052f35ce1998f75c7da96eb17f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 441,
+          "sha256": "dc91b29311fd7c5341cfc6e8ebaa383ec2b943052f35ce1998f75c7da96eb17f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "39a0a3a8926f64b852fba534bdc8f1805e8679c5ae48008e5e6bdb0428773085",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/playlist-energy.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 878,
+          "sha256": "40aafc32ec88721f7bbf90870d3e2c0323438b2ce09ccd105dffe83a3222b1a3",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 878,
+          "sha256": "40aafc32ec88721f7bbf90870d3e2c0323438b2ce09ccd105dffe83a3222b1a3",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "197d93bec7ffdcdeef06ea868144a3741cf8057b3f9ba46b6e38c42674691cc2",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/playlist-focus.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 874,
+          "sha256": "a991a1d960393bf5e486ba42357db4c617f77dd69221dda18cf85744bb9b639e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "a991a1d960393bf5e486ba42357db4c617f77dd69221dda18cf85744bb9b639e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "fa173cd1af62b976d9e213afc18e7e3d4f2de430641b0a1b15436eb0e16cb804",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/playlist-night.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 875,
+          "sha256": "d7c85bf8d721dfc55944f3169e55d744f4c8cf06ba6e679b8300b3e3109f1024",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 875,
+          "sha256": "d7c85bf8d721dfc55944f3169e55d744f4c8cf06ba6e679b8300b3e3109f1024",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "131194587bce409345b24aec28631c98e6a13cea4d92eb6f782d4ae954dbb79e",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/assets/playlist-reset.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Discovery-Build",
+          "bytes": 874,
+          "sha256": "c88ce64b6a81b415771caf50a4df3d74e875067a3e93cf819dac9fc23b6f4782",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "c88ce64b6a81b415771caf50a4df3d74e875067a3e93cf819dac9fc23b6f4782",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "554980a0e5d634830f85a7dac57840191dd92433bc35bd030c62d00a35c99c54",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/build.gradle.kts",
+      "classification": "compatible",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 612,
+          "sha256": "e69493bf1aac69677bf48003bd291c606e1f6775d8a266aac5a8702b98da6e3a",
+          "signals": [
+            "auth",
+            "playback",
+            "payment",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 612,
+          "sha256": "0b58fc90f93d899ef9c9cff039315e7cf42e0a34a07503c3f09f969c1a15ae10",
+          "signals": [
+            "auth",
+            "playback",
+            "payment",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/AndroidManifest.xml",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 592,
+          "sha256": "09c5cad1b2b94f85d263daf4639fc8b261d1d4d08617e5168f156d3b0c99ee84",
+          "signals": [
+            "security",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 975,
+          "sha256": "ac7dea1ebc7ebb285087c8ee88aa92376245540ccd9403b13699ca076dc7b214",
+          "signals": [
+            "auth",
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/artist-echo.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "ed6fe38cb71f425bfba29f889fc2f55268bc9763553cb544bc73f3b8cb59dd6e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "5c63bf59ced0d1b414566524e7e03e258a4b3cde23fb094bca05f460e8a47462",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/artist-kairo.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 881,
+          "sha256": "973afbf7485b36e46097853de9bd4b1c5cfd56ae60b9ba422cfd03c38e0cd65a",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "ad2473fb4c63631488b25e1935dd29d6b9f989fc5f80e7d37a5e0a93dd355b4a",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/artist-luma.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 872,
+          "sha256": "6347fe685e0bc74cdd467ab0d75787ad010498589ba70f63086b46d902929c16",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "ac63c44aa3bb1cc26c5e04a032c54c0233ea977907557f5d632ac6e6c1e58c81",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/artist-nova.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 872,
+          "sha256": "77e4a4758c22dd14f7e9529e68285c7df0fc8d5d7e65426511148973958d4e66",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "37eb04bd26fa49012769bd39e3d395a3338cd7ba5a406a6af1da2933c9b2edfd",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/artist-waeve.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 876,
+          "sha256": "e463d933bac0846f54a1fd03bdc7c88c07e4595ae95c2044a27208b592ca6dea",
+          "signals": [
+            "catalogue"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "e372fa421e4f7ef390c149d5c0ff72c85cfa0f38e5da35847ba96820bd4ba71c",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/cover-after-rain.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "48a9180f84cdc17b676d6b18172bd6203286578950bbe7c653a4a0a2c64fd4e7",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "4d58c8c5a1cde553f5e0bc6f2f09b7cdf31f961f18be3fc683da1575129ec7f1",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/cover-blue-horizon.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 876,
+          "sha256": "07749beaf0e0553c6caf22495d1d14ea1b7f2693f1a049c145e6bb9e031b6496",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "2f20476a834d5f5a4d5d2e6456e4de3098cc5deaa16aa651e53d44974c069bb2",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/cover-city-pulse.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "5a985289572df375ff2d081d948d33d97d1220d375eeba3cf6d2921a0bcaac37",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "ebc3cbf5b9f8e7c2073ec6c1ace7ce3f1c16aa5d6251bd7168a6b7d3102acfe5",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/cover-glass-skyline.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 877,
+          "sha256": "a86b9ccb4a0d87be4b12e5fbdfefb8f26731c84f6bb380d374e1a942fa72f89f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "0d1e3a30e8cfe81f1dee2b3b09fff9e1eb2e4efc1c61446a84657dba92a287e5",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/cover-midnight-current.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 880,
+          "sha256": "3705a6504dc96da9dc055c7f2d11e525ba622da2d79d9ca2d2c4a587f0056724",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 476,
+          "sha256": "c5afcabe39ac4d2d5f52dcae7110daf714c032d38096461d9c27641d607264b3",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/default-cover.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 441,
+          "sha256": "dc91b29311fd7c5341cfc6e8ebaa383ec2b943052f35ce1998f75c7da96eb17f",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "39a0a3a8926f64b852fba534bdc8f1805e8679c5ae48008e5e6bdb0428773085",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/playlist-energy.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 878,
+          "sha256": "40aafc32ec88721f7bbf90870d3e2c0323438b2ce09ccd105dffe83a3222b1a3",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "197d93bec7ffdcdeef06ea868144a3741cf8057b3f9ba46b6e38c42674691cc2",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/playlist-focus.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "a991a1d960393bf5e486ba42357db4c617f77dd69221dda18cf85744bb9b639e",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "fa173cd1af62b976d9e213afc18e7e3d4f2de430641b0a1b15436eb0e16cb804",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/playlist-night.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 875,
+          "sha256": "d7c85bf8d721dfc55944f3169e55d744f4c8cf06ba6e679b8300b3e3109f1024",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "131194587bce409345b24aec28631c98e6a13cea4d92eb6f782d4ae954dbb79e",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/assets/playlist-reset.svg",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 874,
+          "sha256": "c88ce64b6a81b415771caf50a4df3d74e875067a3e93cf819dac9fc23b6f4782",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 475,
+          "sha256": "554980a0e5d634830f85a7dac57840191dd92433bc35bd030c62d00a35c99c54",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/index.html",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 1545,
+          "sha256": "43677bf52657da6b39f755de23ca2aebe5a61052eaefe81e27a8587860b7ad04",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "media"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 1541,
+          "sha256": "b5c01dee8c6ef8e2d724b34c07faeaf2abc6cd6660c17c4c85acac1cbd2ec888",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/js/app.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 28954,
+          "sha256": "ef1d8395e7e66553ab75c5f20641bb59852a9a49d5fceee623a44c191fffa6c3",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 28202,
+          "sha256": "ebdf6f1322393c63c30a4d370265e11d4bbdb08b5c0f570fc610650803fbeb13",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/assets/js/player.js",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 6391,
+          "sha256": "30e6297ccb7a397f0f86b8776f0496d846711788368a12f1745b738000a29f13",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 7601,
+          "sha256": "ac394747c609f2a272f39d8740c664774d3e87d64dea189752b53bdd1c58a091",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "discovery",
+            "analytics",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/java/com/waeve/app/MainActivity.kt",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 1325,
+          "sha256": "fdd5de9944eec66479d082e70ceec989b1a95d49ae9635498157423d714e1c9a",
+          "signals": [
+            "playback",
+            "security",
+            "media",
+            "notification"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 4130,
+          "sha256": "e064abe7138cf3d1b96fa59ad717aeb4d1e8d9181eda9d7123e3058c45f031b3",
+          "signals": [
+            "auth",
+            "playback",
+            "catalogue",
+            "security",
+            "media",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/android/app/src/main/res/values/styles.xml",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 352,
+          "sha256": "a6b695a2b514df5a733343a470af6f70b1e517d0e5189c4e0b6d96c7faa08a14",
+          "signals": []
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 406,
+          "sha256": "5026cbea71311ff3fe19f70c27c4dc5e89caeb6530ac03f23e2f37b2ab6d8bfa",
+          "signals": []
+        }
+      ]
+    },
+    {
+      "relative": "Waeve/docs/PRODUCTION_CHECKLIST.md",
+      "classification": "parallel_implementation",
+      "variants": [
+        {
+          "variant": "Waeve-Final-Production-Build",
+          "bytes": 2688,
+          "sha256": "f51d7899164ea5e75eb956f4457a9a0edb5c3b610a9d38e918abf605631d2d31",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        },
+        {
+          "variant": "Waeve-Final-Production-Build-1.1.0",
+          "bytes": 2847,
+          "sha256": "6425045e7a5c5180ba8dce5817c5be45d5f031fc86f72c584ca86e2e70f5557f",
+          "signals": [
+            "auth",
+            "playback",
+            "playlist",
+            "catalogue",
+            "search",
+            "discovery",
+            "rights",
+            "royalty",
+            "payment",
+            "analytics",
+            "security",
+            "media",
+            "notification",
+            "moderation"
+          ]
+        }
+      ]
+    }
+  ],
+  "classifications": {
+    "identical": 71,
+    "canonical_retained": 0,
+    "compatible": 1,
+    "missing_functionality": 0,
+    "parallel_implementation": 74,
+    "external_dependency": 0
+  },
+  "domains": {
+    "web": {
+      "canonical": "apps/web",
+      "files": 258,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "api": {
+      "canonical": "apps/api",
+      "files": 169,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "artist": {
+      "canonical": "apps/artist",
+      "files": 1,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "admin": {
+      "canonical": "apps/admin",
+      "files": 0,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "developer": {
+      "canonical": "apps/developer",
+      "files": 0,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "contracts": {
+      "canonical": "packages/contracts",
+      "files": 1,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "database": {
+      "canonical": "packages/database",
+      "files": 11,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "security": {
+      "canonical": "packages/security",
+      "files": 6,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 9
+    },
+    "ui": {
+      "canonical": "packages/ui",
+      "files": 12,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "catalog": {
+      "canonical": "services/catalog",
+      "files": 16,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 32
+    },
+    "playback": {
+      "canonical": "services/playback",
+      "files": 23,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 35
+    },
+    "search": {
+      "canonical": "services/search",
+      "files": 5,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 23
+    },
+    "discovery": {
+      "canonical": "services/discovery",
+      "files": 3,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 25
+    },
+    "recommendations": {
+      "canonical": "services/recommendations",
+      "files": 4,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "rights": {
+      "canonical": "services/rights",
+      "files": 7,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 13
+    },
+    "royalties": {
+      "canonical": "services/royalties",
+      "files": 2,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 14
+    },
+    "territory": {
+      "canonical": "services/territory",
+      "files": 2,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "knowledge": {
+      "canonical": "services/knowledge",
+      "files": 2,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "trust": {
+      "canonical": "services/trust",
+      "files": 2,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "editorial": {
+      "canonical": "services/editorial",
+      "files": 2,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "analytics": {
+      "canonical": "services/analytics",
+      "files": 2,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 19
+    },
+    "payments": {
+      "canonical": "services/payments",
+      "files": 5,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "media": {
+      "canonical": "services/media",
+      "files": 5,
+      "status": "multi-implementation-boundary",
+      "conflictingInputs": 32
+    },
+    "notifications": {
+      "canonical": "services/notifications",
+      "files": 1,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "infrastructure": {
+      "canonical": "infrastructure",
+      "files": 2,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "android": {
+      "canonical": "mobile/android",
+      "files": 91,
+      "status": "registered",
+      "conflictingInputs": 0
+    },
+    "tests": {
+      "canonical": "tests",
+      "files": 1,
+      "status": "registered",
+      "conflictingInputs": 0
+    }
+  },
+  "adapters": [],
+  "workspaceChanges": [
+    "apps/artist",
+    "services/catalog",
+    "services/playback",
+    "services/search",
+    "services/discovery",
+    "services/recommendations",
+    "services/rights",
+    "services/royalties",
+    "services/territory",
+    "services/knowledge",
+    "services/trust",
+    "services/editorial",
+    "services/analytics",
+    "services/payments",
+    "services/media",
+    "services/notifications"
+  ],
+  "android": {
+    "files": 91,
+    "gradle": 9,
+    "manifest": true,
+    "status": "BUILDABLE_CANDIDATE"
+  },
+  "status": "RECONCILIATION_REGISTERED"
+}

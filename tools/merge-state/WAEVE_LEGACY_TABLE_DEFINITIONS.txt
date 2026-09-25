@@ -1,0 +1,725 @@
+
+===== 001_init.sql :: users =====
+CREATE TABLE IF NOT EXISTS users(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),email text UNIQUE NOT NULL,password_hash text,display_name text NOT NULL,role text NOT NULL DEFAULT 'listener',country_code char(2),created_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: artists =====
+CREATE TABLE IF NOT EXISTS artists(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),name text NOT NULL,bio text,verified boolean NOT NULL DEFAULT false,created_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: albums =====
+CREATE TABLE IF NOT EXISTS albums(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,title text NOT NULL,artwork_url text,release_date date,kind text NOT NULL DEFAULT 'album');
+
+===== 001_init.sql :: tracks =====
+CREATE TABLE IF NOT EXISTS tracks(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),album_id uuid REFERENCES albums(id) ON DELETE SET NULL,artist_id uuid REFERENCES artists(id) ON DELETE SET NULL,title text NOT NULL,duration_ms int NOT NULL DEFAULT 0,isrc text UNIQUE,audio_key text,explicit boolean NOT NULL DEFAULT false,lossless boolean NOT NULL DEFAULT false,hires boolean NOT NULL DEFAULT false,atmos boolean NOT NULL DEFAULT false,territories text[] NOT NULL DEFAULT '{}',created_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: playlists =====
+CREATE TABLE IF NOT EXISTS playlists(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),owner_id uuid REFERENCES users(id) ON DELETE CASCADE,title text NOT NULL,description text,is_public boolean NOT NULL DEFAULT false,collaborative boolean NOT NULL DEFAULT false,cover_url text,created_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: playlist_tracks =====
+CREATE TABLE IF NOT EXISTS playlist_tracks(playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE,track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,position int NOT NULL,added_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(playlist_id,track_id));
+
+===== 001_init.sql :: likes =====
+CREATE TABLE IF NOT EXISTS likes(user_id uuid REFERENCES users(id) ON DELETE CASCADE,track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(user_id,track_id));
+
+===== 001_init.sql :: follows =====
+CREATE TABLE IF NOT EXISTS follows(user_id uuid REFERENCES users(id) ON DELETE CASCADE,artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(user_id,artist_id));
+
+===== 001_init.sql :: listening_events =====
+CREATE TABLE IF NOT EXISTS listening_events(id bigserial PRIMARY KEY,user_id uuid REFERENCES users(id) ON DELETE SET NULL,track_id uuid REFERENCES tracks(id) ON DELETE SET NULL,event_type text NOT NULL,position_ms int DEFAULT 0,session_id uuid,device_id text,country_code char(2),occurred_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: subscriptions =====
+CREATE TABLE IF NOT EXISTS subscriptions(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),user_id uuid REFERENCES users(id) ON DELETE CASCADE,provider text NOT NULL,status text NOT NULL,plan text NOT NULL,provider_ref text UNIQUE,current_period_end timestamptz,created_at timestamptz NOT NULL DEFAULT now());
+
+===== 001_init.sql :: rights =====
+CREATE TABLE IF NOT EXISTS rights(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,territory char(2) NOT NULL,start_at timestamptz,end_at timestamptz,master_ok boolean NOT NULL DEFAULT false,publishing_ok boolean NOT NULL DEFAULT false,UNIQUE(track_id,territory));
+
+===== 001_init.sql :: royalty_ledger =====
+CREATE TABLE IF NOT EXISTS royalty_ledger(id bigserial PRIMARY KEY,track_id uuid REFERENCES tracks(id),artist_id uuid REFERENCES artists(id),user_id uuid REFERENCES users(id),period date NOT NULL,units numeric(18,6) NOT NULL DEFAULT 0,revenue numeric(18,6) NOT NULL DEFAULT 0,currency char(3) NOT NULL DEFAULT 'USD');
+
+===== 002_global_launch.sql :: devices =====
+CREATE TABLE IF NOT EXISTS devices(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),user_id uuid REFERENCES users(id) ON DELETE CASCADE,device_key text NOT NULL,platform text,app_version text,last_seen_at timestamptz NOT NULL DEFAULT now(),UNIQUE(user_id,device_key));
+
+===== 002_global_launch.sql :: refresh_tokens =====
+CREATE TABLE IF NOT EXISTS refresh_tokens(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),user_id uuid REFERENCES users(id) ON DELETE CASCADE,token_hash text UNIQUE NOT NULL,expires_at timestamptz NOT NULL,revoked_at timestamptz,created_at timestamptz NOT NULL DEFAULT now());
+
+===== 002_global_launch.sql :: artist_profiles =====
+CREATE TABLE IF NOT EXISTS artist_profiles(artist_id uuid PRIMARY KEY REFERENCES artists(id) ON DELETE CASCADE,avatar_url text,header_url text,links jsonb NOT NULL DEFAULT '{}'::jsonb,genres text[] NOT NULL DEFAULT '{}',country_code char(2),updated_at timestamptz NOT NULL DEFAULT now());
+
+===== 002_global_launch.sql :: releases =====
+CREATE TABLE IF NOT EXISTS releases(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,title text NOT NULL,upc text UNIQUE,kind text NOT NULL,release_date date,status text NOT NULL DEFAULT 'draft',artwork_key text,notes text,created_at timestamptz NOT NULL DEFAULT now());
+
+===== 002_global_launch.sql :: release_tracks =====
+CREATE TABLE IF NOT EXISTS release_tracks(release_id uuid REFERENCES releases(id) ON DELETE CASCADE,track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,disc_no int NOT NULL DEFAULT 1,track_no int NOT NULL,PRIMARY KEY(release_id,track_id));
+
+===== 002_global_launch.sql :: credits =====
+CREATE TABLE IF NOT EXISTS credits(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,name text NOT NULL,role text NOT NULL,ipi text,pro text);
+
+===== 002_global_launch.sql :: rights_history =====
+CREATE TABLE IF NOT EXISTS rights_history(id bigserial PRIMARY KEY,rights_id uuid,track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,territory char(2) NOT NULL,action text NOT NULL,payload jsonb NOT NULL DEFAULT '{}',created_at timestamptz NOT NULL DEFAULT now());
+
+===== 002_global_launch.sql :: takedown_requests =====
+CREATE TABLE IF NOT EXISTS takedown_requests(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,reporter text,reason text NOT NULL,status text NOT NULL DEFAULT 'open',created_at timestamptz NOT NULL DEFAULT now(),resolved_at timestamptz);
+
+===== 002_global_launch.sql :: notification_preferences =====
+CREATE TABLE IF NOT EXISTS notification_preferences(user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,email boolean NOT NULL DEFAULT true,push boolean NOT NULL DEFAULT true,new_releases boolean NOT NULL DEFAULT true,recommendations boolean NOT NULL DEFAULT true);
+
+===== 002_global_launch.sql :: listening_sessions =====
+CREATE TABLE IF NOT EXISTS listening_sessions(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),user_id uuid REFERENCES users(id) ON DELETE SET NULL,device_id text,country_code char(2),started_at timestamptz NOT NULL DEFAULT now(),ended_at timestamptz);
+
+===== 002_global_launch.sql :: catalog_ingest_jobs =====
+CREATE TABLE IF NOT EXISTS catalog_ingest_jobs(id uuid PRIMARY KEY DEFAULT gen_random_uuid(),provider text NOT NULL,status text NOT NULL DEFAULT 'queued',source_ref text,records_total int DEFAULT 0,records_ok int DEFAULT 0,records_failed int DEFAULT 0,error_log jsonb NOT NULL DEFAULT '[]',created_at timestamptz NOT NULL DEFAULT now(),completed_at timestamptz);
+
+===== 003_global_features.sql :: user_profiles =====
+CREATE TABLE IF NOT EXISTS user_profiles(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  avatar_url text, bio text, language_code text NOT NULL DEFAULT 'en',
+  timezone text NOT NULL DEFAULT 'UTC', explicit_allowed boolean NOT NULL DEFAULT true,
+  discovery_mode text NOT NULL DEFAULT 'balanced', updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: device_tokens =====
+CREATE TABLE IF NOT EXISTS device_tokens(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  platform text NOT NULL, device_id text NOT NULL, push_token text, app_version text,
+  last_seen_at timestamptz NOT NULL DEFAULT now(), UNIQUE(user_id,device_id)
+);
+
+===== 003_global_features.sql :: playlist_collaborators =====
+CREATE TABLE IF NOT EXISTS playlist_collaborators(
+  playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  role text NOT NULL DEFAULT 'editor', created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY(playlist_id,user_id)
+);
+
+===== 003_global_features.sql :: playlist_shares =====
+CREATE TABLE IF NOT EXISTS playlist_shares(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES users(id) ON DELETE SET NULL, token_hash text UNIQUE NOT NULL,
+  expires_at timestamptz, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: listening_history =====
+CREATE TABLE IF NOT EXISTS listening_history(
+  id bigserial PRIMARY KEY, user_id uuid REFERENCES users(id) ON DELETE CASCADE, track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  session_id uuid, played_at timestamptz NOT NULL DEFAULT now(), duration_ms int NOT NULL DEFAULT 0, completion_ratio numeric(5,4) NOT NULL DEFAULT 0
+);
+
+===== 003_global_features.sql :: smart_downloads =====
+CREATE TABLE IF NOT EXISTS smart_downloads(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE, enabled boolean NOT NULL DEFAULT false,
+  max_tracks int NOT NULL DEFAULT 50, quality text NOT NULL DEFAULT 'high', updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: download_entitlements =====
+CREATE TABLE IF NOT EXISTS download_entitlements(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  track_id uuid REFERENCES tracks(id) ON DELETE CASCADE, quality text NOT NULL DEFAULT 'high',
+  expires_at timestamptz NOT NULL, status text NOT NULL DEFAULT 'active', created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(user_id,track_id,quality)
+);
+
+===== 003_global_features.sql :: track_lyrics =====
+CREATE TABLE IF NOT EXISTS track_lyrics(
+  track_id uuid PRIMARY KEY REFERENCES tracks(id) ON DELETE CASCADE, plain_text text,
+  synced_json jsonb NOT NULL DEFAULT '[]'::jsonb, translations jsonb NOT NULL DEFAULT '{}'::jsonb,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: editorial_items =====
+CREATE TABLE IF NOT EXISTS editorial_items(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), kind text NOT NULL, title text NOT NULL,
+  slug text UNIQUE NOT NULL, excerpt text, body text, hero_image_url text, published_at timestamptz,
+  author_name text, region_code char(2), status text NOT NULL DEFAULT 'draft', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: editorial_track_links =====
+CREATE TABLE IF NOT EXISTS editorial_track_links(
+  editorial_id uuid REFERENCES editorial_items(id) ON DELETE CASCADE, track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  PRIMARY KEY(editorial_id,track_id)
+);
+
+===== 003_global_features.sql :: charts =====
+CREATE TABLE IF NOT EXISTS charts(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), chart_type text NOT NULL, region_code char(2), period_start date NOT NULL,
+  title text NOT NULL, created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(chart_type,region_code,period_start)
+);
+
+===== 003_global_features.sql :: chart_entries =====
+CREATE TABLE IF NOT EXISTS chart_entries(
+  chart_id uuid REFERENCES charts(id) ON DELETE CASCADE, track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  rank int NOT NULL, score numeric(18,6) NOT NULL DEFAULT 0, previous_rank int,
+  PRIMARY KEY(chart_id,track_id)
+);
+
+===== 003_global_features.sql :: release_submissions =====
+CREATE TABLE IF NOT EXISTS release_submissions(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  release_id uuid REFERENCES releases(id) ON DELETE CASCADE, status text NOT NULL DEFAULT 'submitted',
+  reviewer_notes text, submitted_at timestamptz NOT NULL DEFAULT now(), reviewed_at timestamptz
+);
+
+===== 003_global_features.sql :: royalty_splits =====
+CREATE TABLE IF NOT EXISTS royalty_splits(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), release_id uuid REFERENCES releases(id) ON DELETE CASCADE,
+  payee_name text NOT NULL, payee_email text, percentage numeric(7,4) NOT NULL CHECK(percentage >= 0 AND percentage <= 100),
+  role text, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: audit_log =====
+CREATE TABLE IF NOT EXISTS audit_log(
+  id bigserial PRIMARY KEY, actor_user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  action text NOT NULL, entity_type text, entity_id text, ip inet, user_agent text, payload jsonb NOT NULL DEFAULT '{}'::jsonb,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 003_global_features.sql :: feature_flags =====
+CREATE TABLE IF NOT EXISTS feature_flags(
+  key text PRIMARY KEY, enabled boolean NOT NULL DEFAULT false, rollout_percent int NOT NULL DEFAULT 0,
+  config jsonb NOT NULL DEFAULT '{}'::jsonb, updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: user_devices =====
+CREATE TABLE IF NOT EXISTS user_devices(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  device_id text NOT NULL, platform text NOT NULL, model text, os_version text, app_version text,
+  push_token text, last_ip inet, last_seen_at timestamptz NOT NULL DEFAULT now(), created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(user_id,device_id)
+);
+
+===== 004_everything_else.sql :: passkeys =====
+CREATE TABLE IF NOT EXISTS passkeys(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  credential_id text UNIQUE NOT NULL, public_key bytea NOT NULL, sign_count bigint NOT NULL DEFAULT 0,
+  transports text[] NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now(), last_used_at timestamptz
+);
+
+===== 004_everything_else.sql :: auth_identities =====
+CREATE TABLE IF NOT EXISTS auth_identities(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  provider text NOT NULL, subject text NOT NULL, email text, created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(provider,subject)
+);
+
+===== 004_everything_else.sql :: email_verifications =====
+CREATE TABLE IF NOT EXISTS email_verifications(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  token_hash text UNIQUE NOT NULL, expires_at timestamptz NOT NULL, used_at timestamptz
+);
+
+===== 004_everything_else.sql :: password_reset_tokens =====
+CREATE TABLE IF NOT EXISTS password_reset_tokens(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  token_hash text UNIQUE NOT NULL, expires_at timestamptz NOT NULL, used_at timestamptz
+);
+
+===== 004_everything_else.sql :: track_versions =====
+CREATE TABLE IF NOT EXISTS track_versions(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+  version_name text NOT NULL DEFAULT 'original', isrc text, language_code text, mix_name text,
+  explicit boolean NOT NULL DEFAULT false, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: media_assets =====
+CREATE TABLE IF NOT EXISTS media_assets(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  release_id uuid REFERENCES releases(id) ON DELETE CASCADE, kind text NOT NULL,
+  codec text, container text, bitrate_kbps int, sample_rate int, bit_depth int, channels int,
+  object_key text NOT NULL, checksum_sha256 text, duration_ms int, loudness_lufs numeric(7,3), true_peak_db numeric(7,3),
+  encrypted boolean NOT NULL DEFAULT false, drm_scheme text, status text NOT NULL DEFAULT 'ready', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: audio_fingerprints =====
+CREATE TABLE IF NOT EXISTS audio_fingerprints(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
+  algorithm text NOT NULL, fingerprint text NOT NULL, duration_ms int, created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(algorithm,fingerprint)
+);
+
+===== 004_everything_else.sql :: waveform_peaks =====
+CREATE TABLE IF NOT EXISTS waveform_peaks(
+  track_id uuid PRIMARY KEY REFERENCES tracks(id) ON DELETE CASCADE, samples int[] NOT NULL DEFAULT '{}', generated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: genres =====
+CREATE TABLE IF NOT EXISTS genres(id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text UNIQUE NOT NULL, parent_id uuid REFERENCES genres(id), slug text UNIQUE NOT NULL);
+
+===== 004_everything_else.sql :: moods =====
+CREATE TABLE IF NOT EXISTS moods(id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text UNIQUE NOT NULL, slug text UNIQUE NOT NULL);
+
+===== 004_everything_else.sql :: track_genres =====
+CREATE TABLE IF NOT EXISTS track_genres(track_id uuid REFERENCES tracks(id) ON DELETE CASCADE, genre_id uuid REFERENCES genres(id) ON DELETE CASCADE, weight numeric(6,5) DEFAULT 1, PRIMARY KEY(track_id,genre_id));
+
+===== 004_everything_else.sql :: track_moods =====
+CREATE TABLE IF NOT EXISTS track_moods(track_id uuid REFERENCES tracks(id) ON DELETE CASCADE, mood_id uuid REFERENCES moods(id) ON DELETE CASCADE, weight numeric(6,5) DEFAULT 1, PRIMARY KEY(track_id,mood_id));
+
+===== 004_everything_else.sql :: track_tags =====
+CREATE TABLE IF NOT EXISTS track_tags(track_id uuid REFERENCES tracks(id) ON DELETE CASCADE, tag text NOT NULL, PRIMARY KEY(track_id,tag));
+
+===== 004_everything_else.sql :: artist_team_members =====
+CREATE TABLE IF NOT EXISTS artist_team_members(
+  artist_id uuid REFERENCES artists(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  role text NOT NULL DEFAULT 'manager', created_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(artist_id,user_id)
+);
+
+===== 004_everything_else.sql :: artist_verifications =====
+CREATE TABLE IF NOT EXISTS artist_verifications(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  status text NOT NULL DEFAULT 'pending', evidence jsonb NOT NULL DEFAULT '{}', reviewer_id uuid REFERENCES users(id), created_at timestamptz NOT NULL DEFAULT now(), reviewed_at timestamptz
+);
+
+===== 004_everything_else.sql :: artist_posts =====
+CREATE TABLE IF NOT EXISTS artist_posts(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  title text, body text NOT NULL, media jsonb NOT NULL DEFAULT '[]', published_at timestamptz, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: artist_fan_support =====
+CREATE TABLE IF NOT EXISTS artist_fan_support(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES users(id) ON DELETE SET NULL, amount_minor bigint NOT NULL, currency char(3) NOT NULL,
+  provider text, provider_ref text UNIQUE, status text NOT NULL DEFAULT 'pending', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: artist_storefront_items =====
+CREATE TABLE IF NOT EXISTS artist_storefront_items(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  kind text NOT NULL, title text NOT NULL, url text NOT NULL, price_minor bigint, currency char(3), active boolean NOT NULL DEFAULT true
+);
+
+===== 004_everything_else.sql :: listening_rooms =====
+CREATE TABLE IF NOT EXISTS listening_rooms(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), host_user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  name text NOT NULL, privacy text NOT NULL DEFAULT 'invite', status text NOT NULL DEFAULT 'active', current_track_id uuid REFERENCES tracks(id), position_ms int NOT NULL DEFAULT 0,
+  created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: listening_room_members =====
+CREATE TABLE IF NOT EXISTS listening_room_members(
+  room_id uuid REFERENCES listening_rooms(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  role text NOT NULL DEFAULT 'member', joined_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(room_id,user_id)
+);
+
+===== 004_everything_else.sql :: listening_room_events =====
+CREATE TABLE IF NOT EXISTS listening_room_events(
+  id bigserial PRIMARY KEY, room_id uuid REFERENCES listening_rooms(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  event_type text NOT NULL, payload jsonb NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: playlist_comments =====
+CREATE TABLE IF NOT EXISTS playlist_comments(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES users(id) ON DELETE SET NULL, body text NOT NULL, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: content_reactions =====
+CREATE TABLE IF NOT EXISTS content_reactions(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  entity_type text NOT NULL, entity_id uuid NOT NULL, reaction text NOT NULL, created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(user_id,entity_type,entity_id)
+);
+
+===== 004_everything_else.sql :: playback_preferences =====
+CREATE TABLE IF NOT EXISTS playback_preferences(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  audio_quality text NOT NULL DEFAULT 'auto', download_quality text NOT NULL DEFAULT 'high', normalize boolean NOT NULL DEFAULT true,
+  crossfade_ms int NOT NULL DEFAULT 0, gapless boolean NOT NULL DEFAULT true, autoplay boolean NOT NULL DEFAULT true,
+  explicit_content boolean NOT NULL DEFAULT true, video_autoplay boolean NOT NULL DEFAULT true, updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: queue_snapshots =====
+CREATE TABLE IF NOT EXISTS queue_snapshots(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE, items jsonb NOT NULL DEFAULT '[]', current_index int NOT NULL DEFAULT 0,
+  shuffle boolean NOT NULL DEFAULT false, repeat_mode text NOT NULL DEFAULT 'off', updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: playback_transitions =====
+CREATE TABLE IF NOT EXISTS playback_transitions(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), from_track_id uuid REFERENCES tracks(id), to_track_id uuid REFERENCES tracks(id),
+  mode text NOT NULL, confidence numeric(6,5), created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: recommendation_profiles =====
+CREATE TABLE IF NOT EXISTS recommendation_profiles(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE, embedding jsonb, taste jsonb NOT NULL DEFAULT '{}',
+  exploration numeric(5,4) NOT NULL DEFAULT .25, diversity numeric(5,4) NOT NULL DEFAULT .50, freshness numeric(5,4) NOT NULL DEFAULT .50,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: recommendation_impressions =====
+CREATE TABLE IF NOT EXISTS recommendation_impressions(
+  id bigserial PRIMARY KEY, user_id uuid REFERENCES users(id) ON DELETE CASCADE, track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  surface text NOT NULL, position int, reason text, shown_at timestamptz NOT NULL DEFAULT now(), clicked_at timestamptz
+);
+
+===== 004_everything_else.sql :: experiments =====
+CREATE TABLE IF NOT EXISTS experiments(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), key text UNIQUE NOT NULL, description text, status text NOT NULL DEFAULT 'draft', config jsonb NOT NULL DEFAULT '{}'
+);
+
+===== 004_everything_else.sql :: experiment_assignments =====
+CREATE TABLE IF NOT EXISTS experiment_assignments(
+  experiment_id uuid REFERENCES experiments(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  variant text NOT NULL, assigned_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(experiment_id,user_id)
+);
+
+===== 004_everything_else.sql :: search_queries =====
+CREATE TABLE IF NOT EXISTS search_queries(
+  id bigserial PRIMARY KEY, user_id uuid REFERENCES users(id) ON DELETE SET NULL, query text NOT NULL, filters jsonb NOT NULL DEFAULT '{}',
+  result_count int, clicked_entity jsonb, country_code char(2), created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: notifications =====
+CREATE TABLE IF NOT EXISTS notifications(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind text NOT NULL, title text NOT NULL, body text, payload jsonb NOT NULL DEFAULT '{}', read_at timestamptz, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: content_reports =====
+CREATE TABLE IF NOT EXISTS content_reports(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), reporter_user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  entity_type text NOT NULL, entity_id uuid NOT NULL, reason text NOT NULL, details text, status text NOT NULL DEFAULT 'open',
+  moderator_id uuid REFERENCES users(id), created_at timestamptz NOT NULL DEFAULT now(), resolved_at timestamptz
+);
+
+===== 004_everything_else.sql :: moderation_actions =====
+CREATE TABLE IF NOT EXISTS moderation_actions(
+  id bigserial PRIMARY KEY, moderator_id uuid REFERENCES users(id) ON DELETE SET NULL, entity_type text NOT NULL, entity_id uuid NOT NULL,
+  action text NOT NULL, reason text, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: fraud_signals =====
+CREATE TABLE IF NOT EXISTS fraud_signals(
+  id bigserial PRIMARY KEY, user_id uuid REFERENCES users(id) ON DELETE SET NULL, device_id text, signal_type text NOT NULL,
+  score numeric(7,4), payload jsonb NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: subscription_plans =====
+CREATE TABLE IF NOT EXISTS subscription_plans(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), key text UNIQUE NOT NULL, name text NOT NULL, tier text NOT NULL,
+  billing_period text NOT NULL, currency char(3) NOT NULL, price_minor bigint NOT NULL, region_code char(2) NOT NULL DEFAULT 'WW',
+  features jsonb NOT NULL DEFAULT '{}', active boolean NOT NULL DEFAULT true
+);
+
+===== 004_everything_else.sql :: subscription_offers =====
+CREATE TABLE IF NOT EXISTS subscription_offers(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), plan_id uuid REFERENCES subscription_plans(id) ON DELETE CASCADE,
+  code text UNIQUE, trial_days int DEFAULT 0, discount_percent numeric(5,2), starts_at timestamptz, ends_at timestamptz, active boolean NOT NULL DEFAULT true
+);
+
+===== 004_everything_else.sql :: billing_events =====
+CREATE TABLE IF NOT EXISTS billing_events(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), provider text NOT NULL, event_id text UNIQUE NOT NULL, event_type text NOT NULL,
+  payload jsonb NOT NULL, received_at timestamptz NOT NULL DEFAULT now(), processed_at timestamptz
+);
+
+===== 004_everything_else.sql :: payment_methods =====
+CREATE TABLE IF NOT EXISTS payment_methods(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE, provider text NOT NULL,
+  provider_ref text NOT NULL, brand text, last4 text, exp_month int, exp_year int, active boolean NOT NULL DEFAULT true
+);
+
+===== 004_everything_else.sql :: royalty_rates =====
+CREATE TABLE IF NOT EXISTS royalty_rates(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), territory char(2) NOT NULL, plan_tier text NOT NULL, currency char(3) NOT NULL,
+  rate_per_unit numeric(18,9) NOT NULL, effective_from date NOT NULL, effective_to date
+);
+
+===== 004_everything_else.sql :: royalty_statements =====
+CREATE TABLE IF NOT EXISTS royalty_statements(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  period_start date NOT NULL, period_end date NOT NULL, currency char(3) NOT NULL, gross numeric(18,6) NOT NULL DEFAULT 0,
+  deductions numeric(18,6) NOT NULL DEFAULT 0, net numeric(18,6) NOT NULL DEFAULT 0, status text NOT NULL DEFAULT 'draft', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: royalty_payouts =====
+CREATE TABLE IF NOT EXISTS royalty_payouts(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  statement_id uuid REFERENCES royalty_statements(id), provider text, provider_ref text UNIQUE, amount numeric(18,6), currency char(3),
+  status text NOT NULL DEFAULT 'pending', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: podcasts =====
+CREATE TABLE IF NOT EXISTS podcasts(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), title text NOT NULL, description text, artwork_url text, language_code text,
+  explicit boolean NOT NULL DEFAULT false, publisher text, rss_url text, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: podcast_episodes =====
+CREATE TABLE IF NOT EXISTS podcast_episodes(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), podcast_id uuid REFERENCES podcasts(id) ON DELETE CASCADE, title text NOT NULL,
+  description text, published_at timestamptz, duration_ms int, audio_key text, explicit boolean NOT NULL DEFAULT false
+);
+
+===== 004_everything_else.sql :: podcast_progress =====
+CREATE TABLE IF NOT EXISTS podcast_progress(
+  user_id uuid REFERENCES users(id) ON DELETE CASCADE, episode_id uuid REFERENCES podcast_episodes(id) ON DELETE CASCADE,
+  position_ms int NOT NULL DEFAULT 0, completed boolean NOT NULL DEFAULT false, updated_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(user_id,episode_id)
+);
+
+===== 004_everything_else.sql :: music_videos =====
+CREATE TABLE IF NOT EXISTS music_videos(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid REFERENCES tracks(id) ON DELETE CASCADE, title text NOT NULL,
+  video_key text, thumbnail_key text, duration_ms int, explicit boolean NOT NULL DEFAULT false, status text NOT NULL DEFAULT 'ready'
+);
+
+===== 004_everything_else.sql :: live_events =====
+CREATE TABLE IF NOT EXISTS live_events(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE, title text NOT NULL,
+  starts_at timestamptz NOT NULL, ends_at timestamptz, stream_url text, ticket_url text, status text NOT NULL DEFAULT 'scheduled'
+);
+
+===== 004_everything_else.sql :: artist_events =====
+CREATE TABLE IF NOT EXISTS artist_events(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE, city text, country_code char(2),
+  venue text, starts_at timestamptz, ticket_url text, status text NOT NULL DEFAULT 'published'
+);
+
+===== 004_everything_else.sql :: merch_links =====
+CREATE TABLE IF NOT EXISTS merch_links(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE, title text NOT NULL,
+  url text NOT NULL, currency char(3), price_minor bigint, image_url text, active boolean NOT NULL DEFAULT true
+);
+
+===== 004_everything_else.sql :: playlist_folders =====
+CREATE TABLE IF NOT EXISTS playlist_folders(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE, name text NOT NULL, parent_id uuid REFERENCES playlist_folders(id) ON DELETE CASCADE
+);
+
+===== 004_everything_else.sql :: playlist_folder_items =====
+CREATE TABLE IF NOT EXISTS playlist_folder_items(
+  folder_id uuid REFERENCES playlist_folders(id) ON DELETE CASCADE, playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE, PRIMARY KEY(folder_id,playlist_id)
+);
+
+===== 004_everything_else.sql :: playlist_versions =====
+CREATE TABLE IF NOT EXISTS playlist_versions(
+  id bigserial PRIMARY KEY, playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE, snapshot jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: data_export_jobs =====
+CREATE TABLE IF NOT EXISTS data_export_jobs(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE, status text NOT NULL DEFAULT 'queued',
+  object_key text, expires_at timestamptz, created_at timestamptz NOT NULL DEFAULT now(), completed_at timestamptz
+);
+
+===== 004_everything_else.sql :: deletion_requests =====
+CREATE TABLE IF NOT EXISTS deletion_requests(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE, status text NOT NULL DEFAULT 'requested',
+  requested_at timestamptz NOT NULL DEFAULT now(), scheduled_for timestamptz, completed_at timestamptz
+);
+
+===== 004_everything_else.sql :: consent_records =====
+CREATE TABLE IF NOT EXISTS consent_records(
+  id bigserial PRIMARY KEY, user_id uuid REFERENCES users(id) ON DELETE CASCADE, policy_version text NOT NULL,
+  consent_type text NOT NULL, granted boolean NOT NULL, ip inet, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 004_everything_else.sql :: localization_strings =====
+CREATE TABLE IF NOT EXISTS localization_strings(
+  key text NOT NULL, language_code text NOT NULL, value text NOT NULL, PRIMARY KEY(key,language_code)
+);
+
+===== 004_everything_else.sql :: regional_configs =====
+CREATE TABLE IF NOT EXISTS regional_configs(
+  country_code char(2) PRIMARY KEY, currency char(3) NOT NULL, language_code text NOT NULL, timezone text NOT NULL,
+  age_floor int NOT NULL DEFAULT 13, features jsonb NOT NULL DEFAULT '{}'
+);
+
+===== 004_everything_else.sql :: ad_slots =====
+CREATE TABLE IF NOT EXISTS ad_slots(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), placement text NOT NULL, region_code char(2) NOT NULL DEFAULT 'WW',
+  campaign_id uuid, active boolean NOT NULL DEFAULT false, config jsonb NOT NULL DEFAULT '{}'
+);
+
+===== 004_everything_else.sql :: campaigns =====
+CREATE TABLE IF NOT EXISTS campaigns(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text NOT NULL, advertiser text, starts_at timestamptz, ends_at timestamptz,
+  budget_minor bigint, currency char(3), status text NOT NULL DEFAULT 'draft', targeting jsonb NOT NULL DEFAULT '{}'
+);
+
+===== 004_everything_else.sql :: sponsored_playlists =====
+CREATE TABLE IF NOT EXISTS sponsored_playlists(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), playlist_id uuid REFERENCES playlists(id) ON DELETE CASCADE,
+  campaign_id uuid REFERENCES campaigns(id) ON DELETE CASCADE, disclosure text NOT NULL, starts_at timestamptz, ends_at timestamptz
+);
+
+===== 005_category_complete.sql :: radio_stations =====
+CREATE TABLE IF NOT EXISTS radio_stations(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text NOT NULL, station_type text NOT NULL,
+  seed_track_id uuid REFERENCES tracks(id), seed_artist_id uuid REFERENCES artists(id), genre_id uuid REFERENCES genres(id),
+  region_code char(2) DEFAULT 'WW', config jsonb NOT NULL DEFAULT '{}', active boolean NOT NULL DEFAULT true
+);
+
+===== 005_category_complete.sql :: mixes =====
+CREATE TABLE IF NOT EXISTS mixes(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  kind text NOT NULL, title text NOT NULL, description text, generated_at timestamptz NOT NULL DEFAULT now(), expires_at timestamptz
+);
+
+===== 005_category_complete.sql :: mix_tracks =====
+CREATE TABLE IF NOT EXISTS mix_tracks(
+  mix_id uuid REFERENCES mixes(id) ON DELETE CASCADE, track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  position int NOT NULL, reason text, PRIMARY KEY(mix_id,track_id)
+);
+
+===== 005_category_complete.sql :: local_files =====
+CREATE TABLE IF NOT EXISTS local_files(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  device_id text NOT NULL, local_uri text NOT NULL, title text, artist text, album text, duration_ms int,
+  fingerprint text, added_at timestamptz NOT NULL DEFAULT now(), UNIQUE(user_id,device_id,local_uri)
+);
+
+===== 005_category_complete.sql :: playlist_import_jobs =====
+CREATE TABLE IF NOT EXISTS playlist_import_jobs(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  source text NOT NULL, source_ref text, status text NOT NULL DEFAULT 'queued', total int DEFAULT 0, matched int DEFAULT 0, unmatched int DEFAULT 0,
+  report jsonb NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now(), completed_at timestamptz
+);
+
+===== 005_category_complete.sql :: family_groups =====
+CREATE TABLE IF NOT EXISTS family_groups(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), owner_user_id uuid UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+  name text NOT NULL DEFAULT 'Waeve Family', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: family_members =====
+CREATE TABLE IF NOT EXISTS family_members(
+  family_id uuid REFERENCES family_groups(id) ON DELETE CASCADE, user_id uuid UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+  role text NOT NULL DEFAULT 'member', joined_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(family_id,user_id)
+);
+
+===== 005_category_complete.sql :: parental_controls =====
+CREATE TABLE IF NOT EXISTS parental_controls(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE, pin_hash text, restricted_mode boolean NOT NULL DEFAULT false,
+  max_rating text, allow_social boolean NOT NULL DEFAULT true, allow_explicit boolean NOT NULL DEFAULT false, updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: accessibility_preferences =====
+CREATE TABLE IF NOT EXISTS accessibility_preferences(
+  user_id uuid PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE, reduce_motion boolean NOT NULL DEFAULT false,
+  high_contrast boolean NOT NULL DEFAULT false, larger_text boolean NOT NULL DEFAULT false, screen_reader_labels boolean NOT NULL DEFAULT true,
+  captions boolean NOT NULL DEFAULT true, haptic_feedback boolean NOT NULL DEFAULT true, updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: connected_devices =====
+CREATE TABLE IF NOT EXISTS connected_devices(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  kind text NOT NULL, name text NOT NULL, platform text, capabilities jsonb NOT NULL DEFAULT '{}', last_seen_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(user_id,kind,name)
+);
+
+===== 005_category_complete.sql :: device_handoffs =====
+CREATE TABLE IF NOT EXISTS device_handoffs(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  from_device text, to_device text, track_id uuid REFERENCES tracks(id), position_ms int DEFAULT 0,
+  status text NOT NULL DEFAULT 'requested', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: music_recognition_queries =====
+CREATE TABLE IF NOT EXISTS music_recognition_queries(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  device_id text, fingerprint text, matched_track_id uuid REFERENCES tracks(id), confidence numeric(7,5), provider text,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: lyric_corrections =====
+CREATE TABLE IF NOT EXISTS lyric_corrections(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES users(id) ON DELETE SET NULL, locale text NOT NULL, proposed_text text NOT NULL,
+  status text NOT NULL DEFAULT 'pending', reviewer_id uuid REFERENCES users(id), created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: lyrics_contributors =====
+CREATE TABLE IF NOT EXISTS lyrics_contributors(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  name text NOT NULL, role text NOT NULL, publisher text, attribution text
+);
+
+===== 005_category_complete.sql :: digital_booklets =====
+CREATE TABLE IF NOT EXISTS digital_booklets(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), album_id uuid REFERENCES albums(id) ON DELETE CASCADE,
+  title text, object_key text NOT NULL, language_code text, version text NOT NULL DEFAULT '1'
+);
+
+===== 005_category_complete.sql :: album_notes =====
+CREATE TABLE IF NOT EXISTS album_notes(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), album_id uuid REFERENCES albums(id) ON DELETE CASCADE,
+  kind text NOT NULL, title text, body text NOT NULL, author_name text, published_at timestamptz
+);
+
+===== 005_category_complete.sql :: editorial_collections =====
+CREATE TABLE IF NOT EXISTS editorial_collections(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), title text NOT NULL, slug text UNIQUE NOT NULL, description text,
+  hero_image_url text, region_code char(2), published_at timestamptz, status text NOT NULL DEFAULT 'draft'
+);
+
+===== 005_category_complete.sql :: editorial_collection_items =====
+CREATE TABLE IF NOT EXISTS editorial_collection_items(
+  collection_id uuid REFERENCES editorial_collections(id) ON DELETE CASCADE, editorial_id uuid REFERENCES editorial_items(id) ON DELETE CASCADE,
+  position int NOT NULL, PRIMARY KEY(collection_id,editorial_id)
+);
+
+===== 005_category_complete.sql :: fan_communities =====
+CREATE TABLE IF NOT EXISTS fan_communities(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), artist_id uuid REFERENCES artists(id) ON DELETE CASCADE,
+  name text NOT NULL, description text, privacy text NOT NULL DEFAULT 'public', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: fan_community_members =====
+CREATE TABLE IF NOT EXISTS fan_community_members(
+  community_id uuid REFERENCES fan_communities(id) ON DELETE CASCADE, user_id uuid REFERENCES users(id) ON DELETE CASCADE,
+  role text NOT NULL DEFAULT 'member', joined_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(community_id,user_id)
+);
+
+===== 005_category_complete.sql :: community_posts =====
+CREATE TABLE IF NOT EXISTS community_posts(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), community_id uuid REFERENCES fan_communities(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES users(id) ON DELETE SET NULL, body text NOT NULL, media jsonb NOT NULL DEFAULT '[]', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: share_links =====
+CREATE TABLE IF NOT EXISTS share_links(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  entity_type text NOT NULL, entity_id uuid NOT NULL, token_hash text UNIQUE NOT NULL, expires_at timestamptz, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: short_clips =====
+CREATE TABLE IF NOT EXISTS short_clips(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), track_id uuid REFERENCES tracks(id) ON DELETE CASCADE,
+  start_ms int NOT NULL DEFAULT 0, end_ms int NOT NULL, caption text, status text NOT NULL DEFAULT 'ready'
+);
+
+===== 005_category_complete.sql :: ugc_claims =====
+CREATE TABLE IF NOT EXISTS ugc_claims(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), claimant text NOT NULL, track_id uuid REFERENCES tracks(id),
+  external_ref text, claim_type text NOT NULL, status text NOT NULL DEFAULT 'open', evidence jsonb NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: catalog_quality_issues =====
+CREATE TABLE IF NOT EXISTS catalog_quality_issues(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), entity_type text NOT NULL, entity_id uuid NOT NULL,
+  issue_type text NOT NULL, severity text NOT NULL DEFAULT 'medium', details text, status text NOT NULL DEFAULT 'open', created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: support_tickets =====
+CREATE TABLE IF NOT EXISTS support_tickets(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  category text NOT NULL, subject text NOT NULL, body text NOT NULL, status text NOT NULL DEFAULT 'open', priority text NOT NULL DEFAULT 'normal',
+  assigned_to uuid REFERENCES users(id), created_at timestamptz NOT NULL DEFAULT now(), resolved_at timestamptz
+);
+
+===== 005_category_complete.sql :: support_messages =====
+CREATE TABLE IF NOT EXISTS support_messages(
+  id bigserial PRIMARY KEY, ticket_id uuid REFERENCES support_tickets(id) ON DELETE CASCADE, sender_user_id uuid REFERENCES users(id) ON DELETE SET NULL,
+  body text NOT NULL, created_at timestamptz NOT NULL DEFAULT now()
+);
+
+===== 005_category_complete.sql :: incident_announcements =====
+CREATE TABLE IF NOT EXISTS incident_announcements(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), title text NOT NULL, body text NOT NULL, severity text NOT NULL,
+  starts_at timestamptz NOT NULL DEFAULT now(), ends_at timestamptz, active boolean NOT NULL DEFAULT true
+);
+
+===== 005_category_complete.sql :: service_metrics_daily =====
+CREATE TABLE IF NOT EXISTS service_metrics_daily(
+  metric_date date NOT NULL, metric_key text NOT NULL, region_code char(2) NOT NULL DEFAULT 'WW', value numeric(20,6) NOT NULL DEFAULT 0,
+  PRIMARY KEY(metric_date,metric_key,region_code)
+);

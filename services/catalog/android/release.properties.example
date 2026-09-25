@@ -1,0 +1,5 @@
+STORE_FILE=/absolute/path/to/waeve-upload-key.jks
+STORE_PASSWORD=replace-me
+KEY_ALIAS=waeve
+KEY_PASSWORD=replace-me
+# Keep real values outside source control. Configure signing in Gradle/Android Studio.

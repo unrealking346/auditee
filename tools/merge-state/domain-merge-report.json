@@ -1,0 +1,2052 @@
+{
+  "generatedAt": "2026-09-18T11:08:43.115Z",
+  "preservedSources": true,
+  "sourceVariants": 18,
+  "totalFiles": 696,
+  "domains": {
+    "web": {
+      "files": 119,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/index.html",
+          "size": 294
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/package.json",
+          "size": 429
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/public/cover.svg",
+          "size": 357
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/App.tsx",
+          "size": 2259
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/components/AuthModal.tsx",
+          "size": 1508
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/components/NowPlaying.tsx",
+          "size": 535
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/components/PlayerBar.tsx",
+          "size": 1349
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/components/SongCard.tsx",
+          "size": 563
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/lib/api.ts",
+          "size": 751
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/lib/player.ts",
+          "size": 1820
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/main.tsx",
+          "size": 190
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/styles/main.css",
+          "size": 4250
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/src/vite-env.d.ts",
+          "size": 38
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/tsconfig.json",
+          "size": 363
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/web/vite.config.ts",
+          "size": 148
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/assets/demo-cover.svg",
+          "size": 240
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/assets/waeve.svg",
+          "size": 212
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/css/components.css",
+          "size": 859
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/css/main.css",
+          "size": 3306
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/css/player.css",
+          "size": 1338
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/index.html",
+          "size": 1131
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/api.js",
+          "size": 648
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/app.js",
+          "size": 7594
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/config.js",
+          "size": 110
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/library-playlist-ui.js",
+          "size": 84
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/music.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/player.js",
+          "size": 1696
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/playlist-management.js",
+          "size": 104
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/playlist-player.js",
+          "size": 53
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/playlist-ui.js",
+          "size": 136
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/playlists.js",
+          "size": 165
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/router.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/storage.js",
+          "size": 197
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/js/utils.js",
+          "size": 130
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/frontend/pages/account-deletion.html",
+          "size": 322
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/assets/demo-cover.svg",
+          "size": 240
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/assets/waeve.svg",
+          "size": 212
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/css/components.css",
+          "size": 859
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/css/main.css",
+          "size": 5653
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/css/player.css",
+          "size": 1338
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/index.html",
+          "size": 375
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/api.js",
+          "size": 648
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/app.js",
+          "size": 13392
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/config.js",
+          "size": 110
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/library-playlist-ui.js",
+          "size": 84
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/music.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/player.js",
+          "size": 1696
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/playlist-management.js",
+          "size": 104
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/playlist-player.js",
+          "size": 53
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/playlist-ui.js",
+          "size": 136
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/playlists.js",
+          "size": 165
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/router.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/storage.js",
+          "size": 197
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/js/utils.js",
+          "size": 130
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/frontend/pages/account-deletion.html",
+          "size": 322
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/assets/demo-cover.svg",
+          "size": 240
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/assets/waeve.svg",
+          "size": 212
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/css/components.css",
+          "size": 859
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/css/main.css",
+          "size": 5653
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/css/player.css",
+          "size": 1338
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/index.html",
+          "size": 375
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/api.js",
+          "size": 648
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/app.js",
+          "size": 13392
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/config.js",
+          "size": 110
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/library-playlist-ui.js",
+          "size": 84
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/music.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/player.js",
+          "size": 1696
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/playlist-management.js",
+          "size": 104
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/playlist-player.js",
+          "size": 53
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/playlist-ui.js",
+          "size": 136
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/playlists.js",
+          "size": 165
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/router.js",
+          "size": 50
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/storage.js",
+          "size": 197
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/js/utils.js",
+          "size": 130
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/frontend/pages/account-deletion.html",
+          "size": 322
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/components/album-card.html",
+          "size": 121
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/components/header.html",
+          "size": 231
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/components/music-player.html",
+          "size": 383
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/components/song-card.html",
+          "size": 811
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/css/components.css",
+          "size": 16648
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/css/main.css",
+          "size": 7872
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/css/player.css",
+          "size": 6402
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/css/playlist-management.css",
+          "size": 5259
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/css/waeve-theme.css",
+          "size": 3872
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/index.html",
+          "size": 2586
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/app.js",
+          "size": 48057
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/config.js",
+          "size": 186
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/library-playlist-ui.js",
+          "size": 53543
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/music.js",
+          "size": 7880
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/player.js",
+          "size": 19605
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/playlist-management.js",
+          "size": 17414
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/playlist-player.js",
+          "size": 12854
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/playlist-ui.js",
+          "size": 12582
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/playlists.js",
+          "size": 14309
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/router.js",
+          "size": 3883
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/storage.js",
+          "size": 1183
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/js/utils.js",
+          "size": 482
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/music/instrumental.mp3",
+          "size": 4240940
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/music/migos.mp3",
+          "size": 4960940
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/music/second-track.mp3",
+          "size": 3496748
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/music/test-track.mp3",
+          "size": 2852396
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/pages/home.html",
+          "size": 369
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/pages/library.html",
+          "size": 3833
+        },
+        {
+          "source": "Waeve",
+          "path": "frontend/pages/search.html",
+          "size": 929
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/css/components.css",
+          "size": 2389
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/css/main.css",
+          "size": 4638
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/css/player.css",
+          "size": 1457
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/css/playlist-management.css",
+          "size": 557
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/index.html",
+          "size": 1727
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/app.js",
+          "size": 16077
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/config.js",
+          "size": 359
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/music.js",
+          "size": 2589
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/player.js",
+          "size": 5386
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/playlists.js",
+          "size": 546
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/router.js",
+          "size": 180
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/storage.js",
+          "size": 776
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/js/utils.js",
+          "size": 1722
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/manifest.webmanifest",
+          "size": 168
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/frontend/sw.js",
+          "size": 654
+        }
+      ]
+    },
+    "api": {
+      "files": 66,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/Dockerfile",
+          "size": 475
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/package.json",
+          "size": 669
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/db.ts",
+          "size": 263
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/middleware/auth.ts",
+          "size": 997
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/migrate.ts",
+          "size": 347
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/artists.ts",
+          "size": 2035
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/auth.ts",
+          "size": 1467
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/index.ts",
+          "size": 395
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/music.ts",
+          "size": 2529
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/playlists.ts",
+          "size": 2344
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/routes/subscriptions.ts",
+          "size": 1224
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/server.ts",
+          "size": 1367
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/src/services/recommendations.ts",
+          "size": 687
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api/tsconfig.json",
+          "size": 174
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/.env.example",
+          "size": 210
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/package.json",
+          "size": 615
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/prisma/schema.prisma",
+          "size": 6479
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/prisma/seed.js",
+          "size": 1821
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/src/auth.js",
+          "size": 1172
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/src/server.js",
+          "size": 8478
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/backend/src/server.test.js",
+          "size": 168
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/.env.example",
+          "size": 210
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/package.json",
+          "size": 615
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/prisma/schema.prisma",
+          "size": 6479
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/prisma/seed.js",
+          "size": 1821
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/src/auth.js",
+          "size": 1172
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/src/server.js",
+          "size": 8478
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/backend/src/server.test.js",
+          "size": 168
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/.env.example",
+          "size": 210
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/package.json",
+          "size": 1059
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/prisma/schema.prisma",
+          "size": 11971
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/prisma/seed.js",
+          "size": 2790
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/auth.js",
+          "size": 1172
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/routes/platform.js",
+          "size": 3848
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/server.js",
+          "size": 10514
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/server.test.js",
+          "size": 168
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/ai.js",
+          "size": 568
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/analytics.js",
+          "size": 881
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/discovery.js",
+          "size": 1920
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/editorial.js",
+          "size": 987
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/knowledge.js",
+          "size": 992
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/rights.js",
+          "size": 957
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/royalty.js",
+          "size": 1274
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/territory.js",
+          "size": 980
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/backend/src/services/trust.js",
+          "size": 1178
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/Dockerfile",
+          "size": 201
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/migrations/001_init.sql",
+          "size": 3731
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/migrations/002_global_launch.sql",
+          "size": 3412
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/migrations/003_global_features.sql",
+          "size": 5527
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/migrations/004_everything_else.sql",
+          "size": 20466
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/migrations/005_category_complete.sql",
+          "size": 9597
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/package.json",
+          "size": 825
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/app.js",
+          "size": 24887
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/billing.js",
+          "size": 555
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/db.js",
+          "size": 272
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/everything.js",
+          "size": 27407
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/index.js",
+          "size": 236
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/migrate.js",
+          "size": 748
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/recommendations.js",
+          "size": 396
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/rights.js",
+          "size": 355
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/seed.js",
+          "size": 1791
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/server/src/storage.js",
+          "size": 866
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/backend/.env.example",
+          "size": 109
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/backend/package.json",
+          "size": 357
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/backend/src/server.js",
+          "size": 5699
+        },
+        {
+          "source": "Waeve_Production_2.0.0",
+          "path": "backend/server.js",
+          "size": 4042
+        }
+      ]
+    },
+    "database": {
+      "files": 1,
+      "variants": [
+        "WAEVE-Android-production-project"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/infra/schema.sql",
+          "size": 6375
+        }
+      ]
+    },
+    "services": {
+      "files": 7,
+      "variants": [
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+          "size": 365
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+          "size": 572
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+          "size": 365
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+          "size": 1106
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+          "size": 365
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+          "size": 1106
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/apps/waeve_app/lib/features/discovery/discovery_screen.dart",
+          "size": 265
+        }
+      ]
+    },
+    "android": {
+      "files": 162,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/README-ANDROID.md",
+          "size": 1151
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/build.gradle.kts",
+          "size": 2248
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/proguard-rules.pro",
+          "size": 157
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/AndroidManifest.xml",
+          "size": 1358
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/MainActivity.kt",
+          "size": 772
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/WaeveApplication.kt",
+          "size": 301
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/data/WaeveApi.kt",
+          "size": 6233
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/data/WaeveSession.kt",
+          "size": 1575
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/model/Models.kt",
+          "size": 742
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/player/WaevePlaybackService.kt",
+          "size": 1529
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/player/WaevePlayer.kt",
+          "size": 1734
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/ui/App.kt",
+          "size": 11276
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/ui/theme/Theme.kt",
+          "size": 718
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/res/drawable/ic_waeve.xml",
+          "size": 378
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/app/src/main/res/values/styles.xml",
+          "size": 421
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/build.gradle.kts",
+          "size": 215
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/gradle.properties",
+          "size": 133
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/mobile/android/settings.gradle.kts",
+          "size": 281
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/build.gradle.kts",
+          "size": 1302
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/AndroidManifest.xml",
+          "size": 1220
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo-cover.svg",
+          "size": 484
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+          "size": 51313
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/app/src/main/res/values/styles.xml",
+          "size": 411
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/build.gradle.kts",
+          "size": 133
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/mobile/android/settings.gradle.kts",
+          "size": 246
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/build.gradle.kts",
+          "size": 1302
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/AndroidManifest.xml",
+          "size": 1220
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_1.png",
+          "size": 5049
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_2.png",
+          "size": 5019
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_3.png",
+          "size": 5042
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_4.png",
+          "size": 5039
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_1.png",
+          "size": 77105
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_2.png",
+          "size": 67266
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_3.png",
+          "size": 75165
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_4.png",
+          "size": 67676
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_5.png",
+          "size": 71471
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_6.png",
+          "size": 60093
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo-cover.svg",
+          "size": 484
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo1.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo2.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo3.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo4.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo5.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+          "size": 56112
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/app/src/main/res/values/styles.xml",
+          "size": 411
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/build.gradle.kts",
+          "size": 133
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/mobile/android/settings.gradle.kts",
+          "size": 246
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/build.gradle.kts",
+          "size": 1302
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/AndroidManifest.xml",
+          "size": 1220
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_1.png",
+          "size": 5049
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_2.png",
+          "size": 5019
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_3.png",
+          "size": 5042
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/artist_4.png",
+          "size": 5039
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_1.png",
+          "size": 77105
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_2.png",
+          "size": 67266
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_3.png",
+          "size": 75165
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_4.png",
+          "size": 67676
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_5.png",
+          "size": 71471
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/cover_6.png",
+          "size": 60093
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo-cover.svg",
+          "size": 484
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo1.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo2.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo3.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo4.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/assets/demo5.wav",
+          "size": 882044
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+          "size": 67028
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/app/src/main/res/values/styles.xml",
+          "size": 411
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/build.gradle.kts",
+          "size": 133
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/mobile/android/settings.gradle.kts",
+          "size": 246
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/README.md",
+          "size": 887
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/build.gradle.kts",
+          "size": 612
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/AndroidManifest.xml",
+          "size": 592
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-echo.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-kairo.svg",
+          "size": 881
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-luma.svg",
+          "size": 872
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-nova.svg",
+          "size": 872
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-waeve.svg",
+          "size": 876
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-after-rain.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-blue-horizon.svg",
+          "size": 876
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-city-pulse.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-glass-skyline.svg",
+          "size": 877
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-midnight-current.svg",
+          "size": 880
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-neon-hearts.svg",
+          "size": 875
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-slow-motion.svg",
+          "size": 875
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-waeve-sessions.svg",
+          "size": 878
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/default-cover.svg",
+          "size": 441
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-energy.svg",
+          "size": 878
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-focus.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-night.svg",
+          "size": 875
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-reset.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-slow.svg",
+          "size": 874
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/css/main.css",
+          "size": 8555
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/css/player.css",
+          "size": 2634
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/index.html",
+          "size": 1545
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/js/app.js",
+          "size": 28954
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/js/music.js",
+          "size": 5282
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/js/player.js",
+          "size": 6391
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/js/router.js",
+          "size": 413
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/js/storage.js",
+          "size": 1654
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/manifest.webmanifest",
+          "size": 276
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/assets/sw.js",
+          "size": 486
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/java/com/waeve/app/BillingManager.kt",
+          "size": 1795
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/java/com/waeve/app/MainActivity.kt",
+          "size": 1325
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/res/values/styles.xml",
+          "size": 352
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/app/src/main/res/xml/file_paths.xml",
+          "size": 110
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/build.gradle.kts",
+          "size": 142
+        },
+        {
+          "source": "Waeve-Final-Production-Build",
+          "path": "Waeve/android/settings.gradle.kts",
+          "size": 272
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/README.md",
+          "size": 887
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/build.gradle.kts",
+          "size": 612
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/AndroidManifest.xml",
+          "size": 975
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-echo.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-kairo.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-luma.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-nova.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/artist-waeve.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-after-rain.svg",
+          "size": 476
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-blue-horizon.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-city-pulse.svg",
+          "size": 476
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-glass-skyline.svg",
+          "size": 476
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/cover-midnight-current.svg",
+          "size": 476
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/default-cover.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-energy.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-focus.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-night.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/assets/playlist-reset.svg",
+          "size": 475
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/css/main.css",
+          "size": 8555
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/css/player.css",
+          "size": 2634
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/index.html",
+          "size": 1541
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/js/app.js",
+          "size": 28202
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/js/music.js",
+          "size": 5282
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/js/player.js",
+          "size": 7601
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/js/router.js",
+          "size": 413
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/js/storage.js",
+          "size": 1654
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/manifest.webmanifest",
+          "size": 276
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/music/LICENSE.txt",
+          "size": 142
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/music/README.txt",
+          "size": 122
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/music/test-track.mp3",
+          "size": 128983
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/assets/sw.js",
+          "size": 486
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/java/com/waeve/app/BillingManager.kt",
+          "size": 1795
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/java/com/waeve/app/MainActivity.kt",
+          "size": 4130
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/java/com/waeve/app/PlaybackService.kt",
+          "size": 995
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/res/values/styles.xml",
+          "size": 406
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/app/src/main/res/xml/file_paths.xml",
+          "size": 110
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/build.gradle.kts",
+          "size": 142
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/release.properties.example",
+          "size": 203
+        },
+        {
+          "source": "Waeve-Final-Production-Build-1.1.0",
+          "path": "Waeve/android/settings.gradle.kts",
+          "size": 272
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/apps/waeve_app/android/app/src/main/kotlin/com/waeve/app/WaevePlaybackService.kt",
+          "size": 1101
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/apps/waeve_app/android/app/src/main/res/xml/backup_rules.xml",
+          "size": 170
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/app/build.gradle",
+          "size": 450
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/app/src/main/AndroidManifest.xml",
+          "size": 1016
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/app/src/main/java/com/waeve/music/MainActivity.java",
+          "size": 354
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/app/src/main/java/com/waeve/music/WaevePlaybackService.java",
+          "size": 470
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/build.gradle",
+          "size": 73
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/platforms/android-native/settings.gradle",
+          "size": 264
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/build.gradle.kts",
+          "size": 570
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/src/main/AndroidManifest.xml",
+          "size": 938
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/BillingManager.kt",
+          "size": 2633
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+          "size": 308
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/PlaybackService.kt",
+          "size": 837
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/app/src/main/res/values/styles.xml",
+          "size": 355
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/build.gradle.kts",
+          "size": 142
+        },
+        {
+          "source": "Waeve_Final_Build_1.0.0",
+          "path": "Waeve_Final_Build_1.0.0/android/settings.gradle.kts",
+          "size": 265
+        }
+      ]
+    },
+    "tests": {
+      "files": 1,
+      "variants": [
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "paths": [
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/apps/waeve_app/test/widget_test.dart",
+          "size": 345
+        }
+      ]
+    },
+    "infrastructure": {
+      "files": 7,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "paths": [
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/apps/api.dockerignore",
+          "size": 31
+        },
+        {
+          "source": "WAEVE-Android-production-project",
+          "path": "Waeve/infra/docker-compose.yml",
+          "size": 571
+        },
+        {
+          "source": "WAEVE-Complete-2.2.0-UI-Matched",
+          "path": "Waeve/docker-compose.yml",
+          "size": 252
+        },
+        {
+          "source": "WAEVE-Complete-2.4.0-12-Screens",
+          "path": "Waeve/docker-compose.yml",
+          "size": 252
+        },
+        {
+          "source": "WAEVE-Global-Production-Services-4.0.0",
+          "path": "Waeve/docker-compose.yml",
+          "size": 252
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/docker-compose.yml",
+          "size": 2110
+        },
+        {
+          "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+          "path": "waeve/nginx/default.conf",
+          "size": 1098
+        }
+      ]
+    }
+  },
+  "capabilityFamilies": {
+    "playback": {
+      "files": 53,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_1.0.0",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ]
+    },
+    "playlists": {
+      "files": 56,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    "library": {
+      "files": 7,
+      "variants": [
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    "catalogue": {
+      "files": 86,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    "search": {
+      "files": 4,
+      "variants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    "discovery": {
+      "files": 6,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    "identity": {
+      "files": 11,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    "rights": {
+      "files": 6,
+      "variants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    "royalties": {
+      "files": 1,
+      "variants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ]
+    },
+    "analytics": {
+      "files": 1,
+      "variants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ]
+    },
+    "moderation": {
+      "files": 1,
+      "variants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ]
+    },
+    "payments": {
+      "files": 6,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    "notifications": {
+      "files": 0,
+      "variants": []
+    },
+    "infrastructure": {
+      "files": 9,
+      "variants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    }
+  }
+}

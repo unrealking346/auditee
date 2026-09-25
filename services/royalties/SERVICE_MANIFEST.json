@@ -1,0 +1,8 @@
+{
+  "service": "royalties",
+  "status": "canonical-boundary",
+  "sourceCapabilities": [
+    "royalties"
+  ],
+  "rule": "The service must contain verified implementation before being marked complete."
+}

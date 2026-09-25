@@ -1,0 +1,1 @@
+window.WaevePlaylistPlayer={play(id){const p=WaevePlaylists.get(id);if(!p)return;const tracks=p.tracks.map(WaeveMusic.byId).filter(Boolean);if(!tracks.length)return WaeveUtils.toast('This playlist is empty.');WaevePlayer.setQueue(tracks,0)}};

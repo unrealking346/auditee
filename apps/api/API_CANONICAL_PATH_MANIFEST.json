@@ -1,0 +1,46 @@
+{
+  "canonicalPackage": "@waeve/api",
+  "status": "canonical-path-normalized",
+  "activated": [
+    "Dockerfile",
+    "src/db.ts",
+    "src/middleware/auth.ts",
+    "src/migrate.ts",
+    "src/routes/artists.ts",
+    "src/routes/auth.ts",
+    "src/routes/index.ts",
+    "src/routes/music.ts",
+    "src/routes/playlists.ts",
+    "src/routes/subscriptions.ts",
+    "src/server.ts",
+    "src/services/recommendations.ts",
+    "tsconfig.json"
+  ],
+  "preserved": [
+    "package.json",
+    "prisma/schema.prisma",
+    "prisma/seed.js",
+    "src/auth.js",
+    "src/routes/platform.js",
+    "src/server.js",
+    "src/server.test.js",
+    "src/services/ai.js",
+    "src/services/analytics.js",
+    "src/services/discovery.js",
+    "src/services/editorial.js",
+    "src/services/knowledge.js",
+    "src/services/rights.js",
+    "src/services/royalty.js",
+    "src/services/territory.js",
+    "src/services/trust.js",
+    "package.json"
+  ],
+  "sourceOfTruth": "apps/api",
+  "rules": [
+    "Canonical API implementation lives directly under apps/api.",
+    "Nested source copies remain preserved as reconciliation inputs.",
+    "Existing canonical files are never overwritten.",
+    "Original source variants remain untouched.",
+    "The API is not considered complete until dependency installation, type checking, tests and runtime verification pass."
+  ]
+}

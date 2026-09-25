@@ -1,0 +1,3 @@
+import {q} from '../db.js';
+export async function recommendations(userId:string,limit=20){
+ const {rows}=await q<any>(`WITH liked AS (SELECT song_id FROM song_likes WHERE user_id=$1), recent AS (SELECT song_id FROM listening_events WHERE user_id=$1 AND song_id IS NOT NULL ORDER BY occurred_at DESC LIMIT 50), candidates AS (SELECT s.*,u.display_name artist_name, COALESCE(s.streams,0) streams_score FROM songs s JOIN users u ON u.id=s.artist_id WHERE s.id NOT IN (SELECT song_id FROM recent) ORDER BY (CASE WHEN s.id IN (SELECT song_id FROM liked) THEN 100000 ELSE 0 END)+LN(1+COALESCE(s.streams,0))*10 DESC LIMIT 200) SELECT * FROM candidates LIMIT $2`,[userId,limit]); return rows; }

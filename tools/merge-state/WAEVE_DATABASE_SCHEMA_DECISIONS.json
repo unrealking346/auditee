@@ -1,0 +1,864 @@
+{
+  "status": "decision_matrix",
+  "schema_changes_made": false,
+  "legacy_tables": 129,
+  "prisma_models_current": 30,
+  "summary": {
+    "new_canonical_persistent_entity": 84,
+    "canonical_relation_or_join": 14,
+    "existing_prisma_model": 12,
+    "review_required": 10,
+    "canonical_event_or_fact_structure": 9
+  },
+  "decisions": [
+    {
+      "table": "ad_slots",
+      "domain": "advertising",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "campaigns",
+      "domain": "advertising",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_events",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_fan_support",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_posts",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_storefront_items",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_team_members",
+      "domain": "artist_operations",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_verifications",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "merch_links",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "release_submissions",
+      "domain": "artist_operations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "albums",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artist_profiles",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "artists",
+      "domain": "catalog",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Artist"
+    },
+    {
+      "table": "catalog_ingest_jobs",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "catalog_quality_issues",
+      "domain": "catalog",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "credits",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "genres",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "moods",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "release_tracks",
+      "domain": "catalog",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "releases",
+      "domain": "catalog",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Release"
+    },
+    {
+      "table": "track_genres",
+      "domain": "catalog",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "track_moods",
+      "domain": "catalog",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "track_tags",
+      "domain": "catalog",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "track_versions",
+      "domain": "catalog",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "tracks",
+      "domain": "catalog",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Track"
+    },
+    {
+      "table": "community_posts",
+      "domain": "community",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "fan_communities",
+      "domain": "community",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "fan_community_members",
+      "domain": "community",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "short_clips",
+      "domain": "community",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "connected_devices",
+      "domain": "devices",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "device_handoffs",
+      "domain": "devices",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "device_tokens",
+      "domain": "devices",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "devices",
+      "domain": "devices",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "user_devices",
+      "domain": "devices",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "chart_entries",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "charts",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "experiment_assignments",
+      "domain": "discovery_recommendations",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "experiments",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "mix_tracks",
+      "domain": "discovery_recommendations",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "mixes",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "radio_stations",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "recommendation_profiles",
+      "domain": "discovery_recommendations",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "editorial_collection_items",
+      "domain": "editorial",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "editorial_collections",
+      "domain": "editorial",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "editorial_items",
+      "domain": "editorial",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "editorial_track_links",
+      "domain": "editorial",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "sponsored_playlists",
+      "domain": "editorial",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "feature_flags",
+      "domain": "feature_configuration",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "auth_identities",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "consent_records",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "email_verifications",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "passkeys",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "password_reset_tokens",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "refresh_tokens",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "user_profiles",
+      "domain": "identity",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "users",
+      "domain": "identity",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "User"
+    },
+    {
+      "table": "listening_events",
+      "domain": "listening_analytics",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "PlayEvent"
+    },
+    {
+      "table": "listening_history",
+      "domain": "listening_analytics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "listening_sessions",
+      "domain": "listening_analytics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "recommendation_impressions",
+      "domain": "listening_analytics",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "search_queries",
+      "domain": "listening_analytics",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "album_notes",
+      "domain": "lyrics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "digital_booklets",
+      "domain": "lyrics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "lyric_corrections",
+      "domain": "lyrics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "lyrics_contributors",
+      "domain": "lyrics",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "track_lyrics",
+      "domain": "lyrics",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "music_recognition_queries",
+      "domain": "music_recognition",
+      "decision": "review_required",
+      "target_prisma_model": null
+    },
+    {
+      "table": "incident_announcements",
+      "domain": "notifications_support",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "notification_preferences",
+      "domain": "notifications_support",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "notifications",
+      "domain": "notifications_support",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "service_metrics_daily",
+      "domain": "notifications_support",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "support_messages",
+      "domain": "notifications_support",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "support_tickets",
+      "domain": "notifications_support",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "audio_fingerprints",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "download_entitlements",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "local_files",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "media_assets",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playback_preferences",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playback_transitions",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "queue_snapshots",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "smart_downloads",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "waveform_peaks",
+      "domain": "playback_media",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "content_reactions",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "follows",
+      "domain": "playlists_social",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Follow"
+    },
+    {
+      "table": "likes",
+      "domain": "playlists_social",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Like"
+    },
+    {
+      "table": "listening_room_events",
+      "domain": "playlists_social",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "listening_room_members",
+      "domain": "playlists_social",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "listening_rooms",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_collaborators",
+      "domain": "playlists_social",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_comments",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_folder_items",
+      "domain": "playlists_social",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_folders",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_shares",
+      "domain": "playlists_social",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_tracks",
+      "domain": "playlists_social",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "PlaylistTrack"
+    },
+    {
+      "table": "playlist_versions",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlists",
+      "domain": "playlists_social",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Playlist"
+    },
+    {
+      "table": "share_links",
+      "domain": "playlists_social",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "live_events",
+      "domain": "podcasts_video_events",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "music_videos",
+      "domain": "podcasts_video_events",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "podcast_episodes",
+      "domain": "podcasts_video_events",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "podcast_progress",
+      "domain": "podcasts_video_events",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "podcasts",
+      "domain": "podcasts_video_events",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "accessibility_preferences",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "data_export_jobs",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "deletion_requests",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "localization_strings",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "parental_controls",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "regional_configs",
+      "domain": "privacy_accessibility",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "rights",
+      "domain": "rights",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "RightsGrant"
+    },
+    {
+      "table": "rights_history",
+      "domain": "rights",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "takedown_requests",
+      "domain": "rights",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "royalty_ledger",
+      "domain": "royalties",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "RoyaltyLedger"
+    },
+    {
+      "table": "royalty_payouts",
+      "domain": "royalties",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "royalty_rates",
+      "domain": "royalties",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "royalty_splits",
+      "domain": "royalties",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "royalty_statements",
+      "domain": "royalties",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "billing_events",
+      "domain": "subscriptions_billing",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "family_groups",
+      "domain": "subscriptions_billing",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "family_members",
+      "domain": "subscriptions_billing",
+      "decision": "canonical_relation_or_join",
+      "target_prisma_model": null
+    },
+    {
+      "table": "payment_methods",
+      "domain": "subscriptions_billing",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "subscription_offers",
+      "domain": "subscriptions_billing",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "subscription_plans",
+      "domain": "subscriptions_billing",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "subscriptions",
+      "domain": "subscriptions_billing",
+      "decision": "existing_prisma_model",
+      "target_prisma_model": "Subscription"
+    },
+    {
+      "table": "audit_log",
+      "domain": "trust_moderation",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "content_reports",
+      "domain": "trust_moderation",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "fraud_signals",
+      "domain": "trust_moderation",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "moderation_actions",
+      "domain": "trust_moderation",
+      "decision": "canonical_event_or_fact_structure",
+      "target_prisma_model": null
+    },
+    {
+      "table": "ugc_claims",
+      "domain": "trust_moderation",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "table": "playlist_import_jobs",
+      "domain": "unclassified",
+      "decision": "new_canonical_persistent_entity",
+      "target_prisma_model": null
+    },
+    {
+      "legacy_table": "catalog_quality_issues",
+      "decision": "new_canonical_persistent_entity",
+      "canonical_model": "CatalogQualityIssue",
+      "domain": "catalog",
+      "reason": "Persistent quality issue records have no equivalent canonical Prisma model."
+    },
+    {
+      "legacy_table": "community_posts",
+      "decision": "new_canonical_persistent_entity",
+      "canonical_model": "CommunityPost",
+      "domain": "community",
+      "reason": "Community posts are persistent user-generated content linked to fan communities."
+    },
+    {
+      "legacy_table": "fan_community_members",
+      "decision": "canonical_relation_or_join",
+      "canonical_model": "FanCommunityMember",
+      "domain": "community",
+      "reason": "Composite community/user membership relation with role and joined timestamp."
+    },
+    {
+      "legacy_table": "connected_devices",
+      "decision": "new_canonical_persistent_entity",
+      "canonical_model": "ConnectedDevice",
+      "domain": "devices",
+      "reason": "Represents external/connected playback-device registrations and capabilities."
+    },
+    {
+      "legacy_table": "user_devices",
+      "decision": "new_canonical_persistent_entity",
+      "canonical_model": "UserDevice",
+      "domain": "devices",
+      "reason": "Represents authenticated application device registrations, distinct from generic connected-device integrations."
+    },
+    {
+      "legacy_table": "editorial_collection_items",
+      "decision": "canonical_relation_or_join",
+      "canonical_model": "EditorialCollectionItem",
+      "domain": "editorial",
+      "reason": "Composite collection/editorial-item association with ordering."
+    },
+    {
+      "legacy_table": "editorial_collections",
+      "decision": "existing_prisma_model",
+      "canonical_model": "EditorialCollection",
+      "domain": "editorial",
+      "reason": "Canonical model already exists; legacy fields must be reconciled into it rather than creating a duplicate."
+    },
+    {
+      "legacy_table": "editorial_items",
+      "decision": "existing_prisma_model",
+      "canonical_model": "EditorialItem",
+      "domain": "editorial",
+      "reason": "Canonical model already exists; legacy fields must be reconciled into it rather than creating a duplicate."
+    },
+    {
+      "legacy_table": "lyrics_contributors",
+      "decision": "new_canonical_persistent_entity",
+      "canonical_model": "LyricsContributor",
+      "domain": "lyrics",
+      "reason": "Track-linked lyric attribution records have no equivalent canonical Prisma model."
+    },
+    {
+      "legacy_table": "music_recognition_queries",
+      "decision": "canonical_event_or_fact_structure",
+      "canonical_model": "MusicRecognitionQuery",
+      "domain": "music_recognition",
+      "reason": "Represents recognition attempts/results, including fingerprint, provider, confidence and matched track."
+    }
+  ],
+  "review_resolution": {
+    "status": "resolved",
+    "tables_resolved": 10,
+    "resolved_at_stage": "schema_reconciliation"
+  }
+}

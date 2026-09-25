@@ -1,0 +1,10 @@
+{
+  "name": "@waeve/services-royalties",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check backend/src/services/royalty.js"
+  },
+  "dependencies": {}
+}

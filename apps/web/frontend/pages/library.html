@@ -1,0 +1,213 @@
+<section class="page">
+
+    <h1 class="page-title">
+        Your Library
+    </h1>
+
+    <p class="page-description">
+        Your music collection.
+    </p>
+
+
+    <!-- LIKED SONGS -->
+
+    <section class="library-section">
+
+        <div class="library-section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Liked Songs
+                </h2>
+
+                <span
+                    id="library-liked-count"
+                    class="library-count"
+                >
+                    0 songs
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="library-liked-list"
+            class="music-list"
+        >
+
+            <div class="empty-state">
+
+                <h3>
+                    No liked songs yet
+                </h3>
+
+                <p>
+                    Songs you like will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAYLISTS -->
+
+    <section class="library-section">
+
+        <div class="library-section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Playlists
+                </h2>
+
+                <span class="library-count">
+                    Your personal playlists
+                </span>
+
+            </div>
+
+
+            <button
+                id="create-playlist-button"
+                type="button"
+                class="library-action-button"
+            >
+                + Create Playlist
+            </button>
+
+        </div>
+
+
+        <div
+            id="playlist-list"
+            class="playlist-list"
+        >
+
+            <div class="empty-state">
+
+                <h3>
+                    No playlists yet
+                </h3>
+
+                <p>
+                    Create your first playlist.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ALL SONGS -->
+
+    <section class="library-section">
+
+        <div class="library-section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Songs
+                </h2>
+
+                <span
+                    id="library-song-count"
+                    class="library-count"
+                >
+                    0 songs
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="library-song-list"
+            class="music-list"
+        >
+
+            <div class="empty-state">
+
+                <p>
+                    Loading your music...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAYLIST DIALOG -->
+
+    <div
+        id="playlist-dialog"
+        class="playlist-dialog"
+        hidden
+    >
+
+        <div
+            class="playlist-dialog-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="playlist-dialog-title"
+        >
+
+            <h2
+                id="playlist-dialog-title"
+            >
+                Create Playlist
+            </h2>
+
+
+            <label
+                for="playlist-name-input"
+            >
+                Playlist name
+            </label>
+
+
+            <input
+                id="playlist-name-input"
+                type="text"
+                placeholder="My Playlist"
+                maxlength="80"
+                autocomplete="off"
+            >
+
+
+            <div class="playlist-dialog-actions">
+
+                <button
+                    id="cancel-playlist-button"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    id="save-playlist-button"
+                    type="button"
+                >
+                    Create
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

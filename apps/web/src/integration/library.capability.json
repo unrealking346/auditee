@@ -1,0 +1,43 @@
+{
+  "capability": "library",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 7,
+  "sourceVariants": 6,
+  "implementations": [
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/library-playlist-ui.js",
+      "size": 53543
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/pages/library.html",
+      "size": 3833
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/library-playlist-ui.js",
+      "size": 903
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/library/library_screen.dart",
+      "size": 821
+    }
+  ]
+}

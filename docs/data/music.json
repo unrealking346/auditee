@@ -1,0 +1,28 @@
+{
+    "tracks": [
+        {
+            "id": "waeve-demo-001",
+            "title": "Waeve Demo Track",
+            "artist": "Waeve",
+            "album": "Waeve Sessions",
+            "genre": "Demo",
+            "year": 2026,
+            "duration": 0,
+            "audio": "music/test-track.mp3",
+            "artwork": "assets/default-album.png",
+            "explicit": false
+        },
+        {
+            "id": "waeve-second-002",
+            "title": "Second Waeve Track",
+            "artist": "Waeve",
+            "album": "Waeve Sessions",
+            "genre": "Demo",
+            "year": 2026,
+            "duration": 0,
+            "audio": "music/second-track.mp3",
+            "artwork": "assets/default-album.png",
+            "explicit": false
+        }
+    ]
+}

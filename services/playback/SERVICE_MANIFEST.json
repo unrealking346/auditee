@@ -1,0 +1,8 @@
+{
+  "service": "playback",
+  "status": "canonical-boundary",
+  "sourceCapabilities": [
+    "playback"
+  ],
+  "rule": "The service must contain verified implementation before being marked complete."
+}

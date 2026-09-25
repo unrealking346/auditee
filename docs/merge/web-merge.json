@@ -1,0 +1,151 @@
+{
+  "domain": "web",
+  "generatedAt": "2026-09-18T11:07:25.513Z",
+  "entries": [
+    {
+      "source": "Waeve",
+      "path": "frontend/components/album-card.html",
+      "size": 121
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/header.html",
+      "size": 231
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/music-player.html",
+      "size": 383
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/song-card.html",
+      "size": 811
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/components.css",
+      "size": 16648
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/main.css",
+      "size": 7872
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/player.css",
+      "size": 6402
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/playlist-management.css",
+      "size": 5259
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/waeve-theme.css",
+      "size": 3872
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/index.html",
+      "size": 2586
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/app.js",
+      "size": 48057
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/config.js",
+      "size": 186
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/library-playlist-ui.js",
+      "size": 53543
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/music.js",
+      "size": 7880
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/player.js",
+      "size": 19605
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-management.js",
+      "size": 17414
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-player.js",
+      "size": 12854
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-ui.js",
+      "size": 12582
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlists.js",
+      "size": 14309
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/router.js",
+      "size": 3883
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/storage.js",
+      "size": 1183
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/utils.js",
+      "size": 482
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/instrumental.mp3",
+      "size": 4240940
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/migos.mp3",
+      "size": 4960940
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/second-track.mp3",
+      "size": 3496748
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/test-track.mp3",
+      "size": 2852396
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/pages/home.html",
+      "size": 369
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/pages/library.html",
+      "size": 3833
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/pages/search.html",
+      "size": 929
+    }
+  ]
+}

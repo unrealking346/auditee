@@ -1,19 +1,92 @@
-node_modules
-**/node_modules
-**/.gradle
-**/build
-**/.idea
-**/local.properties
-**/.cxx
-**/captures
-*.apk
-*.aab
-*.iml
-.DS_Store
-**/*.pre-*
-**/.gradle/
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+**/dist/
 **/build/
-**/local.properties
+**/.gradle/
 **/.cxx/
-*.apk
-*.aab
+**/target/
+**/.dart_tool/
+**/.idea/
+
+# Generated/local state
+*.tsbuildinfo
+*.log
+*.pid
+.waeve-api.log
+
+# Local environment/secrets
+.env
+.env.*
+!.env.example
+
+# Historical source collections / merge backups
+_merge_backups/
+_sources/
+
+# Local runtime state
+tools/runtime/*.log
+tools/runtime/*.pid
+tools/runtime/*.json
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+
+# Historical/nested source copies
+apps/api/Waeve/
+apps/api/Waeve_Final_Build_1.0.0/
+apps/api/backend/
+apps/api/server/
+apps/api/src/integration/
+apps/admin/dist/
+mobile/android/apps/
+mobile/android/platforms/
+apps/web/Waeve/
+apps/web/Waeve_Final_Build_1.0.0/
+apps/web/_legacy-waeve-frontend/
+apps/web/waeve/
+apps/web/waeve_final/
+apps/web/dist/
+apps/web/tsconfig.tsbuildinfo
+
+# Historical source copies
+_merge_backups/
+_sources/
+apps/api/Waeve/
+apps/api/Waeve_Final_Build_1.0.0/
+apps/api/backend/
+apps/api/server/
+apps/api/src/integration/
+apps/admin/dist/
+apps/web/Waeve/
+apps/web/Waeve_Final_Build_1.0.0/
+apps/web/_legacy-waeve-frontend/
+apps/web/waeve/
+apps/web/waeve_final/
+apps/web/dist/
+apps/web/tsconfig.tsbuildinfo/
+mobile/android/apps/
+mobile/android/platforms/
+
+# Historical / superseded project copies
+_merge_backups/
+_sources/
+docs/Waeve/
+apps/api/Waeve/
+apps/api/Waeve_Final_Build_1.0.0/
+apps/api/backend/
+apps/api/server/
+apps/api/src/integration/
+apps/api/waeve/
+apps/web/Waeve/
+apps/web/Waeve_Final_Build_1.0.0/
+apps/web/_legacy-waeve-frontend/
+apps/web/waeve/
+apps/web/waeve_final/
+apps/web/dist/
+apps/admin/dist/
+mobile/android/apps/
+mobile/android/platforms/

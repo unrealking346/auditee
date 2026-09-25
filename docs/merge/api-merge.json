@@ -1,0 +1,11 @@
+{
+  "domain": "api",
+  "generatedAt": "2026-09-18T11:07:25.570Z",
+  "entries": [
+    {
+      "source": "Waeve_Production_2.0.0",
+      "path": "backend/server.js",
+      "size": 4042
+    }
+  ]
+}

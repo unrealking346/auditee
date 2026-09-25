@@ -1,0 +1,1897 @@
+{
+  "generatedAt": "2026-09-19T16:14:07.019Z",
+  "source": "apps/api/server/migrations",
+  "canonicalSchema": "apps/api/prisma/schema.prisma",
+  "legacyTableCount": 129,
+  "prismaModelCount": 30,
+  "domains": {
+    "advertising": {
+      "tableCount": 2,
+      "tables": [
+        {
+          "table": "ad_slots",
+          "possibleModel": null,
+          "domain": "advertising",
+          "columns": [
+            "id",
+            "placement",
+            "region_code",
+            "campaign_id",
+            "active",
+            "config"
+          ]
+        },
+        {
+          "table": "campaigns",
+          "possibleModel": null,
+          "domain": "advertising",
+          "columns": [
+            "id",
+            "name",
+            "advertiser",
+            "starts_at",
+            "ends_at",
+            "budget_minor",
+            "currency",
+            "status",
+            "targeting"
+          ]
+        }
+      ]
+    },
+    "artist_operations": {
+      "tableCount": 8,
+      "tables": [
+        {
+          "table": "artist_events",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "city",
+            "country_code",
+            "venue",
+            "starts_at",
+            "ticket_url",
+            "status"
+          ]
+        },
+        {
+          "table": "artist_fan_support",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "user_id",
+            "amount_minor",
+            "currency",
+            "provider",
+            "provider_ref",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "artist_posts",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "body",
+            "media",
+            "published_at",
+            "created_at"
+          ]
+        },
+        {
+          "table": "artist_storefront_items",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "kind",
+            "title",
+            "url",
+            "price_minor",
+            "currency",
+            "active"
+          ]
+        },
+        {
+          "table": "artist_team_members",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "artist_id",
+            "user_id",
+            "role",
+            "created_at"
+          ]
+        },
+        {
+          "table": "artist_verifications",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "status",
+            "evidence",
+            "reviewer_id",
+            "created_at",
+            "reviewed_at"
+          ]
+        },
+        {
+          "table": "merch_links",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "url",
+            "currency",
+            "price_minor",
+            "image_url",
+            "active"
+          ]
+        },
+        {
+          "table": "release_submissions",
+          "possibleModel": null,
+          "domain": "artist_operations",
+          "columns": [
+            "id",
+            "artist_id",
+            "release_id",
+            "status",
+            "reviewer_notes",
+            "submitted_at",
+            "reviewed_at"
+          ]
+        }
+      ]
+    },
+    "catalog": {
+      "tableCount": 15,
+      "tables": [
+        {
+          "table": "albums",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "artwork_url",
+            "release_date",
+            "kind"
+          ]
+        },
+        {
+          "table": "artist_profiles",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "artist_id",
+            "avatar_url",
+            "header_url",
+            "links",
+            "genres",
+            "country_code",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "artists",
+          "possibleModel": "Artist",
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "name",
+            "bio",
+            "verified",
+            "created_at"
+          ]
+        },
+        {
+          "table": "catalog_ingest_jobs",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "provider",
+            "status",
+            "source_ref",
+            "records_total",
+            "records_ok",
+            "records_failed",
+            "error_log",
+            "created_at",
+            "completed_at"
+          ]
+        },
+        {
+          "table": "catalog_quality_issues",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "entity_type",
+            "entity_id",
+            "issue_type",
+            "severity",
+            "details",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "credits",
+          "possibleModel": "Credit",
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "track_id",
+            "name",
+            "role",
+            "ipi",
+            "pro"
+          ]
+        },
+        {
+          "table": "genres",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "name",
+            "parent_id",
+            "slug"
+          ]
+        },
+        {
+          "table": "moods",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "name",
+            "slug"
+          ]
+        },
+        {
+          "table": "release_tracks",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "release_id",
+            "track_id",
+            "disc_no",
+            "track_no"
+          ]
+        },
+        {
+          "table": "releases",
+          "possibleModel": "Release",
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "upc",
+            "kind",
+            "release_date",
+            "status",
+            "artwork_key",
+            "notes",
+            "created_at"
+          ]
+        },
+        {
+          "table": "track_genres",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "track_id",
+            "genre_id",
+            "weight"
+          ]
+        },
+        {
+          "table": "track_moods",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "track_id",
+            "mood_id",
+            "weight"
+          ]
+        },
+        {
+          "table": "track_tags",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "track_id",
+            "tag"
+          ]
+        },
+        {
+          "table": "track_versions",
+          "possibleModel": null,
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "track_id",
+            "version_name",
+            "isrc",
+            "language_code",
+            "mix_name",
+            "explicit",
+            "created_at"
+          ]
+        },
+        {
+          "table": "tracks",
+          "possibleModel": "Track",
+          "domain": "catalog",
+          "columns": [
+            "id",
+            "album_id",
+            "artist_id",
+            "title",
+            "duration_ms",
+            "isrc",
+            "audio_key",
+            "explicit",
+            "lossless",
+            "hires",
+            "atmos",
+            "territories",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "community": {
+      "tableCount": 4,
+      "tables": [
+        {
+          "table": "community_posts",
+          "possibleModel": null,
+          "domain": "community",
+          "columns": [
+            "id",
+            "community_id",
+            "user_id",
+            "body",
+            "media",
+            "created_at"
+          ]
+        },
+        {
+          "table": "fan_communities",
+          "possibleModel": null,
+          "domain": "community",
+          "columns": [
+            "id",
+            "artist_id",
+            "name",
+            "description",
+            "privacy",
+            "created_at"
+          ]
+        },
+        {
+          "table": "fan_community_members",
+          "possibleModel": null,
+          "domain": "community",
+          "columns": [
+            "community_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ]
+        },
+        {
+          "table": "short_clips",
+          "possibleModel": null,
+          "domain": "community",
+          "columns": [
+            "id",
+            "track_id",
+            "start_ms",
+            "end_ms",
+            "caption",
+            "status"
+          ]
+        }
+      ]
+    },
+    "devices": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "connected_devices",
+          "possibleModel": null,
+          "domain": "devices",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "name",
+            "platform",
+            "capabilities",
+            "last_seen_at"
+          ]
+        },
+        {
+          "table": "device_handoffs",
+          "possibleModel": null,
+          "domain": "devices",
+          "columns": [
+            "id",
+            "user_id",
+            "from_device",
+            "to_device",
+            "track_id",
+            "position_ms",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "device_tokens",
+          "possibleModel": null,
+          "domain": "devices",
+          "columns": [
+            "id",
+            "user_id",
+            "platform",
+            "device_id",
+            "push_token",
+            "app_version",
+            "last_seen_at"
+          ]
+        },
+        {
+          "table": "devices",
+          "possibleModel": null,
+          "domain": "devices",
+          "columns": [
+            "id",
+            "user_id",
+            "device_key",
+            "platform",
+            "app_version",
+            "last_seen_at"
+          ]
+        },
+        {
+          "table": "user_devices",
+          "possibleModel": null,
+          "domain": "devices",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "platform",
+            "model",
+            "os_version",
+            "app_version",
+            "push_token",
+            "last_ip",
+            "last_seen_at",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "discovery_recommendations": {
+      "tableCount": 8,
+      "tables": [
+        {
+          "table": "chart_entries",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "chart_id",
+            "track_id",
+            "rank",
+            "score",
+            "previous_rank"
+          ]
+        },
+        {
+          "table": "charts",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "id",
+            "chart_type",
+            "region_code",
+            "period_start",
+            "title",
+            "created_at"
+          ]
+        },
+        {
+          "table": "experiment_assignments",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "experiment_id",
+            "user_id",
+            "variant",
+            "assigned_at"
+          ]
+        },
+        {
+          "table": "experiments",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "id",
+            "key",
+            "description",
+            "status",
+            "config"
+          ]
+        },
+        {
+          "table": "mix_tracks",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "mix_id",
+            "track_id",
+            "position",
+            "reason"
+          ]
+        },
+        {
+          "table": "mixes",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "title",
+            "description",
+            "generated_at",
+            "expires_at"
+          ]
+        },
+        {
+          "table": "radio_stations",
+          "possibleModel": null,
+          "domain": "discovery_recommendations",
+          "columns": [
+            "id",
+            "name",
+            "station_type",
+            "seed_track_id",
+            "seed_artist_id",
+            "genre_id",
+            "region_code",
+            "config",
+            "active"
+          ]
+        },
+        {
+          "table": "recommendation_profiles",
+          "possibleModel": "RecommendationProfile",
+          "domain": "discovery_recommendations",
+          "columns": [
+            "user_id",
+            "embedding",
+            "taste",
+            "exploration",
+            "diversity",
+            "freshness",
+            "updated_at"
+          ]
+        }
+      ]
+    },
+    "editorial": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "editorial_collection_items",
+          "possibleModel": null,
+          "domain": "editorial",
+          "columns": [
+            "collection_id",
+            "editorial_id",
+            "position"
+          ]
+        },
+        {
+          "table": "editorial_collections",
+          "possibleModel": "EditorialCollection",
+          "domain": "editorial",
+          "columns": [
+            "id",
+            "title",
+            "slug",
+            "description",
+            "hero_image_url",
+            "region_code",
+            "published_at",
+            "status"
+          ]
+        },
+        {
+          "table": "editorial_items",
+          "possibleModel": "EditorialItem",
+          "domain": "editorial",
+          "columns": [
+            "id",
+            "kind",
+            "title",
+            "slug",
+            "excerpt",
+            "body",
+            "hero_image_url",
+            "published_at",
+            "author_name",
+            "region_code",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "editorial_track_links",
+          "possibleModel": null,
+          "domain": "editorial",
+          "columns": [
+            "editorial_id",
+            "track_id"
+          ]
+        },
+        {
+          "table": "sponsored_playlists",
+          "possibleModel": null,
+          "domain": "editorial",
+          "columns": [
+            "id",
+            "playlist_id",
+            "campaign_id",
+            "disclosure",
+            "starts_at",
+            "ends_at"
+          ]
+        }
+      ]
+    },
+    "feature_configuration": {
+      "tableCount": 1,
+      "tables": [
+        {
+          "table": "feature_flags",
+          "possibleModel": null,
+          "domain": "feature_configuration",
+          "columns": [
+            "key",
+            "enabled",
+            "rollout_percent",
+            "config",
+            "updated_at"
+          ]
+        }
+      ]
+    },
+    "identity": {
+      "tableCount": 8,
+      "tables": [
+        {
+          "table": "auth_identities",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "subject",
+            "email",
+            "created_at"
+          ]
+        },
+        {
+          "table": "consent_records",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "policy_version",
+            "consent_type",
+            "granted",
+            "ip",
+            "created_at"
+          ]
+        },
+        {
+          "table": "email_verifications",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "used_at"
+          ]
+        },
+        {
+          "table": "passkeys",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "credential_id",
+            "public_key",
+            "sign_count",
+            "transports",
+            "created_at",
+            "last_used_at"
+          ]
+        },
+        {
+          "table": "password_reset_tokens",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "used_at"
+          ]
+        },
+        {
+          "table": "refresh_tokens",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "revoked_at",
+            "created_at"
+          ]
+        },
+        {
+          "table": "user_profiles",
+          "possibleModel": null,
+          "domain": "identity",
+          "columns": [
+            "user_id",
+            "avatar_url",
+            "bio",
+            "language_code",
+            "timezone",
+            "explicit_allowed",
+            "discovery_mode",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "users",
+          "possibleModel": "User",
+          "domain": "identity",
+          "columns": [
+            "id",
+            "email",
+            "password_hash",
+            "display_name",
+            "role",
+            "country_code",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "listening_analytics": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "listening_events",
+          "possibleModel": null,
+          "domain": "listening_analytics",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "event_type",
+            "position_ms",
+            "session_id",
+            "device_id",
+            "country_code",
+            "occurred_at"
+          ]
+        },
+        {
+          "table": "listening_history",
+          "possibleModel": null,
+          "domain": "listening_analytics",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "session_id",
+            "played_at",
+            "duration_ms",
+            "completion_ratio"
+          ]
+        },
+        {
+          "table": "listening_sessions",
+          "possibleModel": null,
+          "domain": "listening_analytics",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "country_code",
+            "started_at",
+            "ended_at"
+          ]
+        },
+        {
+          "table": "recommendation_impressions",
+          "possibleModel": null,
+          "domain": "listening_analytics",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "surface",
+            "position",
+            "reason",
+            "shown_at",
+            "clicked_at"
+          ]
+        },
+        {
+          "table": "search_queries",
+          "possibleModel": null,
+          "domain": "listening_analytics",
+          "columns": [
+            "id",
+            "user_id",
+            "query",
+            "filters",
+            "result_count",
+            "clicked_entity",
+            "country_code",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "lyrics": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "album_notes",
+          "possibleModel": null,
+          "domain": "lyrics",
+          "columns": [
+            "id",
+            "album_id",
+            "kind",
+            "title",
+            "body",
+            "author_name",
+            "published_at"
+          ]
+        },
+        {
+          "table": "digital_booklets",
+          "possibleModel": null,
+          "domain": "lyrics",
+          "columns": [
+            "id",
+            "album_id",
+            "title",
+            "object_key",
+            "language_code",
+            "version"
+          ]
+        },
+        {
+          "table": "lyric_corrections",
+          "possibleModel": null,
+          "domain": "lyrics",
+          "columns": [
+            "id",
+            "track_id",
+            "user_id",
+            "locale",
+            "proposed_text",
+            "status",
+            "reviewer_id",
+            "created_at"
+          ]
+        },
+        {
+          "table": "lyrics_contributors",
+          "possibleModel": null,
+          "domain": "lyrics",
+          "columns": [
+            "id",
+            "track_id",
+            "name",
+            "role",
+            "publisher",
+            "attribution"
+          ]
+        },
+        {
+          "table": "track_lyrics",
+          "possibleModel": null,
+          "domain": "lyrics",
+          "columns": [
+            "track_id",
+            "plain_text",
+            "synced_json",
+            "translations",
+            "updated_at"
+          ]
+        }
+      ]
+    },
+    "music_recognition": {
+      "tableCount": 1,
+      "tables": [
+        {
+          "table": "music_recognition_queries",
+          "possibleModel": null,
+          "domain": "music_recognition",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "fingerprint",
+            "matched_track_id",
+            "confidence",
+            "provider",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "notifications_support": {
+      "tableCount": 6,
+      "tables": [
+        {
+          "table": "incident_announcements",
+          "possibleModel": null,
+          "domain": "notifications_support",
+          "columns": [
+            "id",
+            "title",
+            "body",
+            "severity",
+            "starts_at",
+            "ends_at",
+            "active"
+          ]
+        },
+        {
+          "table": "notification_preferences",
+          "possibleModel": null,
+          "domain": "notifications_support",
+          "columns": [
+            "user_id",
+            "email",
+            "push",
+            "new_releases",
+            "recommendations"
+          ]
+        },
+        {
+          "table": "notifications",
+          "possibleModel": "Notification",
+          "domain": "notifications_support",
+          "columns": [
+            "id",
+            "user_id",
+            "kind",
+            "title",
+            "body",
+            "payload",
+            "read_at",
+            "created_at"
+          ]
+        },
+        {
+          "table": "service_metrics_daily",
+          "possibleModel": null,
+          "domain": "notifications_support",
+          "columns": [
+            "metric_date",
+            "metric_key",
+            "region_code",
+            "value"
+          ]
+        },
+        {
+          "table": "support_messages",
+          "possibleModel": null,
+          "domain": "notifications_support",
+          "columns": [
+            "id",
+            "ticket_id",
+            "sender_user_id",
+            "body",
+            "created_at"
+          ]
+        },
+        {
+          "table": "support_tickets",
+          "possibleModel": null,
+          "domain": "notifications_support",
+          "columns": [
+            "id",
+            "user_id",
+            "category",
+            "subject",
+            "body",
+            "status",
+            "priority",
+            "assigned_to",
+            "created_at",
+            "resolved_at"
+          ]
+        }
+      ]
+    },
+    "playback_media": {
+      "tableCount": 9,
+      "tables": [
+        {
+          "table": "audio_fingerprints",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "id",
+            "track_id",
+            "algorithm",
+            "fingerprint",
+            "duration_ms",
+            "created_at"
+          ]
+        },
+        {
+          "table": "download_entitlements",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "id",
+            "user_id",
+            "track_id",
+            "quality",
+            "expires_at",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "local_files",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "local_uri",
+            "title",
+            "artist",
+            "album",
+            "duration_ms",
+            "fingerprint",
+            "added_at"
+          ]
+        },
+        {
+          "table": "media_assets",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "id",
+            "track_id",
+            "release_id",
+            "kind",
+            "codec",
+            "container",
+            "bitrate_kbps",
+            "sample_rate",
+            "bit_depth",
+            "channels",
+            "object_key",
+            "checksum_sha256",
+            "duration_ms",
+            "loudness_lufs",
+            "true_peak_db",
+            "encrypted",
+            "drm_scheme",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "playback_preferences",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "user_id",
+            "audio_quality",
+            "download_quality",
+            "normalize",
+            "crossfade_ms",
+            "gapless",
+            "autoplay",
+            "explicit_content",
+            "video_autoplay",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "playback_transitions",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "id",
+            "from_track_id",
+            "to_track_id",
+            "mode",
+            "confidence",
+            "created_at"
+          ]
+        },
+        {
+          "table": "queue_snapshots",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "user_id",
+            "items",
+            "current_index",
+            "shuffle",
+            "repeat_mode",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "smart_downloads",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "user_id",
+            "enabled",
+            "max_tracks",
+            "quality",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "waveform_peaks",
+          "possibleModel": null,
+          "domain": "playback_media",
+          "columns": [
+            "track_id",
+            "samples",
+            "generated_at"
+          ]
+        }
+      ]
+    },
+    "playlists_social": {
+      "tableCount": 15,
+      "tables": [
+        {
+          "table": "content_reactions",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "user_id",
+            "entity_type",
+            "entity_id",
+            "reaction",
+            "created_at"
+          ]
+        },
+        {
+          "table": "follows",
+          "possibleModel": "Follow",
+          "domain": "playlists_social",
+          "columns": [
+            "user_id",
+            "artist_id",
+            "created_at"
+          ]
+        },
+        {
+          "table": "likes",
+          "possibleModel": "Like",
+          "domain": "playlists_social",
+          "columns": [
+            "user_id",
+            "track_id",
+            "created_at"
+          ]
+        },
+        {
+          "table": "listening_room_events",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "room_id",
+            "user_id",
+            "event_type",
+            "payload",
+            "created_at"
+          ]
+        },
+        {
+          "table": "listening_room_members",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "room_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ]
+        },
+        {
+          "table": "listening_rooms",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "host_user_id",
+            "name",
+            "privacy",
+            "status",
+            "current_track_id",
+            "position_ms",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "playlist_collaborators",
+          "possibleModel": "PlaylistCollaborator",
+          "domain": "playlists_social",
+          "columns": [
+            "playlist_id",
+            "user_id",
+            "role",
+            "created_at"
+          ]
+        },
+        {
+          "table": "playlist_comments",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "playlist_id",
+            "user_id",
+            "body",
+            "created_at"
+          ]
+        },
+        {
+          "table": "playlist_folder_items",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "folder_id",
+            "playlist_id"
+          ]
+        },
+        {
+          "table": "playlist_folders",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "user_id",
+            "name",
+            "parent_id"
+          ]
+        },
+        {
+          "table": "playlist_shares",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "playlist_id",
+            "user_id",
+            "token_hash",
+            "expires_at",
+            "created_at"
+          ]
+        },
+        {
+          "table": "playlist_tracks",
+          "possibleModel": "PlaylistTrack",
+          "domain": "playlists_social",
+          "columns": [
+            "playlist_id",
+            "track_id",
+            "position",
+            "added_at"
+          ]
+        },
+        {
+          "table": "playlist_versions",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "playlist_id",
+            "snapshot",
+            "created_at"
+          ]
+        },
+        {
+          "table": "playlists",
+          "possibleModel": "Playlist",
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "owner_id",
+            "title",
+            "description",
+            "is_public",
+            "collaborative",
+            "cover_url",
+            "created_at"
+          ]
+        },
+        {
+          "table": "share_links",
+          "possibleModel": null,
+          "domain": "playlists_social",
+          "columns": [
+            "id",
+            "user_id",
+            "entity_type",
+            "entity_id",
+            "token_hash",
+            "expires_at",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "podcasts_video_events": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "live_events",
+          "possibleModel": null,
+          "domain": "podcasts_video_events",
+          "columns": [
+            "id",
+            "artist_id",
+            "title",
+            "starts_at",
+            "ends_at",
+            "stream_url",
+            "ticket_url",
+            "status"
+          ]
+        },
+        {
+          "table": "music_videos",
+          "possibleModel": null,
+          "domain": "podcasts_video_events",
+          "columns": [
+            "id",
+            "track_id",
+            "title",
+            "video_key",
+            "thumbnail_key",
+            "duration_ms",
+            "explicit",
+            "status"
+          ]
+        },
+        {
+          "table": "podcast_episodes",
+          "possibleModel": null,
+          "domain": "podcasts_video_events",
+          "columns": [
+            "id",
+            "podcast_id",
+            "title",
+            "description",
+            "published_at",
+            "duration_ms",
+            "audio_key",
+            "explicit"
+          ]
+        },
+        {
+          "table": "podcast_progress",
+          "possibleModel": null,
+          "domain": "podcasts_video_events",
+          "columns": [
+            "user_id",
+            "episode_id",
+            "position_ms",
+            "completed",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "podcasts",
+          "possibleModel": null,
+          "domain": "podcasts_video_events",
+          "columns": [
+            "id",
+            "title",
+            "description",
+            "artwork_url",
+            "language_code",
+            "explicit",
+            "publisher",
+            "rss_url",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "privacy_accessibility": {
+      "tableCount": 6,
+      "tables": [
+        {
+          "table": "accessibility_preferences",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "user_id",
+            "reduce_motion",
+            "high_contrast",
+            "larger_text",
+            "screen_reader_labels",
+            "captions",
+            "haptic_feedback",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "data_export_jobs",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "id",
+            "user_id",
+            "status",
+            "object_key",
+            "expires_at",
+            "created_at",
+            "completed_at"
+          ]
+        },
+        {
+          "table": "deletion_requests",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "id",
+            "user_id",
+            "status",
+            "requested_at",
+            "scheduled_for",
+            "completed_at"
+          ]
+        },
+        {
+          "table": "localization_strings",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "key",
+            "language_code",
+            "value"
+          ]
+        },
+        {
+          "table": "parental_controls",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "user_id",
+            "pin_hash",
+            "restricted_mode",
+            "max_rating",
+            "allow_social",
+            "allow_explicit",
+            "updated_at"
+          ]
+        },
+        {
+          "table": "regional_configs",
+          "possibleModel": null,
+          "domain": "privacy_accessibility",
+          "columns": [
+            "country_code",
+            "currency",
+            "language_code",
+            "timezone",
+            "age_floor",
+            "features"
+          ]
+        }
+      ]
+    },
+    "rights": {
+      "tableCount": 3,
+      "tables": [
+        {
+          "table": "rights",
+          "possibleModel": null,
+          "domain": "rights",
+          "columns": [
+            "id",
+            "track_id",
+            "territory",
+            "start_at",
+            "end_at",
+            "master_ok",
+            "publishing_ok"
+          ]
+        },
+        {
+          "table": "rights_history",
+          "possibleModel": null,
+          "domain": "rights",
+          "columns": [
+            "id",
+            "rights_id",
+            "track_id",
+            "territory",
+            "action",
+            "payload",
+            "created_at"
+          ]
+        },
+        {
+          "table": "takedown_requests",
+          "possibleModel": null,
+          "domain": "rights",
+          "columns": [
+            "id",
+            "track_id",
+            "reporter",
+            "reason",
+            "status",
+            "created_at",
+            "resolved_at"
+          ]
+        }
+      ]
+    },
+    "royalties": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "royalty_ledger",
+          "possibleModel": "RoyaltyLedger",
+          "domain": "royalties",
+          "columns": [
+            "id",
+            "track_id",
+            "artist_id",
+            "user_id",
+            "period",
+            "units",
+            "revenue",
+            "currency"
+          ]
+        },
+        {
+          "table": "royalty_payouts",
+          "possibleModel": null,
+          "domain": "royalties",
+          "columns": [
+            "id",
+            "artist_id",
+            "statement_id",
+            "provider",
+            "provider_ref",
+            "amount",
+            "currency",
+            "status",
+            "created_at"
+          ]
+        },
+        {
+          "table": "royalty_rates",
+          "possibleModel": null,
+          "domain": "royalties",
+          "columns": [
+            "id",
+            "territory",
+            "plan_tier",
+            "currency",
+            "rate_per_unit",
+            "effective_from",
+            "effective_to"
+          ]
+        },
+        {
+          "table": "royalty_splits",
+          "possibleModel": null,
+          "domain": "royalties",
+          "columns": [
+            "id",
+            "release_id",
+            "payee_name",
+            "payee_email",
+            "percentage",
+            "role",
+            "created_at"
+          ]
+        },
+        {
+          "table": "royalty_statements",
+          "possibleModel": null,
+          "domain": "royalties",
+          "columns": [
+            "id",
+            "artist_id",
+            "period_start",
+            "period_end",
+            "currency",
+            "gross",
+            "deductions",
+            "net",
+            "status",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "subscriptions_billing": {
+      "tableCount": 7,
+      "tables": [
+        {
+          "table": "billing_events",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "provider",
+            "event_id",
+            "event_type",
+            "payload",
+            "received_at",
+            "processed_at"
+          ]
+        },
+        {
+          "table": "family_groups",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "owner_user_id",
+            "name",
+            "created_at"
+          ]
+        },
+        {
+          "table": "family_members",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "family_id",
+            "user_id",
+            "role",
+            "joined_at"
+          ]
+        },
+        {
+          "table": "payment_methods",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "provider_ref",
+            "brand",
+            "last4",
+            "exp_month",
+            "exp_year",
+            "active"
+          ]
+        },
+        {
+          "table": "subscription_offers",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "plan_id",
+            "code",
+            "trial_days",
+            "discount_percent",
+            "starts_at",
+            "ends_at",
+            "active"
+          ]
+        },
+        {
+          "table": "subscription_plans",
+          "possibleModel": null,
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "key",
+            "name",
+            "tier",
+            "billing_period",
+            "currency",
+            "price_minor",
+            "region_code",
+            "features",
+            "active"
+          ]
+        },
+        {
+          "table": "subscriptions",
+          "possibleModel": "Subscription",
+          "domain": "subscriptions_billing",
+          "columns": [
+            "id",
+            "user_id",
+            "provider",
+            "status",
+            "plan",
+            "provider_ref",
+            "current_period_end",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "trust_moderation": {
+      "tableCount": 5,
+      "tables": [
+        {
+          "table": "audit_log",
+          "possibleModel": null,
+          "domain": "trust_moderation",
+          "columns": [
+            "id",
+            "actor_user_id",
+            "action",
+            "entity_type",
+            "entity_id",
+            "ip",
+            "user_agent",
+            "payload",
+            "created_at"
+          ]
+        },
+        {
+          "table": "content_reports",
+          "possibleModel": null,
+          "domain": "trust_moderation",
+          "columns": [
+            "id",
+            "reporter_user_id",
+            "entity_type",
+            "entity_id",
+            "reason",
+            "details",
+            "status",
+            "moderator_id",
+            "created_at",
+            "resolved_at"
+          ]
+        },
+        {
+          "table": "fraud_signals",
+          "possibleModel": null,
+          "domain": "trust_moderation",
+          "columns": [
+            "id",
+            "user_id",
+            "device_id",
+            "signal_type",
+            "score",
+            "payload",
+            "created_at"
+          ]
+        },
+        {
+          "table": "moderation_actions",
+          "possibleModel": null,
+          "domain": "trust_moderation",
+          "columns": [
+            "id",
+            "moderator_id",
+            "entity_type",
+            "entity_id",
+            "action",
+            "reason",
+            "created_at"
+          ]
+        },
+        {
+          "table": "ugc_claims",
+          "possibleModel": null,
+          "domain": "trust_moderation",
+          "columns": [
+            "id",
+            "claimant",
+            "track_id",
+            "external_ref",
+            "claim_type",
+            "status",
+            "evidence",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    "unclassified": {
+      "tableCount": 1,
+      "tables": [
+        {
+          "table": "playlist_import_jobs",
+          "possibleModel": null,
+          "domain": "unclassified",
+          "columns": [
+            "id",
+            "user_id",
+            "source",
+            "source_ref",
+            "status",
+            "total",
+            "matched",
+            "unmatched",
+            "report",
+            "created_at",
+            "completed_at"
+          ]
+        }
+      ]
+    }
+  },
+  "unclassified": [
+    "playlist_import_jobs"
+  ],
+  "requiredOutcome": [
+    "One canonical PostgreSQL schema.",
+    "One canonical Prisma schema.",
+    "One ordered production migration history.",
+    "All legacy functionality preserved.",
+    "No destructive deletion of existing source variants.",
+    "No duplicate production API/database authorities."
+  ]
+}

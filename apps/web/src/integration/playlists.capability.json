@@ -1,0 +1,288 @@
+{
+  "capability": "playlists",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 56,
+  "sourceVariants": 12,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/playlists.ts",
+      "size": 2344
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/playlist-management.js",
+      "size": 104
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/playlist-ui.js",
+      "size": 136
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/playlists.js",
+      "size": 165
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/playlist-management.js",
+      "size": 104
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/playlist-ui.js",
+      "size": 136
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/playlists.js",
+      "size": 165
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/library-playlist-ui.js",
+      "size": 84
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/playlist-management.js",
+      "size": 104
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/playlist-ui.js",
+      "size": 136
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/playlists.js",
+      "size": 165
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/playlist-management.css",
+      "size": 5259
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/library-playlist-ui.js",
+      "size": 53543
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-management.js",
+      "size": 17414
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-player.js",
+      "size": 12854
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-ui.js",
+      "size": 12582
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlists.js",
+      "size": 14309
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/css/playlist-management.css",
+      "size": 1716
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/library-playlist-ui.js",
+      "size": 903
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/playlist-management.js",
+      "size": 1184
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/playlist-player.js",
+      "size": 243
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/playlist-ui.js",
+      "size": 1430
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/playlists.js",
+      "size": 717
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/playlist-energy.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/playlist-focus.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/playlist-night.svg",
+      "size": 875
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/playlist-reset.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/playlist-slow.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/js/playlists.js",
+      "size": 3378
+    },
+    {
+      "source": "Waeve-Final-Build",
+      "path": "Waeve/js/playlists.js",
+      "size": 3378
+    },
+    {
+      "source": "Waeve-Final-Player-Build",
+      "path": "Waeve/js/playlists.js",
+      "size": 3378
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-energy.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-focus.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-night.svg",
+      "size": 875
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-reset.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-slow.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/playlist-energy.svg",
+      "size": 878
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/playlist-focus.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/playlist-night.svg",
+      "size": 875
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/playlist-reset.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/playlist-slow.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-energy.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-focus.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-night.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/playlist-reset.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/playlist-energy.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/playlist-focus.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/playlist-night.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/playlist-reset.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/frontend/css/playlist-management.css",
+      "size": 557
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/frontend/js/playlists.js",
+      "size": 546
+    }
+  ]
+}

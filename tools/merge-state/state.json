@@ -1,0 +1,17 @@
+{
+  "lastControllerRun": "2026-09-18T19:04:45.917Z",
+  "status": "BLOCKED",
+  "completedStages": [
+    "WORKSPACE DEPENDENCY INSTALL",
+    "PRISMA CLIENT GENERATION",
+    "SHARED CONTRACTS",
+    "API CHECK",
+    "API TESTS",
+    "WEB BUILD",
+    "WEB TESTS",
+    "DATABASE CHECK"
+  ],
+  "blockers": [
+    "Android debug build failed."
+  ]
+}

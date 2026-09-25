@@ -1,0 +1,523 @@
+{
+  "generatedAt": "2026-09-18T15:06:26.832Z",
+  "sourceVariants": [
+    "WAEVE-Android-production-project",
+    "WAEVE-Complete-2.2.0-UI-Matched",
+    "WAEVE-Complete-2.4.0-12-Screens",
+    "WAEVE-Global-Production-Services-4.0.0",
+    "Waeve",
+    "Waeve-1.1.0",
+    "Waeve-2.0.0-final",
+    "Waeve-2.0.1-local-ready",
+    "Waeve-Discovery-Build",
+    "Waeve-Final-Build",
+    "Waeve-Final-Player-Build",
+    "Waeve-Final-Production-Build",
+    "Waeve-Final-Production-Build-1.1.0",
+    "Waeve-final-1.0.0",
+    "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+    "Waeve_Final_1.0.0",
+    "Waeve_Final_Build_1.0.0",
+    "Waeve_Production_2.0.0"
+  ],
+  "preserved": true,
+  "domains": {
+    "web": {
+      "sourceFiles": 119,
+      "copied": 6,
+      "identical": 47,
+      "conflicts": 66,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "canonicalPath": "apps/web",
+      "status": "INTEGRATED"
+    },
+    "api": {
+      "sourceFiles": 66,
+      "copied": 34,
+      "identical": 24,
+      "conflicts": 8,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ],
+      "canonicalPath": "apps/api",
+      "status": "INTEGRATED"
+    },
+    "artist": {
+      "sourceFiles": 0,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [],
+      "canonicalPath": "apps/artist",
+      "status": "NO_SOURCE_EVIDENCE"
+    },
+    "admin": {
+      "sourceFiles": 0,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [],
+      "canonicalPath": "apps/admin",
+      "status": "NO_SOURCE_EVIDENCE"
+    },
+    "developer": {
+      "sourceFiles": 0,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [],
+      "canonicalPath": "apps/developer",
+      "status": "NO_SOURCE_EVIDENCE"
+    },
+    "contracts": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "packages/contracts",
+      "status": "INTEGRATED"
+    },
+    "database": {
+      "sourceFiles": 9,
+      "copied": 7,
+      "identical": 1,
+      "conflicts": 1,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "packages/database",
+      "status": "INTEGRATED"
+    },
+    "security": {
+      "sourceFiles": 8,
+      "copied": 6,
+      "identical": 2,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "packages/security",
+      "status": "INTEGRATED"
+    },
+    "ui": {
+      "sourceFiles": 19,
+      "copied": 12,
+      "identical": 2,
+      "conflicts": 5,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "canonicalPath": "packages/ui",
+      "status": "INTEGRATED"
+    },
+    "catalog": {
+      "sourceFiles": 16,
+      "copied": 15,
+      "identical": 0,
+      "conflicts": 1,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "services/catalog",
+      "status": "INTEGRATED"
+    },
+    "playback": {
+      "sourceFiles": 53,
+      "copied": 22,
+      "identical": 9,
+      "conflicts": 22,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_1.0.0",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ],
+      "canonicalPath": "services/playback",
+      "status": "INTEGRATED"
+    },
+    "search": {
+      "sourceFiles": 4,
+      "copied": 4,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "services/search",
+      "status": "INTEGRATED"
+    },
+    "discovery": {
+      "sourceFiles": 2,
+      "copied": 2,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "services/discovery",
+      "status": "INTEGRATED"
+    },
+    "recommendations": {
+      "sourceFiles": 4,
+      "copied": 3,
+      "identical": 1,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "services/recommendations",
+      "status": "INTEGRATED"
+    },
+    "rights": {
+      "sourceFiles": 6,
+      "copied": 6,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": "services/rights",
+      "status": "INTEGRATED"
+    },
+    "royalties": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/royalties",
+      "status": "INTEGRATED"
+    },
+    "territory": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/territory",
+      "status": "INTEGRATED"
+    },
+    "knowledge": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/knowledge",
+      "status": "INTEGRATED"
+    },
+    "trust": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/trust",
+      "status": "INTEGRATED"
+    },
+    "editorial": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/editorial",
+      "status": "INTEGRATED"
+    },
+    "analytics": {
+      "sourceFiles": 1,
+      "copied": 1,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0"
+      ],
+      "canonicalPath": "services/analytics",
+      "status": "INTEGRATED"
+    },
+    "payments": {
+      "sourceFiles": 5,
+      "copied": 4,
+      "identical": 1,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "canonicalPath": "services/payments",
+      "status": "INTEGRATED"
+    },
+    "media": {
+      "sourceFiles": 16,
+      "copied": 4,
+      "identical": 3,
+      "conflicts": 9,
+      "sourceVariants": [
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_1.0.0",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "canonicalPath": "services/media",
+      "status": "INTEGRATED"
+    },
+    "notifications": {
+      "sourceFiles": 0,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [],
+      "canonicalPath": "services/notifications",
+      "status": "NO_SOURCE_EVIDENCE"
+    },
+    "infrastructure": {
+      "sourceFiles": 14,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": null,
+      "status": "CONFLICT_ONLY"
+    },
+    "android": {
+      "sourceFiles": 168,
+      "copied": 91,
+      "identical": 31,
+      "conflicts": 46,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ],
+      "canonicalPath": "mobile/android",
+      "status": "BUILD_ENTRYPOINT_PRESENT"
+    },
+    "tests": {
+      "sourceFiles": 4,
+      "copied": 0,
+      "identical": 0,
+      "conflicts": 0,
+      "sourceVariants": [
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ],
+      "canonicalPath": null,
+      "status": "CONFLICT_ONLY"
+    }
+  },
+  "copied": 223,
+  "identical": 121,
+  "conflicts": 158,
+  "sourceFiles": 696,
+  "conflictRegister": [
+    {
+      "domain": "web",
+      "conflicts": 66,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    {
+      "domain": "api",
+      "conflicts": 8,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ]
+    },
+    {
+      "domain": "database",
+      "conflicts": 1,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    {
+      "domain": "ui",
+      "conflicts": 5,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    {
+      "domain": "catalog",
+      "conflicts": 1,
+      "sourceVariants": [
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE"
+      ]
+    },
+    {
+      "domain": "playback",
+      "conflicts": 22,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_1.0.0",
+        "Waeve_Final_Build_1.0.0",
+        "Waeve_Production_2.0.0"
+      ]
+    },
+    {
+      "domain": "media",
+      "conflicts": 9,
+      "sourceVariants": [
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve",
+        "Waeve-1.1.0",
+        "Waeve-Discovery-Build",
+        "Waeve-Final-Build",
+        "Waeve-Final-Player-Build",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_1.0.0",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    },
+    {
+      "domain": "android",
+      "conflicts": 46,
+      "sourceVariants": [
+        "WAEVE-Android-production-project",
+        "WAEVE-Complete-2.2.0-UI-Matched",
+        "WAEVE-Complete-2.4.0-12-Screens",
+        "WAEVE-Global-Production-Services-4.0.0",
+        "Waeve-Final-Production-Build",
+        "Waeve-Final-Production-Build-1.1.0",
+        "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+        "Waeve_Final_Build_1.0.0"
+      ]
+    }
+  ],
+  "status": "INTEGRATED_WITH_RECONCILIATION_CONFLICTS"
+}

@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2026-09-18T19:04:45.917Z",
+  "mode": {
+    "automated": true,
+    "repair": false,
+    "resume": true
+  },
+  "preservedSources": true,
+  "domains": {
+    "web": {
+      "path": "apps/web",
+      "exists": true,
+      "files": 258,
+      "package": true,
+      "implementationEvidence": true,
+      "buildScript": true,
+      "testScript": true,
+      "status": "workspace-buildable"
+    },
+    "api": {
+      "path": "apps/api",
+      "exists": true,
+      "files": 169,
+      "package": true,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": true,
+      "status": "workspace-present"
+    },
+    "artist": {
+      "path": "apps/artist",
+      "exists": true,
+      "files": 2,
+      "package": true,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "workspace-present"
+    },
+    "admin": {
+      "path": "apps/admin",
+      "exists": true,
+      "files": 0,
+      "package": false,
+      "implementationEvidence": false,
+      "buildScript": false,
+      "testScript": false,
+      "status": "empty"
+    },
+    "developer": {
+      "path": "apps/developer",
+      "exists": true,
+      "files": 0,
+      "package": false,
+      "implementationEvidence": false,
+      "buildScript": false,
+      "testScript": false,
+      "status": "empty"
+    },
+    "shared": {
+      "path": "packages/shared",
+      "exists": true,
+      "files": 7,
+      "package": true,
+      "implementationEvidence": true,
+      "buildScript": true,
+      "testScript": false,
+      "status": "workspace-buildable"
+    },
+    "contracts": {
+      "path": "packages/contracts",
+      "exists": true,
+      "files": 1,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "database": {
+      "path": "packages/database",
+      "exists": true,
+      "files": 11,
+      "package": true,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "workspace-present"
+    },
+    "security": {
+      "path": "packages/security",
+      "exists": true,
+      "files": 7,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "ui": {
+      "path": "packages/ui",
+      "exists": true,
+      "files": 12,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "services": {
+      "path": "services",
+      "exists": true,
+      "files": 110,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "android": {
+      "path": "mobile/android",
+      "exists": true,
+      "files": 425,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "infrastructure": {
+      "path": "infrastructure",
+      "exists": true,
+      "files": 2,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    },
+    "tests": {
+      "path": "tests",
+      "exists": true,
+      "files": 1,
+      "package": false,
+      "implementationEvidence": true,
+      "buildScript": false,
+      "testScript": false,
+      "status": "source-present-no-package"
+    }
+  },
+  "stages": [
+    {
+      "stage": "workspace-discovery",
+      "workspace": "apps/api",
+      "name": "@waeve/api",
+      "scripts": {
+        "dev": "node --watch src/server.js",
+        "start": "node src/server.js",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev",
+        "seed": "node prisma/seed.js",
+        "test": "node --test",
+        "check": "node --check src/server.js && node --check src/routes/platform.js && node --check src/services/territory.js && node --check src/services/rights.js && node --check src/services/royalty.js && node --check src/services/knowledge.js && node --check src/services/discovery.js && node --check src/services/trust.js && node --check src/services/editorial.js && node --check src/services/ai.js && node --check src/services/analytics.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "apps/artist",
+      "name": "@waeve/apps-artist",
+      "scripts": {}
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "apps/web",
+      "name": "@waeve/web",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "test": "vitest run",
+        "preview": "vite preview"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "packages/database",
+      "name": "@waeve/database",
+      "scripts": {
+        "check": "node --check scripts/check-schema.mjs",
+        "verify": "npm run check"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "packages/shared",
+      "name": "@waeve/shared",
+      "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/analytics",
+      "name": "@waeve/services-analytics",
+      "scripts": {
+        "check": "node --check backend/src/services/analytics.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/catalog",
+      "name": "@waeve/services-catalog",
+      "scripts": {
+        "check": "node --check js/catalogue.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/discovery",
+      "name": "@waeve/services-discovery",
+      "scripts": {
+        "check": "node --check backend/src/services/discovery.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/editorial",
+      "name": "@waeve/services-editorial",
+      "scripts": {
+        "check": "node --check backend/src/services/editorial.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/knowledge",
+      "name": "@waeve/services-knowledge",
+      "scripts": {
+        "check": "node --check backend/src/services/knowledge.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/media",
+      "name": "@waeve/services-media",
+      "scripts": {
+        "check": "node --check android/app/src/main/assets/js/storage.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/notifications",
+      "name": "@waeve/services-notifications",
+      "scripts": {}
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/payments",
+      "name": "@waeve/services-payments",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/playback",
+      "name": "@waeve/services-playback",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/recommendations",
+      "name": "@waeve/services-recommendations",
+      "scripts": {
+        "check": "tsc --noEmit -p tsconfig.json"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/rights",
+      "name": "@waeve/services-rights",
+      "scripts": {
+        "check": "node --check backend/src/services/rights.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/royalties",
+      "name": "@waeve/services-royalties",
+      "scripts": {
+        "check": "node --check backend/src/services/royalty.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/search",
+      "name": "@waeve/services-search",
+      "scripts": {}
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/territory",
+      "name": "@waeve/services-territory",
+      "scripts": {
+        "check": "node --check backend/src/services/territory.js"
+      }
+    },
+    {
+      "stage": "workspace-discovery",
+      "workspace": "services/trust",
+      "name": "@waeve/services-trust",
+      "scripts": {
+        "check": "node --check backend/src/services/trust.js"
+      }
+    }
+  ],
+  "blockers": [
+    "Android debug build failed."
+  ],
+  "externalDependencies": [
+    "Licensed commercial music catalog and territory rights",
+    "Production object storage/CDN credentials",
+    "Payment/billing provider accounts and webhooks",
+    "Identity/email provider configuration",
+    "App-store signing and distribution credentials",
+    "Production transcoding/queue infrastructure",
+    "Production royalty contracts, tax and regional legal configuration"
+  ],
+  "preservedSourceVariants": 18,
+  "status": "BLOCKED",
+  "results": [
+    {
+      "label": "WORKSPACE DEPENDENCY INSTALL",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "PRISMA CLIENT GENERATION",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "SHARED CONTRACTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "API CHECK",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "API TESTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "WEB BUILD",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "WEB TESTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "DATABASE CHECK",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "ANDROID BUILD",
+      "ok": false,
+      "code": 1
+    }
+  ]
+}

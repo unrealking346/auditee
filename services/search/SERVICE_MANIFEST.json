@@ -1,0 +1,8 @@
+{
+  "service": "search",
+  "status": "canonical-boundary",
+  "sourceCapabilities": [
+    "search"
+  ],
+  "rule": "The service must contain verified implementation before being marked complete."
+}

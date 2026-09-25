@@ -1,0 +1,273 @@
+{
+  "capability": "playback",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 53,
+  "sourceVariants": 15,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/web/src/components/PlayerBar.tsx",
+      "size": 1349
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/web/src/lib/player.ts",
+      "size": 1820
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/player/WaevePlaybackService.kt",
+      "size": 1529
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/mobile/player/WaevePlayer.kt",
+      "size": 1734
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/css/player.css",
+      "size": 1338
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/player.js",
+      "size": 1696
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 572
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/css/player.css",
+      "size": 1338
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/player.js",
+      "size": 1696
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 1106
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/css/player.css",
+      "size": 1338
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/player.js",
+      "size": 1696
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/playlist-player.js",
+      "size": 53
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 1106
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/music-player.html",
+      "size": 383
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/css/player.css",
+      "size": 6402
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/player.js",
+      "size": 19605
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/playlist-player.js",
+      "size": 12854
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/css/player.css",
+      "size": 3176
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/player.js",
+      "size": 5905
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/playlist-player.js",
+      "size": 243
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/css/player.css",
+      "size": 2267
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/js/player.js",
+      "size": 6575
+    },
+    {
+      "source": "Waeve-Final-Build",
+      "path": "Waeve/css/player.css",
+      "size": 1788
+    },
+    {
+      "source": "Waeve-Final-Build",
+      "path": "Waeve/js/player.js",
+      "size": 4691
+    },
+    {
+      "source": "Waeve-Final-Player-Build",
+      "path": "Waeve/css/player.css",
+      "size": 2267
+    },
+    {
+      "source": "Waeve-Final-Player-Build",
+      "path": "Waeve/js/player.js",
+      "size": 6575
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/css/player.css",
+      "size": 2634
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/js/player.js",
+      "size": 6391
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/css/player.css",
+      "size": 2634
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/js/player.js",
+      "size": 6391
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/css/player.css",
+      "size": 2634
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/js/player.js",
+      "size": 7601
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/java/com/waeve/app/PlaybackService.kt",
+      "size": 995
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/css/player.css",
+      "size": 2634
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/js/player.js",
+      "size": 7601
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/android/app/src/main/kotlin/com/waeve/app/WaevePlaybackService.kt",
+      "size": 1101
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/ios/Runner/AudioSessionBridge.swift",
+      "size": 334
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/player/now_playing_screen.dart",
+      "size": 1789
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/css/player.css",
+      "size": 1454
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/js/player.js",
+      "size": 2806
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/platforms/android-native/app/src/main/java/com/waeve/music/WaevePlaybackService.java",
+      "size": 470
+    },
+    {
+      "source": "Waeve_Final_1.0.0",
+      "path": "css/player.css",
+      "size": 834
+    },
+    {
+      "source": "Waeve_Final_1.0.0",
+      "path": "js/player.js",
+      "size": 874
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/PlaybackService.kt",
+      "size": 837
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/frontend/css/player.css",
+      "size": 1457
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/frontend/js/player.js",
+      "size": 5386
+    },
+    {
+      "source": "Waeve_Production_2.0.0",
+      "path": "public/css/player.css",
+      "size": 890
+    }
+  ]
+}

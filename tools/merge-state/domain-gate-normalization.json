@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-09-19T08:54:14.282Z",
+  "domains": {
+    "apps/web": {
+      "status": "STANDARDIZED",
+      "files": 258,
+      "sourceFiles": 119,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    },
+    "apps/api": {
+      "status": "STANDARDIZED",
+      "files": 169,
+      "sourceFiles": 130,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    },
+    "apps/artist": {
+      "status": "STANDARDIZED",
+      "files": 5,
+      "sourceFiles": 2,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    },
+    "apps/admin": {
+      "status": "STANDARDIZED",
+      "files": 4,
+      "sourceFiles": 2,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    },
+    "apps/developer": {
+      "status": "STANDARDIZED",
+      "files": 4,
+      "sourceFiles": 2,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    },
+    "packages/shared": {
+      "status": "STANDARDIZED",
+      "files": 7,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": true,
+      "test": false
+    },
+    "packages/contracts": {
+      "status": "NO_PACKAGE_MANIFEST",
+      "files": 1,
+      "sourceFiles": 0,
+      "tests": false
+    },
+    "packages/database": {
+      "status": "STANDARDIZED",
+      "files": 11,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "packages/security": {
+      "status": "NO_PACKAGE_MANIFEST",
+      "files": 7,
+      "sourceFiles": 4,
+      "tests": false
+    },
+    "packages/ui": {
+      "status": "NO_PACKAGE_MANIFEST",
+      "files": 12,
+      "sourceFiles": 4,
+      "tests": false
+    },
+    "services/catalog": {
+      "status": "STANDARDIZED",
+      "files": 18,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/playback": {
+      "status": "STANDARDIZED",
+      "files": 26,
+      "sourceFiles": 7,
+      "tests": false,
+      "check": true,
+      "build": true,
+      "test": false
+    },
+    "services/search": {
+      "status": "STANDARDIZED",
+      "files": 7,
+      "sourceFiles": 0,
+      "tests": false,
+      "check": false,
+      "build": false,
+      "test": false
+    },
+    "services/discovery": {
+      "status": "STANDARDIZED",
+      "files": 5,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/recommendations": {
+      "status": "STANDARDIZED",
+      "files": 7,
+      "sourceFiles": 3,
+      "tests": false,
+      "check": true,
+      "build": true,
+      "test": false
+    },
+    "services/rights": {
+      "status": "STANDARDIZED",
+      "files": 9,
+      "sourceFiles": 3,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/royalties": {
+      "status": "STANDARDIZED",
+      "files": 4,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/territory": {
+      "status": "STANDARDIZED",
+      "files": 3,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/knowledge": {
+      "status": "STANDARDIZED",
+      "files": 3,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/trust": {
+      "status": "STANDARDIZED",
+      "files": 3,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/editorial": {
+      "status": "STANDARDIZED",
+      "files": 3,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/analytics": {
+      "status": "STANDARDIZED",
+      "files": 4,
+      "sourceFiles": 1,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/payments": {
+      "status": "STANDARDIZED",
+      "files": 9,
+      "sourceFiles": 4,
+      "tests": false,
+      "check": true,
+      "build": true,
+      "test": false
+    },
+    "services/media": {
+      "status": "STANDARDIZED",
+      "files": 7,
+      "sourceFiles": 4,
+      "tests": false,
+      "check": true,
+      "build": false,
+      "test": false
+    },
+    "services/notifications": {
+      "status": "STANDARDIZED",
+      "files": 5,
+      "sourceFiles": 2,
+      "tests": true,
+      "check": true,
+      "build": true,
+      "test": true
+    }
+  },
+  "changedPackageManifests": [
+    "apps/web",
+    "apps/api",
+    "services/playback",
+    "services/recommendations",
+    "services/payments"
+  ],
+  "createdGateFiles": [
+    "apps/web",
+    "apps/api",
+    "apps/artist",
+    "apps/admin",
+    "apps/developer",
+    "packages/shared",
+    "packages/database",
+    "services/catalog",
+    "services/playback",
+    "services/search",
+    "services/discovery",
+    "services/recommendations",
+    "services/rights",
+    "services/royalties",
+    "services/territory",
+    "services/knowledge",
+    "services/trust",
+    "services/editorial",
+    "services/analytics",
+    "services/payments",
+    "services/media",
+    "services/notifications"
+  ],
+  "preservedExistingContent": true
+}

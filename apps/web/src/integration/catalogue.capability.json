@@ -1,0 +1,438 @@
+{
+  "capability": "catalogue",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 86,
+  "sourceVariants": 13,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/artists.ts",
+      "size": 2035
+    },
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/music.ts",
+      "size": 2529
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/frontend/js/music.js",
+      "size": 50
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+      "size": 51313
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 572
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/frontend/js/music.js",
+      "size": 50
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_1.png",
+      "size": 5049
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_2.png",
+      "size": 5019
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_3.png",
+      "size": 5042
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_4.png",
+      "size": 5039
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+      "size": 56112
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 1106
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/docs/GLOBAL_MUSIC_INDUSTRY_RESEARCH_2026.md",
+      "size": 4860
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/frontend/js/music.js",
+      "size": 50
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_1.png",
+      "size": 5049
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_2.png",
+      "size": 5019
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_3.png",
+      "size": 5042
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/assets/artist_4.png",
+      "size": 5039
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+      "size": 67028
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/PlaybackRepository.kt",
+      "size": 365
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/mobile/android/app/src/main/java/com/waeve/music/playback/WaevePlaybackService.kt",
+      "size": 1106
+    },
+    {
+      "source": "Waeve",
+      "path": "data/music.json",
+      "size": 782
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/album-card.html",
+      "size": 121
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/components/music-player.html",
+      "size": 383
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/js/music.js",
+      "size": 7880
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/instrumental.mp3",
+      "size": 4240940
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/migos.mp3",
+      "size": 4960940
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/second-track.mp3",
+      "size": 3496748
+    },
+    {
+      "source": "Waeve",
+      "path": "frontend/music/test-track.mp3",
+      "size": 2852396
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/catalogue.js",
+      "size": 1432
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/js/music.js",
+      "size": 2614
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/music/instrumental.mp3",
+      "size": 4240940
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/music/migos.mp3",
+      "size": 4960940
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/music/second-track.mp3",
+      "size": 3496748
+    },
+    {
+      "source": "Waeve-1.1.0",
+      "path": "Waeve/music/test-track.mp3",
+      "size": 2852396
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/artist-echo.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/artist-kairo.svg",
+      "size": 881
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/artist-luma.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/artist-nova.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/assets/artist-waeve.svg",
+      "size": 876
+    },
+    {
+      "source": "Waeve-Discovery-Build",
+      "path": "Waeve/js/music.js",
+      "size": 5850
+    },
+    {
+      "source": "Waeve-Final-Build",
+      "path": "Waeve/js/music.js",
+      "size": 759
+    },
+    {
+      "source": "Waeve-Final-Player-Build",
+      "path": "Waeve/js/music.js",
+      "size": 759
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-echo.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-kairo.svg",
+      "size": 881
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-luma.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-nova.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-waeve.svg",
+      "size": 876
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/android/app/src/main/assets/js/music.js",
+      "size": 5282
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/artist-echo.svg",
+      "size": 874
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/artist-kairo.svg",
+      "size": 881
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/artist-luma.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/artist-nova.svg",
+      "size": 872
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/assets/artist-waeve.svg",
+      "size": 876
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/js/music.js",
+      "size": 5282
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/music/README.txt",
+      "size": 122
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-echo.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-kairo.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-luma.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-nova.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/assets/artist-waeve.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/js/music.js",
+      "size": 5282
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/music/LICENSE.txt",
+      "size": 142
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/music/README.txt",
+      "size": 122
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/android/app/src/main/assets/music/test-track.mp3",
+      "size": 128983
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/artist-echo.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/artist-kairo.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/artist-luma.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/artist-nova.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/assets/artist-waeve.svg",
+      "size": 475
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/js/music.js",
+      "size": 5282
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/music/LICENSE.txt",
+      "size": 142
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/music/README.txt",
+      "size": 122
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/music/test-track.mp3",
+      "size": 128983
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/artist/artist_studio.dart",
+      "size": 296
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/models/track.dart",
+      "size": 310
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/docs/DATA_DOMAIN_CATALOG.md",
+      "size": 1510
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/js/music.js",
+      "size": 918
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/platforms/android-native/app/src/main/java/com/waeve/music/MainActivity.java",
+      "size": 354
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/platforms/android-native/app/src/main/java/com/waeve/music/WaevePlaybackService.java",
+      "size": 470
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/BillingManager.kt",
+      "size": 2633
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/MainActivity.kt",
+      "size": 308
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/android/app/src/main/java/com/waeve/music/PlaybackService.kt",
+      "size": 837
+    },
+    {
+      "source": "Waeve_Final_Build_1.0.0",
+      "path": "Waeve_Final_Build_1.0.0/frontend/js/music.js",
+      "size": 2589
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+import type {Song} from '@waeve/shared'; import {player} from '../lib/player'; import {api} from '../lib/api';
+export function SongCard({song}:{song:Song}){return <article className="card"><button className="cover" onClick={()=>player.play(song)}><img src={song.artworkUrl||'/cover.svg'} alt=""/><span>▶</span></button><div className="card-info"><b title={song.title}>{song.title}</b><span>{song.artist||'Unknown artist'}</span></div><button onClick={()=>api(`/music/songs/${song.id}/like`,{method:'POST'})} aria-label="Like song">♡</button></article>}

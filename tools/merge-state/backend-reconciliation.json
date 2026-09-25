@@ -1,0 +1,213 @@
+{
+  "purpose": "Non-destructive backend implementation reconciliation",
+  "canonicalRuntime": "@waeve/api",
+  "copied": [
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/package.json"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/prisma/seed.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/auth.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/routes/platform.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/server.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/server.test.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/ai.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/analytics.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/discovery.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/editorial.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/knowledge.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/rights.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/royalty.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/territory.js"
+    },
+    {
+      "variant": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/trust.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/package.json"
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/prisma/seed.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/auth.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/server.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.4.0-12-Screens",
+      "path": "Waeve/backend/src/server.test.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/package.json"
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/prisma/seed.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/auth.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/server.js"
+    },
+    {
+      "variant": "WAEVE-Complete-2.2.0-UI-Matched",
+      "path": "Waeve/backend/src/server.test.js"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/package.json"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/db.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/middleware/auth.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/migrate.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/artists.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/auth.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/index.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/music.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/playlists.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/routes/subscriptions.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/server.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/services/recommendations.ts"
+    },
+    {
+      "variant": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/tsconfig.json"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/package.json"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/app.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/billing.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/db.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/everything.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/index.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/migrate.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/recommendations.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/rights.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/seed.js"
+    },
+    {
+      "variant": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/storage.js"
+    },
+    {
+      "variant": "Waeve_Production_2.0.0",
+      "path": "backend/server.js"
+    }
+  ],
+  "conflicts": [],
+  "rules": [
+    "Original source variants remain untouched.",
+    "Canonical API files are never overwritten by source variants.",
+    "Source implementations are retained under integration/sources for controlled reconciliation.",
+    "Conflicts are recorded rather than silently discarded."
+  ]
+}

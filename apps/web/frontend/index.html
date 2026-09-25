@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Waeve music streaming platform"
+    >
+
+    <title>Waeve</title>
+
+
+    <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/player.css">
+<link rel="stylesheet" href="css/playlist-management.css">
+<link rel="stylesheet" href="css/waeve-theme.css">
+
+</head>
+
+
+<body>
+
+    <div id="waeve-app">
+
+        <header class="waeve-header">
+
+            <div class="waeve-logo">
+                WAEVE
+            </div>
+
+
+            <nav
+                class="waeve-navigation"
+                aria-label="Main navigation"
+            >
+
+                <button
+                    type="button"
+                    class="nav-button active"
+                    data-page="home"
+                >
+                    Home
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-button"
+                    data-page="search"
+                >
+                    Search
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-button"
+                    data-page="library"
+                >
+                    Library
+                </button>
+
+            </nav>
+
+        </header>
+
+
+        <main
+            id="waeve-content"
+            class="waeve-content"
+        >
+
+            <section class="loading-screen">
+
+                <h1>WAEVE</h1>
+
+                <p>
+                    Starting application...
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <footer class="waeve-footer">
+
+            <p>
+                Waeve
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- WAEVE CORE -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/router.js"></script>
+
+    <script src="js/utils.js"></script>
+
+
+    <!-- MUSIC SYSTEM -->
+    <script src="js/music.js"></script>
+
+    <script src="js/playlists.js"></script>
+
+
+    <!-- AUDIO PLAYER -->
+
+    <script src="js/player.js"></script>
+
+    <script src="js/playlist-player.js"></script>
+
+    <script src="js/playlist-ui.js"></script>
+
+    <script src="js/playlist-management.js"></script>
+
+    <script src="js/library-playlist-ui.js"></script>
+
+    <!-- APPLICATION -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "capability": "analytics",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 1,
+  "sourceVariants": 1,
+  "implementations": [
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/analytics.js",
+      "size": 881
+    }
+  ]
+}

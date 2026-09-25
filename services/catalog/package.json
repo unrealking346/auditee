@@ -1,0 +1,10 @@
+{
+  "name": "@waeve/services-catalog",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check js/catalogue.js"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,44 @@
+{
+  "name": "waeve",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "apps/artist",
+    "apps/admin",
+    "apps/developer",
+    "packages/shared",
+    "packages/contracts",
+    "packages/database",
+    "packages/security",
+    "packages/ui",
+    "services/catalog",
+    "services/playback",
+    "services/search",
+    "services/discovery",
+    "services/recommendations",
+    "services/rights",
+    "services/royalties",
+    "services/territory",
+    "services/knowledge",
+    "services/trust",
+    "services/editorial",
+    "services/analytics",
+    "services/payments",
+    "services/media",
+    "services/notifications"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

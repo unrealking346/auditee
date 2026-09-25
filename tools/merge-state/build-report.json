@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-09-18T19:04:45.917Z",
+  "status": "BLOCKED",
+  "blockers": [
+    "Android debug build failed."
+  ],
+  "results": [
+    {
+      "label": "WORKSPACE DEPENDENCY INSTALL",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "PRISMA CLIENT GENERATION",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "SHARED CONTRACTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "API CHECK",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "API TESTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "WEB BUILD",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "WEB TESTS",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "DATABASE CHECK",
+      "ok": true,
+      "code": 0
+    },
+    {
+      "label": "ANDROID BUILD",
+      "ok": false,
+      "code": 1
+    }
+  ]
+}

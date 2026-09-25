@@ -1,0 +1,32 @@
+{
+  "canonicalPackage": "@waeve/api",
+  "implementationBaseline": "WAEVE-Global-Production-Services-4.0.0",
+  "sourcePath": "backend",
+  "copied": [
+    ".env.example",
+    "package.json",
+    "prisma/schema.prisma",
+    "prisma/seed.js",
+    "src/auth.js",
+    "src/routes/platform.js",
+    "src/server.js",
+    "src/server.test.js",
+    "src/services/ai.js",
+    "src/services/analytics.js",
+    "src/services/discovery.js",
+    "src/services/editorial.js",
+    "src/services/knowledge.js",
+    "src/services/rights.js",
+    "src/services/royalty.js",
+    "src/services/territory.js",
+    "src/services/trust.js"
+  ],
+  "preserved": [],
+  "rules": [
+    "The selected production backend is the canonical implementation baseline.",
+    "Other preserved backend variants remain reconciliation inputs.",
+    "Existing canonical files are never overwritten.",
+    "Original source variants remain untouched.",
+    "Feature completion requires build, tests, integration and verification."
+  ]
+}

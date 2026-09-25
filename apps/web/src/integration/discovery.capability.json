@@ -1,0 +1,38 @@
+{
+  "capability": "discovery",
+  "status": "integration-inputs-reconciled",
+  "implementationCount": 6,
+  "sourceVariants": 5,
+  "implementations": [
+    {
+      "source": "WAEVE-Android-production-project",
+      "path": "Waeve/apps/api/src/services/recommendations.ts",
+      "size": 687
+    },
+    {
+      "source": "WAEVE-Global-Production-Services-4.0.0",
+      "path": "Waeve/backend/src/services/discovery.js",
+      "size": 1920
+    },
+    {
+      "source": "Waeve-Final-Production-Build",
+      "path": "Waeve/docs/AI_RECOMMENDATION_SPEC.md",
+      "size": 784
+    },
+    {
+      "source": "Waeve-Final-Production-Build-1.1.0",
+      "path": "Waeve/docs/AI_RECOMMENDATION_SPEC.md",
+      "size": 784
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/apps/waeve_app/lib/features/discovery/discovery_screen.dart",
+      "size": 265
+    },
+    {
+      "source": "Waeve_2.0_EVERYTHING_GLOBAL_FINAL_SOURCE",
+      "path": "waeve/server/src/recommendations.js",
+      "size": 396
+    }
+  ]
+}

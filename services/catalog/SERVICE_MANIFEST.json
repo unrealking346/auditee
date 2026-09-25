@@ -1,0 +1,8 @@
+{
+  "service": "catalog",
+  "status": "canonical-boundary",
+  "sourceCapabilities": [
+    "catalog"
+  ],
+  "rule": "The service must contain verified implementation before being marked complete."
+}

@@ -1,0 +1,20 @@
+{
+  "canonicalAndroid": "mobile/android",
+  "files": 91,
+  "gradleEntrypoints": [
+    "mobile/android/android/app/build.gradle.kts",
+    "mobile/android/android/build.gradle.kts",
+    "mobile/android/android/settings.gradle.kts",
+    "mobile/android/app/build.gradle.kts",
+    "mobile/android/build.gradle.kts",
+    "mobile/android/gradle.properties",
+    "mobile/android/platforms/android-native/app/build.gradle",
+    "mobile/android/platforms/android-native/build.gradle",
+    "mobile/android/platforms/android-native/settings.gradle",
+    "mobile/android/settings.gradle.kts"
+  ],
+  "wrapperPresent": false,
+  "sourceVariantsModified": 0,
+  "destructiveOperations": 0,
+  "status": "INSPECTED"
+}

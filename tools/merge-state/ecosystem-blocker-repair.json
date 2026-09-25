@@ -1,0 +1,25 @@
+{
+  "repaired": [
+    "services/analytics:check->backend/src/services/analytics.js",
+    "services/catalog:check->js/catalogue.js",
+    "services/discovery:check->backend/src/services/discovery.js",
+    "services/editorial:check->backend/src/services/editorial.js",
+    "services/knowledge:check->backend/src/services/knowledge.js",
+    "services/media:check->android/app/src/main/assets/js/storage.js",
+    "services/rights:check->backend/src/services/rights.js",
+    "services/royalties:check->backend/src/services/royalty.js",
+    "services/territory:check->backend/src/services/territory.js",
+    "services/trust:check->backend/src/services/trust.js",
+    "services/playback:react-typescript-config",
+    "services/playback:src/lib/player.ts:audioUrl-contract",
+    "services/playback:react-dependencies",
+    "services/payments:src/db.ts",
+    "services/payments:src/middleware/auth.ts",
+    "services/payments:express-types",
+    "services/recommendations:src/db.ts",
+    "services/recommendations:pg"
+  ],
+  "preserved": [],
+  "unresolved": [],
+  "sourceVariantsModified": 0
+}
